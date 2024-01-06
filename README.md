@@ -15,7 +15,7 @@
 
 ### Documentation
 
-Read the [Documentation page](https://mabesi.io/react-components/docs/) for more information and examples.
+Read the [Documentation page](https://github.com/mabesi/react-components/wiki) for more information and examples.
 
 ### Installation
 
