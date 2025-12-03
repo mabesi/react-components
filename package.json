@@ -1,62 +1,105 @@
 {
+    "name": "@mabesi/react-components",
     "version": "0.1.0",
+    "description": "Modern React component library with TypeScript support - DynamicForm, DataTable, Modal, and more",
+    "author": "Plinio Mabesi",
     "license": "MIT",
-    "main": "dist/index.js",
-    "typings": "dist/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mabesi/react-components"
+    },
+    "homepage": "https://github.com/mabesi/react-components#readme",
+    "bugs": {
+        "url": "https://github.com/mabesi/react-components/issues"
+    },
+    "keywords": [
+        "react",
+        "components",
+        "typescript",
+        "dynamic-form",
+        "form-builder",
+        "ui-components",
+        "react-library"
+    ],
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+        },
+        "./styles.css": "./dist/styles.css"
+    },
     "files": [
         "dist",
-        "src"
+        "README.md",
+        "LICENSE"
     ],
     "engines": {
-        "node": ">=10"
+        "node": ">=18"
     },
     "scripts": {
-        "start": "tsdx watch",
-        "build": "tsdx build",
-        "test": "tsdx test --passWithNoTests",
-        "lint": "tsdx lint",
-        "prepare": "tsdx build",
+        "dev": "tsup --watch",
+        "build": "tsup",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "test:ui": "vitest --ui",
+        "lint": "eslint src --ext .ts,.tsx",
+        "lint:fix": "eslint src --ext .ts,.tsx --fix",
+        "format": "prettier --write \"src/**/*.{ts,tsx,json,css,md}\"",
+        "format:check": "prettier --check \"src/**/*.{ts,tsx,json,css,md}\"",
+        "typecheck": "tsc --noEmit",
         "size": "size-limit",
         "analyze": "size-limit --why",
-        "deploy": "npm version patch && npm publish"
+        "prepare": "npm run build",
+        "prepublishOnly": "npm run lint && npm run typecheck && npm run test && npm run build"
     },
     "peerDependencies": {
-        "react": ">=16"
+        "react": ">=18.0.0",
+        "react-dom": ">=18.0.0"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "tsdx lint"
-        }
+    "devDependencies": {
+        "@size-limit/preset-small-lib": "^11.1.6",
+        "@testing-library/react": "^16.1.0",
+        "@testing-library/user-event": "^14.5.2",
+        "@types/node": "^22.10.1",
+        "@types/react": "^18.3.12",
+        "@types/react-dom": "^18.3.1",
+        "@typescript-eslint/eslint-plugin": "^8.15.0",
+        "@typescript-eslint/parser": "^8.15.0",
+        "@vitejs/plugin-react": "^4.3.4",
+        "eslint": "^9.15.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-react": "^7.37.2",
+        "eslint-plugin-react-hooks": "^5.0.0",
+        "happy-dom": "^15.11.7",
+        "prettier": "^3.3.3",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "size-limit": "^11.1.6",
+        "tsup": "^8.3.5",
+        "typescript": "^5.7.2",
+        "vite": "^6.0.1",
+        "vitest": "^2.1.5"
     },
     "prettier": {
-        "printWidth": 80,
         "semi": true,
         "singleQuote": true,
-        "trailingComma": "es5"
+        "tabWidth": 2,
+        "trailingComma": "es5",
+        "printWidth": 80,
+        "arrowParens": "avoid"
     },
-    "name": "@mabesi/react-components",
-    "author": "Plinio Mabesi",
-    "module": "dist/react-components.esm.js",
     "size-limit": [
         {
-            "path": "dist/react-components.cjs.production.min.js",
-            "limit": "10 KB"
+            "path": "dist/index.js",
+            "limit": "15 KB"
         },
         {
-            "path": "dist/react-components.esm.js",
-            "limit": "10 KB"
+            "path": "dist/index.mjs",
+            "limit": "15 KB"
         }
-    ],
-    "devDependencies": {
-        "@size-limit/preset-small-lib": "^11.0.1",
-        "@types/react": "^18.2.47",
-        "@types/react-dom": "^18.2.18",
-        "husky": "^8.0.3",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "size-limit": "^11.0.1",
-        "tsdx": "^0.14.1",
-        "tslib": "^2.6.2",
-        "typescript": "^3.9.10"
-    }
+    ]
 }
