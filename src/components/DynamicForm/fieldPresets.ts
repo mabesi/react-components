@@ -1,4 +1,6 @@
 import type { RegularFormField } from './types';
+import { en } from '../../i18n/en';
+import { ptBR } from '../../i18n/pt-BR';
 
 /**
  * Field preset type - identifies which preset configuration to use
@@ -35,6 +37,13 @@ export type FieldPresetType =
  * Excludes 'preset' to avoid circular reference
  */
 export type FieldPresetConfig = Partial<Omit<RegularFormField, 'preset'>>;
+
+/**
+ * Get translations based on locale
+ */
+const getTranslations = (locale?: 'en' | 'pt-BR') => {
+    return locale === 'pt-BR' ? ptBR : en;
+};
 
 /**
  * Field presets configuration
@@ -317,12 +326,13 @@ export const FIELD_PRESETS: Record<FieldPresetType, FieldPresetConfig> = {
 };
 
 /**
- * Apply a preset to a field configuration
+ * Apply a preset to a field configuration with i18n support
  * Merges preset defaults with user-provided overrides
  */
 export const applyFieldPreset = (
     preset: FieldPresetType,
-    overrides: Partial<RegularFormField> = {}
+    overrides: Partial<RegularFormField> = {},
+    locale?: 'en' | 'pt-BR'
 ): RegularFormField => {
     const presetConfig = FIELD_PRESETS[preset];
 
@@ -330,24 +340,64 @@ export const applyFieldPreset = (
         throw new Error(`Unknown field preset: ${preset}`);
     }
 
+    // Get translations based on locale
+    const translations = getTranslations(locale);
+
+    // Get translated label
+    const translatedLabel = translations.fields[preset] || presetConfig.label;
+
+    // Get translated placeholder if exists
+    const translatedPlaceholder = (translations.placeholders as any)[preset] || presetConfig.placeholder;
+
+    // Translate validation messages
+    const translatedValidation = presetConfig.validation?.map((rule) => {
+        if (rule.type === 'required') {
+            return {
+                ...rule,
+                message: rule.message || translations.validation.required
+            };
+        }
+        if (rule.type === 'email') {
+            return {
+                ...rule,
+                message: rule.message || translations.validation.email
+            };
+        }
+        if (rule.type === 'minLength' && 'value' in rule) {
+            return {
+                ...rule,
+                message: rule.message || translations.validation.minLength(rule.value)
+            };
+        }
+        if (rule.type === 'maxLength' && 'value' in rule) {
+            return {
+                ...rule,
+                message: rule.message || translations.validation.maxLength(rule.value)
+            };
+        }
+        if (rule.type === 'pattern') {
+            return {
+                ...rule,
+                message: rule.message || translations.validation.pattern
+            };
+        }
+        return rule;
+    });
+
     // Merge preset with overrides
     // User overrides take precedence over preset defaults
     const merged: RegularFormField = {
         ...presetConfig,
         ...overrides,
+        // Use translated values if not overridden
+        label: overrides.label || translatedLabel,
+        placeholder: overrides.placeholder || translatedPlaceholder,
+        validation: overrides.validation || translatedValidation,
         // Ensure required fields are present
         id: overrides.id || presetConfig.id || preset,
         name: overrides.name || presetConfig.name || preset,
-        label: overrides.label || presetConfig.label || preset,
         type: overrides.type || presetConfig.type || 'text',
     } as RegularFormField;
-
-    // Merge validation rules if both preset and override have them
-    if (presetConfig.validation && overrides.validation) {
-        // User can completely override validation or extend it
-        // By default, we use user's validation (they can include preset rules if needed)
-        merged.validation = overrides.validation;
-    }
 
     return merged;
 };

@@ -5,6 +5,7 @@ import { validateValue } from './validators';
 import { applyFieldPreset } from './fieldPresets';
 import { flattenFields, isSection } from './fieldUtils';
 import { Section } from '../Section';
+import { useI18n } from '../../context/I18nContext';
 import styles from './styles.module.css';
 
 export const DynamicForm: React.FC<DynamicFormProps> = ({
@@ -20,6 +21,8 @@ export const DynamicForm: React.FC<DynamicFormProps> = ({
     validateOnBlur = true,
     validateOnChange = false,
 }) => {
+    const { locale } = useI18n();
+
     // Process fields: flatten sections and apply presets
     const processedFields = useMemo(() => {
         // First, flatten all nested sections into regular fields only
@@ -28,7 +31,7 @@ export const DynamicForm: React.FC<DynamicFormProps> = ({
         // Then apply presets to flattened fields
         return flatFields.map((field) => {
             if (field.preset) {
-                return applyFieldPreset(field.preset, field) as RegularFormField;
+                return applyFieldPreset(field.preset, field, locale) as RegularFormField;
             }
             // Ensure required fields are present
             if (!field.id || !field.name || !field.label || !field.type) {
@@ -36,7 +39,7 @@ export const DynamicForm: React.FC<DynamicFormProps> = ({
             }
             return field;
         });
-    }, [fields]);
+    }, [fields, locale]);
 
     const [values, setValues] = useState<FormValues>(() => {
         const initial: FormValues = {};
