@@ -1,11 +1,11 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { DynamicForm, ThemeProvider, I18nProvider } from '../src';
+import { DynamicForm, ThemeProvider, I18nProvider, useTheme, useI18n } from '../src';
 import type { FormField } from '../src/components/DynamicForm/types';
 
-const App: React.FC = () => {
-  const [currentTheme, setCurrentTheme] = React.useState<'default' | 'minimal' | 'modern' | 'compact'>('default');
-  const [currentLocale, setCurrentLocale] = React.useState<'en' | 'pt-BR'>('pt-BR');
+const FormExample: React.FC = () => {
+  const { themeName, setTheme } = useTheme();
+  const { locale, setLocale } = useI18n();
 
   // Form configuration with sections
   const fields: FormField[] = [
@@ -15,7 +15,7 @@ const App: React.FC = () => {
     // Contact Information Section (collapsible)
     {
       type: 'section',
-      title: currentLocale === 'pt-BR' ? 'Informações de Contato' : 'Contact Information',
+      title: locale === 'pt-BR' ? 'Informações de Contato' : 'Contact Information',
       collapsible: true,
       fields: [
         { preset: 'email' },
@@ -27,7 +27,7 @@ const App: React.FC = () => {
     // Address Section (collapsible)
     {
       type: 'section',
-      title: currentLocale === 'pt-BR' ? 'Endereço' : 'Address',
+      title: locale === 'pt-BR' ? 'Endereço' : 'Address',
       collapsible: true,
       defaultExpanded: false, // Start collapsed
       fields: [
@@ -44,7 +44,7 @@ const App: React.FC = () => {
     // Documents Section (non-collapsible)
     {
       type: 'section',
-      title: currentLocale === 'pt-BR' ? 'Documentos' : 'Documents',
+      title: locale === 'pt-BR' ? 'Documentos' : 'Documents',
       fields: [
         { preset: 'cpf' },
         { preset: 'rg' },
@@ -55,12 +55,12 @@ const App: React.FC = () => {
     {
       id: 'terms',
       name: 'terms',
-      label: currentLocale === 'pt-BR' ? 'Aceito os termos e condições' : 'I accept the terms and conditions',
+      label: locale === 'pt-BR' ? 'Aceito os termos e condições' : 'I accept the terms and conditions',
       type: 'checkbox',
       validation: [
         {
           type: 'required',
-          message: currentLocale === 'pt-BR' ? 'Você deve aceitar os termos' : 'You must accept the terms'
+          message: locale === 'pt-BR' ? 'Você deve aceitar os termos' : 'You must accept the terms'
         }
       ]
     }
@@ -72,73 +72,79 @@ const App: React.FC = () => {
   };
 
   return (
-    <ThemeProvider theme={currentTheme}>
-      <I18nProvider locale={currentLocale}>
-        <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem', fontFamily: 'system-ui, sans-serif' }}>
-          <h1 style={{ marginBottom: '0.5rem' }}>DynamicForm - Sections Example</h1>
-          <p style={{ color: '#666', marginBottom: '2rem' }}>
-            {currentLocale === 'pt-BR'
-              ? 'Demonstração de seções em JSON com campos colapsáveis e não-colapsáveis'
-              : 'Demonstration of JSON-based sections with collapsible and non-collapsible fields'}
-          </p>
+    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem', fontFamily: 'system-ui, sans-serif' }}>
+      <h1 style={{ marginBottom: '0.5rem' }}>DynamicForm - Sections Example</h1>
+      <p style={{ color: '#666', marginBottom: '2rem' }}>
+        {locale === 'pt-BR'
+          ? 'Demonstração de seções em JSON com campos colapsáveis e não-colapsáveis'
+          : 'Demonstration of JSON-based sections with collapsible and non-collapsible fields'}
+      </p>
 
-          <div style={{
-            marginBottom: '2rem',
-            display: 'flex',
-            gap: '1rem',
-            padding: '1rem',
-            backgroundColor: '#f5f5f5',
-            borderRadius: '8px'
-          }}>
-            <div style={{ flex: 1 }}>
-              <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500 }}>
-                {currentLocale === 'pt-BR' ? 'Tema:' : 'Theme:'}
-              </label>
-              <select
-                value={currentTheme}
-                onChange={(e) => setCurrentTheme(e.target.value as any)}
-                style={{
-                  width: '100%',
-                  padding: '0.5rem',
-                  borderRadius: '4px',
-                  border: '1px solid #ddd'
-                }}
-              >
-                <option value="default">Default</option>
-                <option value="minimal">Minimal</option>
-                <option value="modern">Modern</option>
-                <option value="compact">Compact</option>
-              </select>
-            </div>
-
-            <div style={{ flex: 1 }}>
-              <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500 }}>
-                {currentLocale === 'pt-BR' ? 'Idioma:' : 'Language:'}
-              </label>
-              <select
-                value={currentLocale}
-                onChange={(e) => setCurrentLocale(e.target.value as any)}
-                style={{
-                  width: '100%',
-                  padding: '0.5rem',
-                  borderRadius: '4px',
-                  border: '1px solid #ddd'
-                }}
-              >
-                <option value="pt-BR">Português (Brasil)</option>
-                <option value="en">English</option>
-              </select>
-            </div>
-          </div>
-
-          <DynamicForm
-            fields={fields}
-            onSubmit={handleSubmit}
-            submitLabel={currentLocale === 'pt-BR' ? 'Enviar Formulário' : 'Submit Form'}
-            cancelLabel={currentLocale === 'pt-BR' ? 'Cancelar' : 'Cancel'}
-            onCancel={() => alert(currentLocale === 'pt-BR' ? 'Cancelado!' : 'Cancelled!')}
-          />
+      <div style={{
+        marginBottom: '2rem',
+        display: 'flex',
+        gap: '1rem',
+        padding: '1rem',
+        backgroundColor: '#f5f5f5',
+        borderRadius: '8px'
+      }}>
+        <div style={{ flex: 1 }}>
+          <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500 }}>
+            {locale === 'pt-BR' ? 'Tema:' : 'Theme:'}
+          </label>
+          <select
+            value={themeName}
+            onChange={(e) => setTheme(e.target.value as any)}
+            style={{
+              width: '100%',
+              padding: '0.5rem',
+              borderRadius: '4px',
+              border: '1px solid #ddd'
+            }}
+          >
+            <option value="default">Default</option>
+            <option value="minimal">Minimal</option>
+            <option value="modern">Modern</option>
+            <option value="compact">Compact</option>
+          </select>
         </div>
+
+        <div style={{ flex: 1 }}>
+          <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500 }}>
+            {locale === 'pt-BR' ? 'Idioma:' : 'Language:'}
+          </label>
+          <select
+            value={locale}
+            onChange={(e) => setLocale(e.target.value as any)}
+            style={{
+              width: '100%',
+              padding: '0.5rem',
+              borderRadius: '4px',
+              border: '1px solid #ddd'
+            }}
+          >
+            <option value="pt-BR">Português (Brasil)</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </div>
+
+      <DynamicForm
+        fields={fields}
+        onSubmit={handleSubmit}
+        submitLabel={locale === 'pt-BR' ? 'Enviar Formulário' : 'Submit Form'}
+        cancelLabel={locale === 'pt-BR' ? 'Cancelar' : 'Cancel'}
+        onCancel={() => alert(locale === 'pt-BR' ? 'Cancelado!' : 'Cancelled!')}
+      />
+    </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <ThemeProvider defaultTheme="default">
+      <I18nProvider locale="pt-BR">
+        <FormExample />
       </I18nProvider>
     </ThemeProvider>
   );
