@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import type { DynamicFormProps, FormValues, FormErrors, FormField as IFormField } from './types';
 import { FormField } from './FormField';
 import { validateValue } from './validators';
+import { applyFieldPreset } from './fieldPresets';
 import styles from './styles.module.css';
 
 export const DynamicForm: React.FC<DynamicFormProps> = ({
@@ -17,6 +18,21 @@ export const DynamicForm: React.FC<DynamicFormProps> = ({
     validateOnBlur = true,
     validateOnChange = false,
 }) => {
+    // Process fields to apply presets
+    const processedFields = useMemo(() => {
+        return fields.map((field) => {
+            // If field has a preset, apply it and merge with overrides
+            if (field.preset) {
+                return applyFieldPreset(field.preset, field);
+            }
+            // Otherwise, ensure required fields are present
+            if (!field.id || !field.name || !field.label || !field.type) {
+                console.warn('Field missing required properties:', field);
+            }
+            return field as IFormField;
+        });
+    }, [fields]);
+
     const [values, setValues] = useState<FormValues>(initialValues);
     const [errors, setErrors] = useState<FormErrors>({});
     const [touched, setTouched] = useState<Record<string, boolean>>({});
@@ -25,9 +41,9 @@ export const DynamicForm: React.FC<DynamicFormProps> = ({
     // Initialize default values
     useEffect(() => {
         const defaults: FormValues = { ...initialValues };
-        fields.forEach((field) => {
-            if (defaults[field.name] === undefined && field.defaultValue !== undefined) {
-                defaults[field.name] = field.defaultValue;
+        processedFields.forEach((field) => {
+            if (defaults[field.name!] === undefined && field.defaultValue !== undefined) {
+                defaults[field.name!] = field.defaultValue;
             }
         });
         setValues(defaults);
@@ -42,7 +58,7 @@ export const DynamicForm: React.FC<DynamicFormProps> = ({
 
     const validateField = useCallback(
         async (name: string, value: any) => {
-            const field = fields.find((f) => f.name === name);
+            const field = processedFields.find((f) => f.name === name);
             if (!field || !field.validation) return;
 
             const error = await validateValue(value, field.validation, values);
@@ -59,7 +75,7 @@ export const DynamicForm: React.FC<DynamicFormProps> = ({
 
             return error;
         },
-        [fields, values]
+        [processedFields, values]
     );
 
     const handleChange = async (name: string, value: any) => {
@@ -87,22 +103,22 @@ export const DynamicForm: React.FC<DynamicFormProps> = ({
         const newErrors: FormErrors = {};
         let isValid = true;
 
-        for (const field of fields) {
+        for (const field of processedFields) {
             // Check dependencies
             if (!checkDependencies(field, values)) continue;
 
-            const value = values[field.name];
+            const value = values[field.name!];
             const error = await validateValue(value, field.validation, values);
 
             if (error) {
-                newErrors[field.name] = error;
+                newErrors[field.name!] = error;
                 isValid = false;
             }
         }
 
         setErrors(newErrors);
         setTouched(
-            fields.reduce((acc, field) => ({ ...acc, [field.name]: true }), {})
+            processedFields.reduce<Record<string, boolean>>((acc, field) => ({ ...acc, [field.name!]: true }), {})
         );
 
         if (isValid) {
@@ -139,7 +155,7 @@ export const DynamicForm: React.FC<DynamicFormProps> = ({
         });
     };
 
-    const visibleFields = fields.filter((field) => checkDependencies(field, values));
+    const visibleFields = processedFields.filter((field) => checkDependencies(field, values));
 
     return (
         <form
@@ -147,16 +163,19 @@ export const DynamicForm: React.FC<DynamicFormProps> = ({
             className={`${styles.formContainer} ${className || ''}`}
             noValidate
         >
-            {visibleFields.map((field) => (
-                <FormField
-                    key={field.id || field.name}
-                    field={field}
-                    value={values[field.name]}
-                    error={touched[field.name] ? errors[field.name] : undefined}
-                    onChange={(value) => handleChange(field.name, value)}
-                    onBlur={() => handleBlur(field.name)}
-                />
-            ))}
+            {visibleFields.map((field) => {
+                const fieldError = touched[field.name!] ? errors[field.name!] : undefined;
+                return (
+                    <FormField
+                        key={field.id || field.name}
+                        field={field}
+                        value={values[field.name!]}
+                        {...(fieldError !== undefined && { error: fieldError })}
+                        onChange={(value) => handleChange(field.name!, value)}
+                        onBlur={() => handleBlur(field.name!)}
+                    />
+                );
+            })}
 
             <div className={styles.buttonGroup}>
                 <button

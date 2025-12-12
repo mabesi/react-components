@@ -1,4 +1,4 @@
-import { FormValues, ValidationRule } from './types';
+import type { FormValues, ValidationRule } from './types';
 
 export const validateValue = async (
     value: any,

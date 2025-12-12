@@ -43,6 +43,7 @@
     "scripts": {
         "dev": "tsup --watch",
         "build": "tsup",
+        "example": "vite --config vite.config.example.ts",
         "test": "vitest run",
         "test:watch": "vitest",
         "test:ui": "vitest --ui",

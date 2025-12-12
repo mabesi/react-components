@@ -1,4 +1,5 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
+import type { FieldPresetType } from './fieldPresets';
 
 export type FieldType =
     | 'text'
@@ -26,11 +27,17 @@ export interface FieldDependency {
     condition?: 'equals' | 'notEquals' | 'contains' | 'greaterThan' | 'lessThan';
 }
 
+/**
+ * Base FormField interface
+ * When using a preset, id/name/label are optional and will be auto-filled
+ * When not using a preset, id/name/label are required
+ */
 export interface FormField {
-    id: string;
-    name: string;
-    label: string;
-    type: FieldType;
+    preset?: FieldPresetType; // Optional preset to auto-configure field
+    id?: string; // Optional when using preset
+    name?: string; // Optional when using preset
+    label?: string; // Optional when using preset
+    type?: FieldType; // Optional when using preset
     placeholder?: string;
     defaultValue?: any;
     options?: { label: string; value: string | number }[]; // For select, radio, checkbox

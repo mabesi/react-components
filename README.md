@@ -30,12 +30,17 @@ This library provides a set of reusable, high-quality React components built wit
 
 These are the key features of the library:
 
-- **DynamicForm**: Generate complex forms from a simple JSON configuration
-- **TypeScript First**: Full type safety and intellisense support
-- **Async Validation**: Built-in support for asynchronous field validation
-- **Field Dependencies**: Show/hide fields based on other field values
-- **Modern Stack**: Built with React 18+, Vite, and Vitest
-- **Accessible**: WCAG 2.1 compliant components
+- **🎨 Theme System**: 4 pre-built themes (default, minimal, modern, compact) with CSS variables
+- **🌍 Internationalization**: Full i18n support with English and Portuguese (Brazil)
+- **📋 Field Presets**: 30+ pre-configured field types (email, phone, address, CPF, etc.) with automatic validation
+- **🗂️ Section Component**: Organize forms with standard or collapsible sections
+- **🌐 Country Select**: 50 countries with localized names in multiple languages
+- **📝 DynamicForm**: Generate complex forms from a simple JSON configuration
+- **✅ TypeScript First**: Full type safety and intellisense support
+- **⚡ Async Validation**: Built-in support for asynchronous field validation
+- **🔗 Field Dependencies**: Show/hide fields based on other field values
+- **🚀 Modern Stack**: Built with React 18+, Vite, and Vitest
+- **♿ Accessible**: WCAG 2.1 compliant components
 
 ## Built With
 
@@ -68,27 +73,114 @@ $ yarn add @mabesi/react-components
 
 ### Usage
 
-Here is a basic example of how to use the `DynamicForm` component:
+#### Quick Start with Themes and i18n
+
+Wrap your application with `ThemeProvider` and `I18nProvider` for full functionality:
+
+```tsx
+import { ThemeProvider, I18nProvider } from '@mabesi/react-components';
+
+function App() {
+  return (
+    <ThemeProvider defaultTheme="modern">
+      <I18nProvider defaultLocale="en">
+        <YourApp />
+      </I18nProvider>
+    </ThemeProvider>
+  );
+}
+```
+
+#### Theme System
+
+Switch between 4 pre-built themes or create your own:
+
+```tsx
+import { useTheme } from '@mabesi/react-components';
+
+function ThemeSwitcher() {
+  const { themeName, setTheme } = useTheme();
+  
+  return (
+    <select value={themeName} onChange={(e) => setTheme(e.target.value)}>
+      <option value="default">Default</option>
+      <option value="minimal">Minimal</option>
+      <option value="modern">Modern</option>
+      <option value="compact">Compact</option>
+    </select>
+  );
+}
+```
+
+**Available Themes:**
+- `default` - Bootstrap-inspired styling
+- `minimal` - Clean design, no shadows
+- `modern` - Rounded corners, vibrant colors
+- `compact` - Dense layout, reduced spacing
+
+#### Internationalization
+
+Switch between languages dynamically:
+
+```tsx
+import { useI18n, useTranslation } from '@mabesi/react-components';
+
+function LanguageSwitcher() {
+  const { locale, setLocale } = useI18n();
+  const t = useTranslation();
+  
+  return (
+    <div>
+      <button onClick={() => setLocale('en')}>English</button>
+      <button onClick={() => setLocale('pt-BR')}>Português</button>
+      <p>{t.fields.email}</p> {/* Translates automatically */}
+    </div>
+  );
+}
+```
+
+**Supported Languages:**
+- English (default)
+- Portuguese (Brazil)
+
+#### Section Component
+
+Organize your forms with sections:
+
+```tsx
+import { Section, DynamicForm } from '@mabesi/react-components';
+
+function MyForm() {
+  return (
+    <div>
+      {/* Standard section */}
+      <Section title="Personal Information">
+        <DynamicForm fields={personalFields} onSubmit={handleSubmit} />
+      </Section>
+      
+      {/* Collapsible section */}
+      <Section title="Address" collapsible defaultExpanded={false}>
+        <DynamicForm fields={addressFields} onSubmit={handleSubmit} />
+      </Section>
+    </div>
+  );
+}
+```
+
+#### Field Presets
+
+Create forms quickly using presets:
 
 ```tsx
 import { DynamicForm, FormField } from '@mabesi/react-components';
 
 const MyForm = () => {
   const fields: FormField[] = [
-    {
-      id: 'email',
-      name: 'email',
-      label: 'Email',
-      type: 'email',
-      validation: [{ type: 'required', message: 'Email is required' }]
-    },
-    {
-      id: 'password',
-      name: 'password',
-      label: 'Password',
-      type: 'password',
-      validation: [{ type: 'minLength', value: 8, message: 'Min 8 chars' }]
-    }
+    { preset: 'fullName' },
+    { preset: 'email' },
+    { preset: 'password' },
+    { preset: 'mobile' },
+    { preset: 'country' }, // Select with 50 countries
   ];
 
   const handleSubmit = (values) => {
@@ -97,6 +189,67 @@ const MyForm = () => {
 
   return <DynamicForm fields={fields} onSubmit={handleSubmit} />;
 };
+```
+
+**Available Presets:**
+
+**Personal Information:**
+- `firstName`, `lastName`, `fullName`
+- `email`, `password`, `confirmPassword`
+- `birthDate`, `age`
+
+**Contact:**
+- `phone`, `mobile`
+
+**Address:**
+- `address`, `addressNumber`, `complement`, `neighborhood`
+- `city`, `state`, `country` (select with 50 countries), `zipCode`
+
+**Brazilian Documents:**
+- `cpf`, `cnpj`, `rg`
+
+#### Overriding Preset Values
+
+Customize any preset value:
+
+```tsx
+const fields: FormField[] = [
+  {
+    preset: 'email',
+    label: 'Corporate Email', // Override label
+  },
+  {
+    preset: 'mobile',
+    validation: [], // Remove required validation
+  },
+  {
+    preset: 'phone',
+    placeholder: '+1 (555) 123-4567', // Custom placeholder
+  },
+];
+```
+
+#### Traditional Usage (Without Presets)
+
+You can still define fields manually without using presets:
+
+```tsx
+const fields: FormField[] = [
+  {
+    id: 'email',
+    name: 'email',
+    label: 'Email',
+    type: 'email',
+    validation: [{ type: 'required', message: 'Email is required' }]
+  },
+  {
+    id: 'password',
+    name: 'password',
+    label: 'Password',
+    type: 'password',
+    validation: [{ type: 'minLength', value: 8, message: 'Min 8 chars' }]
+  }
+];
 ```
 
 ### Building
