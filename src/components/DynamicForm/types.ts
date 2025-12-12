@@ -6,62 +6,77 @@ export type FieldType =
     | 'email'
     | 'password'
     | 'number'
-    | 'textarea'
-    | 'select'
-    | 'radio'
-    | 'checkbox'
-    | 'file'
+    | 'tel'
+    | 'url'
     | 'date'
-    | 'custom';
+    | 'time'
+    | 'datetime-local'
+    | 'checkbox'
+    | 'radio'
+    | 'select'
+    | 'textarea'
+    | 'file';
 
 export interface ValidationRule {
-    type: 'required' | 'min' | 'max' | 'minLength' | 'maxLength' | 'pattern' | 'email' | 'url' | 'custom';
-    value?: any;
+    type: 'required' | 'email' | 'minLength' | 'maxLength' | 'min' | 'max' | 'pattern' | 'custom';
     message: string;
-    validator?: (value: any, formValues: FormValues) => boolean | Promise<boolean>;
+    value?: any;
+    validator?: (value: any, formValues?: FormValues) => boolean | Promise<boolean>;
+}
+
+export interface SelectOption {
+    label: string;
+    value: string | number;
 }
 
 export interface FieldDependency {
     field: string;
     value: any;
-    condition?: 'equals' | 'notEquals' | 'contains' | 'greaterThan' | 'lessThan';
+    operator?: 'equals' | 'notEquals' | 'contains';
 }
 
 /**
- * Base FormField interface
- * When using a preset, id/name/label are optional and will be auto-filled
- * When not using a preset, id/name/label are required
+ * Regular form field
  */
-export interface FormField {
-    preset?: FieldPresetType; // Optional preset to auto-configure field
-    id?: string; // Optional when using preset
-    name?: string; // Optional when using preset
-    label?: string; // Optional when using preset
-    type?: FieldType; // Optional when using preset
+export interface RegularFormField {
+    preset?: FieldPresetType;
+    id?: string;
+    name?: string;
+    label?: string;
+    type?: FieldType;
     placeholder?: string;
     defaultValue?: any;
-    options?: { label: string; value: string | number }[]; // For select, radio, checkbox
     validation?: ValidationRule[];
-    dependencies?: FieldDependency[]; // Show field only if dependency is met
-    className?: string;
+    options?: SelectOption[];
+    dependencies?: FieldDependency[];
     disabled?: boolean;
-    readOnly?: boolean;
     description?: string;
     render?: (props: {
         field: FormField;
         value: any;
         onChange: (value: any) => void;
         error?: string;
-    }) => ReactNode; // Custom renderer
+    }) => ReactNode;
 }
 
-export interface FormValues {
-    [key: string]: any;
+/**
+ * Section field that groups other fields
+ */
+export interface SectionField {
+    type: 'section';
+    title?: string;
+    collapsible?: boolean;
+    defaultExpanded?: boolean;
+    fields: FormField[];
 }
 
-export interface FormErrors {
-    [key: string]: string;
-}
+/**
+ * Form field can be either a regular field or a section
+ */
+export type FormField = RegularFormField | SectionField;
+
+export type FormValues = Record<string, any>;
+export type FormErrors = Record<string, string>;
 
 export interface DynamicFormProps {
     fields: FormField[];

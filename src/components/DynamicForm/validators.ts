@@ -66,14 +66,6 @@ export const validateValue = async (
                 }
                 break;
 
-            case 'url':
-                try {
-                    new URL(value);
-                } catch (_) {
-                    return message;
-                }
-                break;
-
             case 'custom':
                 if (validator) {
                     const isValid = await validator(value, formValues);

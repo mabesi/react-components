@@ -1,4 +1,4 @@
-import type { FormField } from './types';
+import type { RegularFormField } from './types';
 
 /**
  * Field preset type - identifies which preset configuration to use
@@ -34,7 +34,7 @@ export type FieldPresetType =
  * Partial field configuration for presets
  * Excludes 'preset' to avoid circular reference
  */
-export type FieldPresetConfig = Omit<Partial<FormField>, 'preset'>;
+export type FieldPresetConfig = Partial<Omit<RegularFormField, 'preset'>>;
 
 /**
  * Field presets configuration
@@ -322,8 +322,8 @@ export const FIELD_PRESETS: Record<FieldPresetType, FieldPresetConfig> = {
  */
 export const applyFieldPreset = (
     preset: FieldPresetType,
-    overrides: Partial<FormField> = {}
-): FormField => {
+    overrides: Partial<RegularFormField> = {}
+): RegularFormField => {
     const presetConfig = FIELD_PRESETS[preset];
 
     if (!presetConfig) {
@@ -332,7 +332,7 @@ export const applyFieldPreset = (
 
     // Merge preset with overrides
     // User overrides take precedence over preset defaults
-    const merged: FormField = {
+    const merged: RegularFormField = {
         ...presetConfig,
         ...overrides,
         // Ensure required fields are present
@@ -340,7 +340,7 @@ export const applyFieldPreset = (
         name: overrides.name || presetConfig.name || preset,
         label: overrides.label || presetConfig.label || preset,
         type: overrides.type || presetConfig.type || 'text',
-    } as FormField;
+    } as RegularFormField;
 
     // Merge validation rules if both preset and override have them
     if (presetConfig.validation && overrides.validation) {

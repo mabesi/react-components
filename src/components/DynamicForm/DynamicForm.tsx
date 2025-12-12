@@ -1,8 +1,10 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import type { DynamicFormProps, FormValues, FormErrors, FormField as IFormField } from './types';
+import React, { useState, useCallback, useMemo } from 'react';
+import type { DynamicFormProps, FormValues, FormErrors, FormField as IFormField, RegularFormField } from './types';
 import { FormField } from './FormField';
 import { validateValue } from './validators';
 import { applyFieldPreset } from './fieldPresets';
+import { flattenFields, isSection } from './fieldUtils';
+import { Section } from '../Section';
 import styles from './styles.module.css';
 
 export const DynamicForm: React.FC<DynamicFormProps> = ({
@@ -18,71 +20,82 @@ export const DynamicForm: React.FC<DynamicFormProps> = ({
     validateOnBlur = true,
     validateOnChange = false,
 }) => {
-    // Process fields to apply presets
+    // Process fields: flatten sections and apply presets
     const processedFields = useMemo(() => {
-        return fields.map((field) => {
-            // If field has a preset, apply it and merge with overrides
+        // First, flatten all nested sections into regular fields only
+        const flatFields = flattenFields(fields);
+
+        // Then apply presets to flattened fields
+        return flatFields.map((field) => {
             if (field.preset) {
-                return applyFieldPreset(field.preset, field);
+                return applyFieldPreset(field.preset, field) as RegularFormField;
             }
-            // Otherwise, ensure required fields are present
+            // Ensure required fields are present
             if (!field.id || !field.name || !field.label || !field.type) {
                 console.warn('Field missing required properties:', field);
             }
-            return field as IFormField;
+            return field;
         });
     }, [fields]);
 
-    const [values, setValues] = useState<FormValues>(initialValues);
+    const [values, setValues] = useState<FormValues>(() => {
+        const initial: FormValues = {};
+        processedFields.forEach((field) => {
+            if (field.defaultValue !== undefined) {
+                initial[field.name!] = field.defaultValue;
+            }
+        });
+        return { ...initial, ...initialValues };
+    });
+
     const [errors, setErrors] = useState<FormErrors>({});
     const [touched, setTouched] = useState<Record<string, boolean>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    // Initialize default values
-    useEffect(() => {
-        const defaults: FormValues = { ...initialValues };
-        processedFields.forEach((field) => {
-            if (defaults[field.name!] === undefined && field.defaultValue !== undefined) {
-                defaults[field.name!] = field.defaultValue;
+    // Check if field should be visible based on dependencies
+    const checkDependencies = useCallback((field: RegularFormField, currentValues: FormValues): boolean => {
+        if (!field.dependencies || field.dependencies.length === 0) {
+            return true;
+        }
+
+        return field.dependencies.every((dep) => {
+            const depValue = currentValues[dep.field];
+            const operator = dep.operator || 'equals';
+
+            switch (operator) {
+                case 'equals':
+                    return depValue === dep.value;
+                case 'notEquals':
+                    return depValue !== dep.value;
+                case 'contains':
+                    return Array.isArray(depValue) && depValue.includes(dep.value);
+                default:
+                    return true;
             }
         });
-        setValues(defaults);
-    }, []); // Run once on mount
+    }, []);
 
-    // Notify parent of changes
-    useEffect(() => {
-        if (onChange) {
-            onChange(values);
-        }
-    }, [values, onChange]);
-
-    const validateField = useCallback(
-        async (name: string, value: any) => {
-            const field = processedFields.find((f) => f.name === name);
-            if (!field || !field.validation) return;
-
-            const error = await validateValue(value, field.validation, values);
-
-            setErrors((prev) => {
-                const newErrors = { ...prev };
-                if (error) {
-                    newErrors[name] = error;
-                } else {
-                    delete newErrors[name];
-                }
-                return newErrors;
-            });
-
-            return error;
-        },
-        [processedFields, values]
-    );
+    const visibleFields = useMemo(() => {
+        return processedFields.filter((field) => checkDependencies(field, values));
+    }, [processedFields, values, checkDependencies]);
 
     const handleChange = async (name: string, value: any) => {
-        setValues((prev) => ({ ...prev, [name]: value }));
+        const newValues = { ...values, [name]: value };
+        setValues(newValues);
 
-        if (validateOnChange) {
-            await validateField(name, value);
+        if (onChange) {
+            onChange(newValues);
+        }
+
+        if (validateOnChange && touched[name]) {
+            const field = processedFields.find((f) => f.name === name);
+            if (field) {
+                const error = await validateValue(value, field.validation || [], newValues);
+                setErrors((prev) => ({
+                    ...prev,
+                    [name]: error || '',
+                }));
+            }
         }
     };
 
@@ -90,8 +103,14 @@ export const DynamicForm: React.FC<DynamicFormProps> = ({
         setTouched((prev) => ({ ...prev, [name]: true }));
 
         if (validateOnBlur) {
-            const value = values[name];
-            await validateField(name, value);
+            const field = processedFields.find((f) => f.name === name);
+            if (field) {
+                const error = await validateValue(values[name], field.validation || [], values);
+                setErrors((prev) => ({
+                    ...prev,
+                    [name]: error || '',
+                }));
+            }
         }
     };
 
@@ -101,20 +120,14 @@ export const DynamicForm: React.FC<DynamicFormProps> = ({
 
         // Validate all fields
         const newErrors: FormErrors = {};
-        let isValid = true;
-
-        for (const field of processedFields) {
-            // Check dependencies
-            if (!checkDependencies(field, values)) continue;
-
-            const value = values[field.name!];
-            const error = await validateValue(value, field.validation, values);
-
+        for (const field of visibleFields) {
+            const error = await validateValue(values[field.name!], field.validation || [], values);
             if (error) {
                 newErrors[field.name!] = error;
-                isValid = false;
             }
         }
+
+        const isValid = Object.keys(newErrors).length === 0;
 
         setErrors(newErrors);
         setTouched(
@@ -124,38 +137,55 @@ export const DynamicForm: React.FC<DynamicFormProps> = ({
         if (isValid) {
             try {
                 await onSubmit(values);
-            } catch (error) {
-                console.error('Form submission error:', error);
+            } finally {
+                setIsSubmitting(false);
             }
+        } else {
+            setIsSubmitting(false);
         }
-
-        setIsSubmitting(false);
     };
 
-    const checkDependencies = (field: IFormField, currentValues: FormValues): boolean => {
-        if (!field.dependencies || field.dependencies.length === 0) return true;
-
-        return field.dependencies.every((dep) => {
-            const value = currentValues[dep.field];
-
-            switch (dep.condition) {
-                case 'equals':
-                    return value === dep.value;
-                case 'notEquals':
-                    return value !== dep.value;
-                case 'contains':
-                    return Array.isArray(value) && value.includes(dep.value);
-                case 'greaterThan':
-                    return value > dep.value;
-                case 'lessThan':
-                    return value < dep.value;
-                default: // Default to equals
-                    return value === dep.value;
+    // Recursive function to render fields with sections
+    const renderFieldsWithSections = (fieldsToRender: IFormField[]): React.ReactNode => {
+        return fieldsToRender.map((field, index) => {
+            // Check if it's a section using type guard
+            if (isSection(field)) {
+                return (
+                    <Section
+                        key={`section-${index}`}
+                        title={field.title || ''}
+                        collapsible={field.collapsible || false}
+                        defaultExpanded={field.defaultExpanded !== false}
+                    >
+                        {renderFieldsWithSections(field.fields)}
+                    </Section>
+                );
             }
+
+            // Regular field - find the processed version from flattened array
+            const processedField = processedFields.find(
+                (pf) => pf.name === field.name || pf.id === field.id
+            );
+
+            if (!processedField) return null;
+
+            // Check if field should be visible based on dependencies
+            if (!checkDependencies(processedField, values)) return null;
+
+            const fieldError = touched[processedField.name!] ? errors[processedField.name!] : undefined;
+
+            return (
+                <FormField
+                    key={processedField.id || processedField.name}
+                    field={processedField}
+                    value={values[processedField.name!]}
+                    {...(fieldError !== undefined && { error: fieldError })}
+                    onChange={(value) => handleChange(processedField.name!, value)}
+                    onBlur={() => handleBlur(processedField.name!)}
+                />
+            );
         });
     };
-
-    const visibleFields = processedFields.filter((field) => checkDependencies(field, values));
 
     return (
         <form
@@ -163,19 +193,7 @@ export const DynamicForm: React.FC<DynamicFormProps> = ({
             className={`${styles.formContainer} ${className || ''}`}
             noValidate
         >
-            {visibleFields.map((field) => {
-                const fieldError = touched[field.name!] ? errors[field.name!] : undefined;
-                return (
-                    <FormField
-                        key={field.id || field.name}
-                        field={field}
-                        value={values[field.name!]}
-                        {...(fieldError !== undefined && { error: fieldError })}
-                        onChange={(value) => handleChange(field.name!, value)}
-                        onBlur={() => handleBlur(field.name!)}
-                    />
-                );
-            })}
+            {renderFieldsWithSections(fields)}
 
             <div className={styles.buttonGroup}>
                 <button
