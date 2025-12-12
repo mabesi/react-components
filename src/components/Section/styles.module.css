@@ -43,7 +43,6 @@
 }
 
 .sectionContent {
-    overflow: hidden;
     transition: max-height var(--theme-transition-normal, 300ms ease-in-out),
         opacity var(--theme-transition-normal, 300ms ease-in-out);
 }
@@ -51,11 +50,13 @@
 .sectionContent.collapsed {
     max-height: 0;
     opacity: 0;
+    overflow: hidden;
 }
 
 .sectionContent.expanded {
-    max-height: 5000px;
+    max-height: none;
     opacity: 1;
+    overflow: visible;
 }
 
 /* No title variant */
