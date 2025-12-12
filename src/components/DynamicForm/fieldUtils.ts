@@ -4,7 +4,7 @@ import type { FormField, RegularFormField, SectionField } from './types';
  * Type guard to check if a field is a section
  */
 export const isSection = (field: FormField): field is SectionField => {
-    return 'type' in field && field.type === 'section';
+    return 'type' in field && field.type === 'section' && 'fields' in field && Array.isArray((field as any).fields);
 };
 
 /**

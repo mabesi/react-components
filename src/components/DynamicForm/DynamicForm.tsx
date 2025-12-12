@@ -163,11 +163,20 @@ export const DynamicForm: React.FC<DynamicFormProps> = ({
             }
 
             // Regular field - find the processed version from flattened array
-            const processedField = processedFields.find(
-                (pf) => pf.name === field.name || pf.id === field.id
-            );
+            // Match by preset first (for preset fields), then by name/id
+            const processedField = processedFields.find((pf) => {
+                // If original field has preset, match by preset
+                if ('preset' in field && field.preset) {
+                    return pf.name === field.preset || pf.id === field.preset;
+                }
+                // Otherwise match by name or id
+                return pf.name === field.name || pf.id === field.id;
+            });
 
-            if (!processedField) return null;
+            if (!processedField) {
+                console.warn('[DynamicForm] Could not find processed field for:', field);
+                return null;
+            }
 
             // Check if field should be visible based on dependencies
             if (!checkDependencies(processedField, values)) return null;

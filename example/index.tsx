@@ -1,181 +1,143 @@
-import 'react-app-polyfill/ie11';
-import * as React from 'react';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
-import {
-  DynamicForm,
-  FormField,
-  ThemeProvider,
-  I18nProvider,
-  Section,
-  useTheme,
-  useI18n,
-  type ThemeName,
-  type Locale
-} from '../src';
+import { DynamicForm, ThemeProvider, I18nProvider } from '../src';
+import type { FormField } from '../src/components/DynamicForm/types';
 
-const ThemeSwitcher = () => {
-  const { themeName, setTheme } = useTheme();
-  const themes: ThemeName[] = ['default', 'minimal', 'modern', 'compact'];
+const App: React.FC = () => {
+  const [currentTheme, setCurrentTheme] = React.useState<'default' | 'minimal' | 'modern' | 'compact'>('default');
+  const [currentLocale, setCurrentLocale] = React.useState<'en' | 'pt-BR'>('pt-BR');
 
-  return (
-    <div style={{ marginBottom: '1rem' }}>
-      <label style={{ marginRight: '0.5rem', fontWeight: 'bold' }}>Theme:</label>
-      {themes.map(theme => (
-        <button
-          key={theme}
-          onClick={() => setTheme(theme)}
-          style={{
-            marginRight: '0.5rem',
-            padding: '0.5rem 1rem',
-            backgroundColor: themeName === theme ? '#007bff' : '#f0f0f0',
-            color: themeName === theme ? 'white' : 'black',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-          }}
-        >
-          {theme}
-        </button>
-      ))}
-    </div>
-  );
-};
-
-const LanguageSwitcher = () => {
-  const { locale, setLocale } = useI18n();
-  const languages: { code: Locale; label: string }[] = [
-    { code: 'en', label: 'English' },
-    { code: 'pt-BR', label: 'Português (BR)' },
-  ];
-
-  return (
-    <div style={{ marginBottom: '1rem' }}>
-      <label style={{ marginRight: '0.5rem', fontWeight: 'bold' }}>Language:</label>
-      {languages.map(lang => (
-        <button
-          key={lang.code}
-          onClick={() => setLocale(lang.code)}
-          style={{
-            marginRight: '0.5rem',
-            padding: '0.5rem 1rem',
-            backgroundColor: locale === lang.code ? '#28a745' : '#f0f0f0',
-            color: locale === lang.code ? 'white' : 'black',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-          }}
-        >
-          {lang.label}
-        </button>
-      ))}
-    </div>
-  );
-};
-
-const FormExample = () => {
-  const { t } = useI18n();
-
+  // Form configuration with sections
   const fields: FormField[] = [
-    // Personal Information Section
+    // Field outside section
     { preset: 'fullName' },
-    { preset: 'email' },
-    { preset: 'password' },
-    { preset: 'confirmPassword' },
-    { preset: 'birthDate' },
 
-    // Contact Information Section
-    { preset: 'mobile' },
-    { preset: 'phone', validation: [] }, // Optional
+    // Contact Information Section (collapsible)
+    {
+      type: 'section',
+      title: currentLocale === 'pt-BR' ? 'Informações de Contato' : 'Contact Information',
+      collapsible: true,
+      fields: [
+        { preset: 'email' },
+        { preset: 'mobile' },
+        { preset: 'phone', validation: [] }, // Override to remove validation
+      ]
+    },
 
-    // Address Section
-    { preset: 'zipCode' },
-    { preset: 'address' },
-    { preset: 'addressNumber' },
-    { preset: 'complement' },
-    { preset: 'neighborhood' },
-    { preset: 'city' },
-    { preset: 'state' },
-    { preset: 'country' }, // Now a select with country list
+    // Address Section (collapsible)
+    {
+      type: 'section',
+      title: currentLocale === 'pt-BR' ? 'Endereço' : 'Address',
+      collapsible: true,
+      defaultExpanded: false, // Start collapsed
+      fields: [
+        { preset: 'zipCode' },
+        { preset: 'address' },
+        { preset: 'addressNumber' },
+        { preset: 'complement' },
+        { preset: 'neighborhood' },
+        { preset: 'city' },
+        { preset: 'state' },
+      ]
+    },
 
-    // Documents Section
-    { preset: 'cpf' },
-    { preset: 'rg', validation: [] }, // Optional
+    // Documents Section (non-collapsible)
+    {
+      type: 'section',
+      title: currentLocale === 'pt-BR' ? 'Documentos' : 'Documents',
+      fields: [
+        { preset: 'cpf' },
+        { preset: 'rg' },
+      ]
+    },
 
-    // Terms
+    // Terms checkbox outside section
     {
       id: 'terms',
       name: 'terms',
-      label: t.common.required,
+      label: currentLocale === 'pt-BR' ? 'Aceito os termos e condições' : 'I accept the terms and conditions',
       type: 'checkbox',
       validation: [
         {
-          type: 'custom',
-          message: t.validation.required,
-          validator: (value: any) => value === true,
-        },
-      ],
-    },
+          type: 'required',
+          message: currentLocale === 'pt-BR' ? 'Você deve aceitar os termos' : 'You must accept the terms'
+        }
+      ]
+    }
   ];
 
-  const handleSubmit = async (values: any) => {
+  const handleSubmit = (values: any) => {
     console.log('Form submitted:', values);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    alert(t.common.submit + '!\n\n' + JSON.stringify(values, null, 2));
+    alert(JSON.stringify(values, null, 2));
   };
 
   return (
-    <div>
-      <Section title={t.fields.fullName + ' & ' + t.fields.email} collapsible defaultExpanded>
-        <DynamicForm
-          fields={fields.slice(0, 5)}
-          onSubmit={handleSubmit}
-          submitLabel={t.common.submit}
-        />
-      </Section>
-
-      <Section title={t.fields.phone + ' & ' + t.fields.mobile} collapsible defaultExpanded>
-        <DynamicForm
-          fields={fields.slice(5, 7)}
-          onSubmit={handleSubmit}
-          submitLabel={t.common.submit}
-        />
-      </Section>
-
-      <Section title={t.fields.address} collapsible defaultExpanded>
-        <DynamicForm
-          fields={fields.slice(7, 15)}
-          onSubmit={handleSubmit}
-          submitLabel={t.common.submit}
-        />
-      </Section>
-
-      <Section title="Documents" collapsible>
-        <DynamicForm
-          fields={fields.slice(15)}
-          onSubmit={handleSubmit}
-          submitLabel={t.common.submit}
-        />
-      </Section>
-    </div>
-  );
-};
-
-const App = () => {
-  return (
-    <ThemeProvider defaultTheme="default">
-      <I18nProvider defaultLocale="en">
-        <div style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto' }}>
-          <h1>DynamicForm - Complete Example</h1>
-          <p>
-            Demonstrating: <strong>Themes</strong>, <strong>i18n</strong>, <strong>Field Presets</strong>, and <strong>Section Components</strong>
+    <ThemeProvider theme={currentTheme}>
+      <I18nProvider locale={currentLocale}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem', fontFamily: 'system-ui, sans-serif' }}>
+          <h1 style={{ marginBottom: '0.5rem' }}>DynamicForm - Sections Example</h1>
+          <p style={{ color: '#666', marginBottom: '2rem' }}>
+            {currentLocale === 'pt-BR'
+              ? 'Demonstração de seções em JSON com campos colapsáveis e não-colapsáveis'
+              : 'Demonstration of JSON-based sections with collapsible and non-collapsible fields'}
           </p>
 
-          <ThemeSwitcher />
-          <LanguageSwitcher />
+          <div style={{
+            marginBottom: '2rem',
+            display: 'flex',
+            gap: '1rem',
+            padding: '1rem',
+            backgroundColor: '#f5f5f5',
+            borderRadius: '8px'
+          }}>
+            <div style={{ flex: 1 }}>
+              <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500 }}>
+                {currentLocale === 'pt-BR' ? 'Tema:' : 'Theme:'}
+              </label>
+              <select
+                value={currentTheme}
+                onChange={(e) => setCurrentTheme(e.target.value as any)}
+                style={{
+                  width: '100%',
+                  padding: '0.5rem',
+                  borderRadius: '4px',
+                  border: '1px solid #ddd'
+                }}
+              >
+                <option value="default">Default</option>
+                <option value="minimal">Minimal</option>
+                <option value="modern">Modern</option>
+                <option value="compact">Compact</option>
+              </select>
+            </div>
 
-          <hr style={{ margin: '2rem 0' }} />
+            <div style={{ flex: 1 }}>
+              <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500 }}>
+                {currentLocale === 'pt-BR' ? 'Idioma:' : 'Language:'}
+              </label>
+              <select
+                value={currentLocale}
+                onChange={(e) => setCurrentLocale(e.target.value as any)}
+                style={{
+                  width: '100%',
+                  padding: '0.5rem',
+                  borderRadius: '4px',
+                  border: '1px solid #ddd'
+                }}
+              >
+                <option value="pt-BR">Português (Brasil)</option>
+                <option value="en">English</option>
+              </select>
+            </div>
+          </div>
 
-          <FormExample />
+          <DynamicForm
+            fields={fields}
+            onSubmit={handleSubmit}
+            submitLabel={currentLocale === 'pt-BR' ? 'Enviar Formulário' : 'Submit Form'}
+            cancelLabel={currentLocale === 'pt-BR' ? 'Cancelar' : 'Cancel'}
+            onCancel={() => alert(currentLocale === 'pt-BR' ? 'Cancelado!' : 'Cancelled!')}
+          />
         </div>
       </I18nProvider>
     </ThemeProvider>
