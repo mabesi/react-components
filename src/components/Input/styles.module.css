@@ -1,0 +1,108 @@
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--theme-font-family, inherit);
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.label {
+    margin-bottom: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--theme-text-primary, #1e293b);
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+    border: 1px solid var(--theme-border, #cbd5e1);
+    border-radius: 6px;
+    background-color: var(--theme-surface, #ffffff);
+    transition: all 0.2s ease;
+    overflow: hidden;
+}
+
+.inputContainer:focus-within {
+    border-color: var(--theme-primary, #3b82f6);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.inputContainer.error {
+    border-color: var(--theme-error, #ef4444);
+}
+
+.inputContainer.error:focus-within {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.inputContainer.disabled {
+    background-color: var(--theme-surface-secondary, #f1f5f9);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+    background: transparent;
+    color: var(--theme-text-primary, #1e293b);
+    font-size: 0.95rem;
+    width: 100%;
+    /* Ensure input takes full width of flex child */
+    min-width: 0;
+    /* Fix flexbox text overflow issues */
+}
+
+.input:disabled {
+    cursor: not-allowed;
+}
+
+/* Sizes */
+.inputContainer.small .input {
+    padding: 6px 10px;
+    font-size: 0.875rem;
+}
+
+.inputContainer.medium .input {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+}
+
+.inputContainer.large .input {
+    padding: 12px 16px;
+    font-size: 1.1rem;
+}
+
+/* Adornments */
+.adornmentStart,
+.adornmentEnd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--theme-text-secondary, #64748b);
+    padding: 0 12px;
+    font-size: 1rem;
+}
+
+.adornmentStart {
+    padding-right: 0;
+}
+
+.adornmentEnd {
+    padding-left: 0;
+}
+
+/* Helper Text */
+.helperText {
+    margin-top: 4px;
+    font-size: 0.75rem;
+    color: var(--theme-text-secondary, #64748b);
+}
+
+.helperText.error {
+    color: var(--theme-error, #ef4444);
+}

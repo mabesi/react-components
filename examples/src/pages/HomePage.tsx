@@ -145,6 +145,19 @@ export default function HomePage() {
                     </ul>
                     <span className="card-link">View Examples →</span>
                 </Link>
+
+                <Link to="/input" className="card">
+                    <div className="card-icon">⌨️</div>
+                    <h2 className="card-title">Input</h2>
+                    <p className="card-description">Text fields & entries.</p>
+                    <ul className="card-features">
+                        <li>Labels & Helpers</li>
+                        <li>Validation States</li>
+                        <li>Adornments</li>
+                        <li>Sizes</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
             </div>
 
             <footer>

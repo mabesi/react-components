@@ -27,6 +27,7 @@ function App() {
                         <Route path="/avatar" element={<AvatarPage />} />
                         <Route path="/tooltip" element={<TooltipPage />} />
                         <Route path="/alert" element={<AlertPage />} />
+                        <Route path="/input" element={<InputPage />} />
                     </Routes>
                 </I18nProvider>
             </ThemeProvider>
