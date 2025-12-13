@@ -31,4 +31,12 @@ export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
      * @default true
      */
     icon?: ReactNode | boolean;
+
+    /**
+     * The size of the alert.
+     * @default 'medium'
+     */
+    size?: AlertSize;
 }
+
+export type AlertSize = 'small' | 'medium' | 'large';

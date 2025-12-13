@@ -16,6 +16,7 @@ export const Alert: React.FC<AlertProps> = ({
     dismissible = false,
     onDismiss,
     icon = true,
+    size = 'medium',
     className,
     children,
     ...props
@@ -38,7 +39,7 @@ export const Alert: React.FC<AlertProps> = ({
 
     return (
         <div
-            className={`${styles.alert} ${styles[variant]} ${className || ''}`}
+            className={`${styles.alert} ${styles[variant]} ${styles[size]} ${className || ''}`}
             role="alert"
             {...props}
         >

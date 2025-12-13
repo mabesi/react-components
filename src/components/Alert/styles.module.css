@@ -40,6 +40,41 @@
     opacity: 1;
 }
 
+/* Sizes */
+.alert.small {
+    padding: 8px 12px;
+    font-size: 0.875rem;
+    gap: 8px;
+}
+
+.alert.small .alertTitle {
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+.alert.small .alertContent {
+    font-size: 0.875rem;
+}
+
+.alert.medium {
+    /* Default styles */
+}
+
+.alert.large {
+    padding: 24px;
+    font-size: 1.1rem;
+    gap: 16px;
+}
+
+.alert.large .alertTitle {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.alert.large .alertContent {
+    font-size: 1.1rem;
+}
+
 /* Variants */
 .alert.info {
     background-color: var(--theme-info-bg, #eff6ff);
