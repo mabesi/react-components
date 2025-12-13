@@ -58,14 +58,25 @@ export default function HomePage() {
                 <Link to="/button" className="card">
                     <div className="card-icon">🔘</div>
                     <h2 className="card-title">Button</h2>
-                    <p className="card-description">
-                        Standardized buttons with various variants, sizes, and states.
-                    </p>
+                    <p className="card-description">Standardized, theme-aware buttons.</p>
                     <ul className="card-features">
                         <li>Multiple Variants</li>
                         <li>Size Options</li>
                         <li>Icon Support</li>
                         <li>Loading State</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
+
+                <Link to="/card" className="card">
+                    <div className="card-icon">🎴</div>
+                    <h2 className="card-title">Card</h2>
+                    <p className="card-description">Flexible content containers.</p>
+                    <ul className="card-features">
+                        <li>Headers & Footers</li>
+                        <li>Image Support</li>
+                        <li>Theme Aware</li>
+                        <li>Interactive</li>
                     </ul>
                     <span className="card-link">View Examples →</span>
                 </Link>

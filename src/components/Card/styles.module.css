@@ -1,0 +1,120 @@
+
+.card {
+    background-color: var(--theme-background, #ffffff);
+    border-radius: var(--theme-radius-md, 8px);
+    transition: all var(--theme-transition-normal, 200ms) ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Variants */
+.elevated {
+    box-shadow: var(--theme-shadow-sm, 0 1px 3px rgba(0,0,0,0.1));
+    border: 1px solid transparent;
+}
+
+.outlined {
+    border: var(--theme-border-thin, 1px) solid var(--theme-border, #e2e8f0);
+    box-shadow: none;
+}
+
+.filled {
+    background-color: var(--theme-background-secondary, #f7fafc);
+    border: 1px solid transparent;
+    box-shadow: none;
+}
+
+/* Interactive */
+.interactive {
+    cursor: pointer;
+}
+
+.interactive:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--theme-shadow-md, 0 4px 6px rgba(0,0,0,0.1));
+}
+
+.interactive:active {
+    transform: translateY(0);
+}
+
+/* Padding */
+.padding-none { padding: 0; }
+.padding-small { padding: var(--theme-spacing-sm, 12px); }
+.padding-medium { padding: var(--theme-spacing-md, 20px); }
+.padding-large { padding: var(--theme-spacing-lg, 32px); }
+
+/* Header */
+.header {
+    padding: var(--theme-spacing-md, 20px);
+    border-bottom: 1px solid var(--theme-border, #e2e8f0);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.headerContent {
+    flex: 1;
+}
+
+.title {
+    margin: 0;
+    font-family: var(--theme-font-family, inherit);
+    font-size: var(--theme-font-size-lg, 1.125rem);
+    font-weight: var(--theme-font-weight-semibold, 600);
+    color: var(--theme-text, #1a202c);
+    line-height: var(--theme-line-height-tight, 1.25);
+}
+
+.subtitle {
+    margin: 4px 0 0;
+    font-family: var(--theme-font-family, inherit);
+    font-size: var(--theme-font-size-sm, 0.875rem);
+    color: var(--theme-text-secondary, #718096);
+    line-height: var(--theme-line-height-normal, 1.5);
+}
+
+.action {
+    margin-left: var(--theme-spacing-md, 20px);
+}
+
+/* Body */
+.body {
+    flex: 1;
+    padding: var(--theme-spacing-md, 20px);
+    color: var(--theme-text, #1a202c);
+    font-size: var(--theme-font-size-md, 1rem);
+    line-height: var(--theme-line-height-relaxed, 1.625);
+}
+
+/* Footer */
+.footer {
+    padding: var(--theme-spacing-md, 20px);
+    border-top: 1px solid var(--theme-border, #e2e8f0);
+    display: flex;
+    gap: var(--theme-spacing-sm, 12px);
+    background-color: var(--theme-background-secondary, #f7fafc);
+}
+
+.align-start { justify-content: flex-start; }
+.align-center { justify-content: center; }
+.align-end { justify-content: flex-end; }
+.align-space-between { justify-content: space-between; }
+
+/* Image */
+.image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* Adjustment for paddings when subcomponents are used */
+/* If the card uses internal components like Header/Body, control padding on the container */
+.card:has(.header),
+.card:has(.body),
+.card:has(.footer) {
+    /* If structured components are used, reset padding on the main card */
+    padding: 0 !important;
+}
