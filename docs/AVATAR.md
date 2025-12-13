@@ -26,9 +26,9 @@ function Example() {
 | `src` | `string` | - | Image source URL. |
 | `alt` | `string` | - | Alt text for accessibility. |
 | `name` | `string` | - | Name of the user. Used to generate initials if image fails or isn't provided. |
-| `variant` | `'circle' | 'square' | 'rounded'` | `'circle'` | Shape of the avatar. |
-| `size` | `'small' | 'medium' | 'large' | 'xlarge'` | `'medium'` | Size of the avatar. |
-| `status` | `'online' | 'offline' | 'busy' | 'away'` | - | Optional status indicator dot. |
+| `variant` | `'circle' \| 'square' \| 'rounded'` | `'circle'` | Shape of the avatar. |
+| `size` | `'small' \| 'medium' \| 'large' \| 'xlarge'` | `'medium'` | Size of the avatar. |
+| `status` | `'online' \| 'offline' \| 'busy' \| 'away'` | - | Optional status indicator dot. |
 | `className` | `string` | - | Additional CSS classes. |
 
 ## Fallback Logic

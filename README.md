@@ -65,6 +65,62 @@ Organize content into flexible, theme-aware sections.
 
 [📖 Full Documentation](./docs/TABS.md)
 
+### 🏷️ [Badge](./docs/BADGE.md)
+Small status indicators for numbers or text labels.
+- Multiple variants (success, warning, error, etc.)
+- Pill and rounded shapes
+- Counter visualization
+
+[📖 Full Documentation](./docs/BADGE.md)
+
+### 👤 [Avatar](./docs/AVATAR.md)
+User profile images with support for fallbacks and initials.
+- Image, text (initials), or icon support
+- Various sizes and shapes
+- Status indicators
+
+[📖 Full Documentation](./docs/AVATAR.md)
+
+### 💡 [Tooltip](./docs/TOOLTIP.md)
+Contextual information displayed on hover or focus.
+- Customizable position (top, bottom, left, right)
+- Click or hover triggers
+- Custom content support
+
+[📖 Full Documentation](./docs/TOOLTIP.md)
+
+### ⚠️ [Alert](./docs/ALERT.md)
+Feedback messages for user actions.
+- 4 variants (Info, Success, Warning, Error)
+- Dismissible option
+- Icon support
+
+[📖 Full Documentation](./docs/ALERT.md)
+
+### ⌨️ [Input](./docs/INPUT.md)
+Enhanced text input fields.
+- Validation states
+- Leading and trailing icons
+- Accessible labels
+
+[📖 Full Documentation](./docs/INPUT.md)
+
+### 🔽 [Select](./docs/SELECT.md)
+Customizable dropdown selection component.
+- Single and multiple selection
+- Searchable options
+- Custom option rendering
+
+[📖 Full Documentation](./docs/SELECT.md)
+
+### ☑️ [Checkbox](./docs/CHECKBOX.md)
+Selection control for boolean values.
+- Indeterminate state support
+- Custom labeling
+- Validation states
+
+[📖 Full Documentation](./docs/CHECKBOX.md)
+
 ## ✨ Features
 
 - **🎨 Theme System**: 4 pre-built themes (default, minimal, modern, compact)

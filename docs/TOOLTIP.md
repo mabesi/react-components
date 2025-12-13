@@ -23,7 +23,7 @@ function Example() {
 |---|---|---|---|
 | `content` | `ReactNode` | - | The text or content to display inside the tooltip. |
 | `children` | `ReactNode` | - | The trigger element. |
-| `position` | `'top' | 'bottom' | 'left' | 'right'` | `'top'` | Preferred position relative to the trigger. |
+| `position` | `'top' \| 'bottom' \| 'left' \| 'right'` | `'top'` | Preferred position relative to the trigger. |
 | `delay` | `number` | `200` | Delay in milliseconds before showing the tooltip. |
 | `className` | `string` | - | Additional CSS classes for the wrapper. |
 
