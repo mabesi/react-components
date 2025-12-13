@@ -25,6 +25,7 @@ function App() {
                         <Route path="/tabs" element={<TabsPage />} />
                         <Route path="/badge" element={<BadgePage />} />
                         <Route path="/avatar" element={<AvatarPage />} />
+                        <Route path="/tooltip" element={<TooltipPage />} />
                     </Routes>
                 </I18nProvider>
             </ThemeProvider>

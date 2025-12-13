@@ -119,6 +119,19 @@ export default function HomePage() {
                     </ul>
                     <span className="card-link">View Examples →</span>
                 </Link>
+
+                <Link to="/tooltip" className="card">
+                    <div className="card-icon">💬</div>
+                    <h2 className="card-title">Tooltip</h2>
+                    <p className="card-description">Floating contextual info.</p>
+                    <ul className="card-features">
+                        <li>4 Positions</li>
+                        <li>Custom Delays</li>
+                        <li>Keyboard Access</li>
+                        <li>Rich Content</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
             </div>
 
             <footer>

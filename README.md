@@ -105,6 +105,7 @@ function App() {
 - **[Tabs Documentation](./docs/TABS.md)** - Complete guide for tabs
 - **[Badge Documentation](./docs/BADGE.md)** - Complete guide for badges
 - **[Avatar Documentation](./docs/AVATAR.md)** - Complete guide for avatars
+- **[Tooltip Documentation](./docs/TOOLTIP.md)** - Complete guide for tooltips
 - **[Modal Documentation](./docs/MODAL.md)** - Complete guide for modals
 - **[Button Documentation](./docs/BUTTON.md)** - Complete guide for buttons
 
@@ -169,6 +170,7 @@ Interactive examples are available in the `examples` folder as a React applicati
 - **Tabs Examples** - Content organization demos with variants
 - **Badge Examples** - Status indicators status and counters
 - **Avatar Examples** - Profile images and fallbacks
+- **Tooltip Examples** - Contextual info on hover/focus
 - **Button Examples** - Showcase variants, sizes, and states
 - **Modal Examples** - Dialogs, popups, and confirmation flows
 - **Theme Switcher** - Test all 4 themes in real-time

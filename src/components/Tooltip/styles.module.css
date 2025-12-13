@@ -1,0 +1,60 @@
+.tooltipWrapper {
+    display: inline-block;
+    position: relative;
+    width: fit-content;
+}
+
+.tooltipContent {
+    position: absolute;
+    background-color: var(--theme-surface-inverse, #1e293b);
+    color: var(--theme-text-inverse, #ffffff);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    pointer-events: none;
+    /* Prevent tooltip from blocking interaction if it lingers */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    font-family: var(--theme-font-family, inherit);
+}
+
+.tooltipContent.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Positions */
+.tooltipContent.top {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    margin-bottom: 4px;
+}
+
+.tooltipContent.bottom {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    margin-top: 4px;
+}
+
+.tooltipContent.left {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-8px);
+    margin-right: 4px;
+}
+
+.tooltipContent.right {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%) translateX(8px);
+    margin-left: 4px;
+}
+
+/* Arrows (Optional - simplified for now without arrows or pseudo-elements to keep CSS clean, 
+   but can add ::after if needed) */
