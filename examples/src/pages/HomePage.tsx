@@ -39,6 +39,21 @@ export default function HomePage() {
                     </ul>
                     <span className="card-link">View Examples →</span>
                 </Link>
+
+                <Link to="/modal" className="card">
+                    <div className="card-icon">🪟</div>
+                    <h2 className="card-title">Modal</h2>
+                    <p className="card-description">
+                        Accessible dialogs, popups, and actionable overlays.
+                    </p>
+                    <ul className="card-features">
+                        <li>Keyboard Navigation</li>
+                        <li>Focus Trapping</li>
+                        <li>Customizable Content</li>
+                        <li>Stackable</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
             </div>
 
             <footer>

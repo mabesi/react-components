@@ -534,7 +534,7 @@ function App() {
 
 ## Examples
 
-See the [DataTable examples](../examples/datatable-example.html) for interactive demonstrations of all features.
+See the [Examples](../examples) directory for interactive demonstrations of all features.
 
 ## TypeScript Support
 

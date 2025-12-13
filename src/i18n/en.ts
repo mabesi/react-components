@@ -69,4 +69,11 @@ export const en: Translations = {
         selected: (count) => `${count} selected`,
         showing: ({ start, end, total }) => `Showing ${start} to ${end} of ${total} records`,
     },
+
+    modal: {
+        close: 'Close',
+        confirm: 'Confirm',
+        cancel: 'Cancel',
+        ok: 'OK',
+    },
 };

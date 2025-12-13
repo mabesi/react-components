@@ -30,6 +30,15 @@ Feature-rich table component for displaying and interacting with tabular data.
 
 [📖 Full Documentation](./docs/DATATABLE.md)
 
+### 🪟 [Modal](./docs/MODAL.md)
+Accessible dialogs, popups, and actionable overlays.
+- 4 Sizes (Small, Medium, Large, Fullscreen)
+- Position options (Top, Center, Bottom)
+- Focus trap & Accessibility
+- Portal rendering
+
+[📖 Full Documentation](./docs/MODAL.md)
+
 ## ✨ Features
 
 - **🎨 Theme System**: 4 pre-built themes (default, minimal, modern, compact)
@@ -66,6 +75,7 @@ function App() {
 
 - **[DynamicForm Documentation](./docs/DYNAMICFORM.md)** - Complete guide for form building
 - **[DataTable Documentation](./docs/DATATABLE.md)** - Complete guide for data tables
+- **[Modal Documentation](./docs/MODAL.md)** - Complete guide for modals
 
 ## 🎨 Themes
 
@@ -94,7 +104,7 @@ function ThemeSwitcher() {
 - `modern` - Rounded corners, vibrant colors
 - `compact` - Dense layout, reduced spacing
 
-[🎯 View Theme Examples](./examples/themes-example.html)
+[🎯 View Theme Examples within the Examples App](../examples)
 
 ## 🌍 Internationalization
 
@@ -124,6 +134,7 @@ Interactive examples are available in the `examples` folder as a React applicati
 
 - **DynamicForm Examples** - Form building demos with all features
 - **DataTable Examples** - Table interaction demos with sorting, pagination, and actions
+- **Modal Examples** - Dialogs, popups, and confirmation flows
 - **Theme Switcher** - Test all 4 themes in real-time
 - **Language Switcher** - Test i18n support (English/Portuguese)
 

@@ -155,7 +155,83 @@
     line-height: 1.6;
 }
 
-/* Action Button Styles */
+/* Demo Actions */
+.demo-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.demo-actions button {
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    color: #495057;
+    border-color: #dee2e6;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.demo-actions button:hover {
+    background-color: #e9ecef;
+    border-color: #ced4da;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.demo-actions button:active {
+    transform: translateY(0);
+}
+
+/* Specific Button Variants */
+.demo-actions button.primary,
+.primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.demo-actions button.primary:hover,
+.primary:hover {
+    box-shadow: 0 4px 12px rgba(118, 75, 162, 0.4) !important;
+    opacity: 0.95;
+}
+
+.demo-actions button.secondary,
+.secondary {
+    background-color: #6c757d !important;
+    color: white !important;
+    border-color: #6c757d !important;
+}
+
+.demo-actions button.secondary:hover,
+.secondary:hover {
+    background-color: #5a6268 !important;
+    border-color: #545b62 !important;
+}
+
+.demo-actions button.danger,
+.danger {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5253 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.demo-actions button.danger:hover,
+.danger:hover {
+    box-shadow: 0 4px 12px rgba(238, 82, 83, 0.4) !important;
+    opacity: 0.95;
+}
+
+/* Action Button Styles (DataTable) */
 :global(.action-edit) {
     background-color: #3498db !important;
     border-color: #3498db !important;

@@ -70,4 +70,11 @@ export const ptBR: Translations = {
         showing: ({ start, end, total }: { start: number; end: number; total: number }) =>
             `Mostrando ${start} a ${end} de ${total} registros`,
     },
+
+    modal: {
+        close: 'Fechar',
+        confirm: 'Confirmar',
+        cancel: 'Cancelar',
+        ok: 'OK',
+    },
 };

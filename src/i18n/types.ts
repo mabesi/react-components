@@ -74,6 +74,14 @@ export interface Translations {
         selected: (count: number) => string;
         showing: (params: { start: number; end: number; total: number }) => string;
     };
+
+    // Modal
+    modal: {
+        close: string;
+        confirm: string;
+        cancel: string;
+        ok: string;
+    };
 }
 
 export interface I18nContextValue {

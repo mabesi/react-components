@@ -3,6 +3,7 @@ import { ThemeProvider, I18nProvider } from '@mabesi/react-components';
 import HomePage from './pages/HomePage';
 import DynamicFormPage from './pages/DynamicFormPage';
 import DataTablePage from './pages/DataTablePage';
+import ModalPage from './pages/ModalPage';
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
                         <Route path="/" element={<HomePage />} />
                         <Route path="/dynamicform" element={<DynamicFormPage />} />
                         <Route path="/datatable" element={<DataTablePage />} />
+                        <Route path="/modal" element={<ModalPage />} />
                     </Routes>
                 </I18nProvider>
             </ThemeProvider>
