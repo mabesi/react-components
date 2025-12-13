@@ -50,9 +50,11 @@ export interface RegularFormField {
     options?: SelectOption[];
     dependencies?: FieldDependency[];
     disabled?: boolean;
+    readOnly?: boolean;
+    className?: string;
     description?: string;
     render?: (props: {
-        field: FormField;
+        field: RegularFormField;
         value: any;
         onChange: (value: any) => void;
         error?: string;

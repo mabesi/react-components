@@ -1,9 +1,9 @@
 import React from 'react';
-import type { FormField as IFormField } from './types';
+import type { RegularFormField } from './types';
 import styles from './styles.module.css';
 
 interface FormFieldProps {
-    field: IFormField;
+    field: RegularFormField;
     value: any;
     error?: string;
     onChange: (value: any) => void;
@@ -43,7 +43,7 @@ export const FormField: React.FC<FormFieldProps> = ({
                     {label}
                     {isRequired && <span className={styles.required}>*</span>}
                 </label>
-                {render({ field, value, onChange, error })}
+                {render({ field, value, onChange, ...(error !== undefined && { error }) })}
                 {description && <div className={styles.description}>{description}</div>}
                 {error && <div className={styles.errorMessage}>{error}</div>}
             </div>
