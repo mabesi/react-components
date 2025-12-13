@@ -1,0 +1,91 @@
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    /* Pill shape */
+    padding: 2px 8px;
+    /* Default padding */
+    font-size: 0.75rem;
+    /* Small font size */
+    font-weight: 600;
+    /* Medium weight */
+    line-height: 1;
+    /* Tight line height */
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    font-family: var(--theme-font-family, inherit);
+}
+
+/* Variants */
+.badge.primary {
+    background-color: var(--theme-primary, #3b82f6);
+    color: white;
+}
+
+.badge.secondary {
+    background-color: var(--theme-secondary, #64748b);
+    color: white;
+}
+
+.badge.success {
+    background-color: var(--theme-success, #10b981);
+    color: white;
+}
+
+.badge.warning {
+    background-color: var(--theme-warning, #f59e0b);
+    color: white;
+}
+
+.badge.danger {
+    background-color: var(--theme-error, #ef4444);
+    color: white;
+}
+
+.badge.info {
+    background-color: var(--theme-info, #0ea5e9);
+    color: white;
+}
+
+.badge.light {
+    background-color: #f1f5f9;
+    color: #475569;
+}
+
+.badge.dark {
+    background-color: #1e293b;
+    color: white;
+}
+
+/* Outline Variants */
+.badge.outlined {
+    background-color: transparent;
+    border: 1px solid currentColor;
+}
+
+/* Sizes */
+.badge.small {
+    padding: 1px 6px;
+    font-size: 0.7rem;
+}
+
+.badge.medium {
+    padding: 2px 8px;
+    font-size: 0.75rem;
+}
+
+.badge.large {
+    padding: 4px 12px;
+    font-size: 0.875rem;
+}
+
+/* Dot variant */
+.badge.dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    color: transparent;
+}

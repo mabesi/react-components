@@ -93,6 +93,19 @@ export default function HomePage() {
                     </ul>
                     <span className="card-link">View Examples →</span>
                 </Link>
+
+                <Link to="/badge" className="card">
+                    <div className="card-icon">📛</div>
+                    <h2 className="card-title">Badge</h2>
+                    <p className="card-description">Status indicators.</p>
+                    <ul className="card-features">
+                        <li>Colors & Variants</li>
+                        <li>Outlined Mode</li>
+                        <li>Dot Mode</li>
+                        <li>Sizes</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
             </div>
 
             <footer>

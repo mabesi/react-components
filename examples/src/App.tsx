@@ -7,6 +7,7 @@ import ModalPage from './pages/ModalPage';
 import { ButtonPage } from './pages/ButtonPage';
 import { TabsPage } from './pages/TabsPage';
 import { CardPage } from './pages/CardPage';
+import { BadgePage } from './pages/BadgePage';
 import './App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                         <Route path="/button" element={<ButtonPage />} />
                         <Route path="/card" element={<CardPage />} />
                         <Route path="/tabs" element={<TabsPage />} />
+                        <Route path="/badge" element={<BadgePage />} />
                     </Routes>
                 </I18nProvider>
             </ThemeProvider>

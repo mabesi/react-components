@@ -165,6 +165,7 @@ Interactive examples are available in the `examples` folder as a React applicati
 - **DataTable Examples** - Table interaction demos with sorting, pagination, and actions
 - **Card Examples** - Flexible content container demos with variants and media
 - **Tabs Examples** - Content organization demos with variants
+- **Badge Examples** - Status indicators status and counters
 - **Button Examples** - Showcase variants, sizes, and states
 - **Modal Examples** - Dialogs, popups, and confirmation flows
 - **Theme Switcher** - Test all 4 themes in real-time

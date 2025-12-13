@@ -5,6 +5,7 @@ export * from './components/DataTable';
 export * from './components/Button';
 export * from './components/Card';
 export * from './components/Tabs';
+export { Badge, type BadgeProps } from './components/Badge';
 export * from './components/Modal';
 
 // Themes
