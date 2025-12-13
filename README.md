@@ -39,6 +39,15 @@ Feature-rich table component for displaying and interacting with tabular data.
 
 [📖 Full Documentation](./docs/DATATABLE.md)
 
+### 🎴 [Card](./docs/CARD.md)
+Flexible content container used to organize information and actions.
+- 3 Variants (Elevated, Outlined, Filled)
+- Structured subcomponents (Header, Body, Footer, Image)
+- Theme-aware styling
+- Interactive capabilities
+
+[📖 Full Documentation](./docs/CARD.md)
+
 ### 🪟 [Modal](./docs/MODAL.md)
 Accessible dialogs, popups, and actionable overlays.
 - 4 Sizes (Small, Medium, Large, Fullscreen)
