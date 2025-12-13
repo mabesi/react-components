@@ -128,33 +128,74 @@ import { useI18n } from '@mabesi/react-components';
 
 function LanguageSwitcher() {
   const { locale, setLocale } = useI18n();
+  
+  return (
+    <button onClick={() => setLocale(locale === 'en' ? 'pt-BR' : 'en')}>
+      {locale === 'en' ? 'Switch to Portuguese' : 'Mudar para Inglês'}
+    </button>
+  );
+}
+```
+
+**Field presets automatically translate** when locale changes - no manual configuration needed!
+
 **Supported Languages:**
 - English (default)
 - Portuguese (Brazil)
 
-#### Section Component
+#### JSON-based Sections
 
-Organize your forms with sections:
+Organize your forms with sections defined directly in the JSON configuration:
 
 ```tsx
-import { Section, DynamicForm } from '@mabesi/react-components';
+import { DynamicForm } from '@mabesi/react-components';
+
+const fields = [
+  // Field outside section
+  { preset: 'fullName' },
+  
+  // Collapsible section
+  {
+    type: 'section',
+    title: 'Contact Information',
+    collapsible: true,
+    defaultExpanded: true,
+    fields: [
+      { preset: 'email' },
+      { preset: 'mobile' },
+      { preset: 'phone' }
+    ]
+  },
+  
+  // Non-collapsible section
+  {
+    type: 'section',
+    title: 'Address',
+    fields: [
+      { preset: 'zipCode' },
+      { preset: 'address' },
+      { preset: 'city' },
+      { preset: 'state' }
+    ]
+  }
+];
 
 function MyForm() {
   return (
-    <div>
-      {/* Standard section */}
-      <Section title="Personal Information">
-        <DynamicForm fields={personalFields} onSubmit={handleSubmit} />
-      </Section>
-      
-      {/* Collapsible section */}
-      <Section title="Address" collapsible defaultExpanded={false}>
-        <DynamicForm fields={addressFields} onSubmit={handleSubmit} />
-      </Section>
-    </div>
+    <DynamicForm
+      fields={fields}
+      onSubmit={(values) => console.log(values)}
+    />
   );
 }
 ```
+
+**Key features:**
+- Sections defined as field type in JSON
+- Collapsible and non-collapsible sections
+- Fields can be inside or outside sections
+- Single form submission for all fields
+- Automatic spacing and visual hierarchy
 
 #### Field Presets
 
