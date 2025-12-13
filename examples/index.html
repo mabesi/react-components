@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mabesi React Components - Examples</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      color: white;
+      margin-bottom: 60px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      opacity: 0.9;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .card-description {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .card-features {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .card-features li {
+      padding: 8px 0;
+      color: #555;
+      display: flex;
+      align-items: center;
+    }
+
+    .card-features li::before {
+      content: "✓";
+      color: #667eea;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      color: #667eea;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .card-link::after {
+      content: "→";
+      margin-left: 8px;
+      transition: margin-left 0.3s ease;
+    }
+
+    .card:hover .card-link::after {
+      margin-left: 12px;
+    }
+
+    footer {
+      text-align: center;
+      color: white;
+      margin-top: 60px;
+      opacity: 0.9;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    footer a:hover {
+      border-bottom-color: white;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .subtitle {
+        font-size: 1rem;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>📦 Mabesi React Components</h1>
+      <p class="subtitle">Interactive Examples & Demonstrations</p>
+    </header>
+
+    <div class="cards-grid">
+      <!-- DynamicForm Card -->
+      <a href="./dynamicform-example.html" class="card">
+        <div class="card-icon">📝</div>
+        <h2 class="card-title">DynamicForm</h2>
+        <p class="card-description">
+          Build complex forms from simple JSON configurations with automatic validation and i18n support.
+        </p>
+        <ul class="card-features">
+          <li>30+ Field Presets</li>
+          <li>Auto-Translation</li>
+          <li>Collapsible Sections</li>
+          <li>Custom Validation</li>
+        </ul>
+        <span class="card-link">View Examples</span>
+      </a>
+
+      <!-- DataTable Card -->
+      <a href="./datatable-example.html" class="card">
+        <div class="card-icon">📊</div>
+        <h2 class="card-title">DataTable</h2>
+        <p class="card-description">
+          Display and interact with tabular data featuring sorting, pagination, and responsive design.
+        </p>
+        <ul class="card-features">
+          <li>Sortable Columns</li>
+          <li>Pagination Controls</li>
+          <li>Row Selection</li>
+          <li>Mobile Responsive</li>
+        </ul>
+        <span class="card-link">View Examples</span>
+      </a>
+
+      <!-- Themes Card -->
+      <a href="./themes-example.html" class="card">
+        <div class="card-icon">🎨</div>
+        <h2 class="card-title">Themes</h2>
+        <p class="card-description">
+          Explore all 4 built-in themes and see how components adapt to different visual styles.
+        </p>
+        <ul class="card-features">
+          <li>Default Theme</li>
+          <li>Minimal Theme</li>
+          <li>Modern Theme</li>
+          <li>Compact Theme</li>
+        </ul>
+        <span class="card-link">View Examples</span>
+      </a>
+    </div>
+
+    <footer>
+      <p>
+        <strong>Mabesi React Components</strong> v0.1.0<br>
+        <a href="../README.md" target="_blank">Documentation</a> •
+        <a href="https://github.com/mabesi/react-components" target="_blank">GitHub</a>
+      </p>
+    </footer>
+  </div>
+</body>
+
+</html>

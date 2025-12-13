@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Themes Example - Mabesi React Components</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="../dist/index.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .theme-selector {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .theme-button {
+            padding: 12px 24px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .theme-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .theme-button.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .demo-section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .demo-section h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="./index.html" class="back-link">← Back to Examples</a>
+
+        <h1>🎨 Themes</h1>
+        <p class="subtitle">Explore all 4 built-in themes</p>
+
+        <div id="root"></div>
+    </div>
+
+    <!-- Load library BEFORE using it -->
+    <script src="../dist/index.js"></script>
+
+    <script type="text/babel">
+        const { useState } = React;
+        const {
+            DynamicForm,
+            DataTable,
+            ThemeProvider,
+            I18nProvider,
+            useTheme
+        } = window.MabesiReactComponents;
+
+        function ThemesExample() {
+            const { themeName, setTheme } = useTheme();
+
+            const themes = [
+                { name: 'default', label: 'Default', description: 'Bootstrap-inspired styling' },
+                { name: 'minimal', label: 'Minimal', description: 'Clean design, no shadows' },
+                { name: 'modern', label: 'Modern', description: 'Rounded corners, vibrant colors' },
+                { name: 'compact', label: 'Compact', description: 'Dense layout, reduced spacing' }
+            ];
+
+            // Sample form fields
+            const formFields = [
+                { preset: 'fullName' },
+                { preset: 'email' },
+                { preset: 'mobile' }
+            ];
+
+            // Sample table data
+            const tableData = [
+                { id: 1, name: 'John Doe', email: 'john@example.com', role: 'Admin' },
+                { id: 2, name: 'Jane Smith', email: 'jane@example.com', role: 'User' },
+                { id: 3, name: 'Bob Johnson', email: 'bob@example.com', role: 'User' }
+            ];
+
+            const tableColumns = [
+                { id: 'name', header: 'Name', accessor: 'name', sortable: true },
+                { id: 'email', header: 'Email', accessor: 'email', sortable: true },
+                { id: 'role', header: 'Role', accessor: 'role' }
+            ];
+
+            return (
+                <>
+                    <div className="theme-selector">
+                        {themes.map(theme => (
+                            <button
+                                key={theme.name}
+                                className={`theme-button ${themeName === theme.name ? 'active' : ''}`}
+                                onClick={() => setTheme(theme.name)}
+                            >
+                                <div>{theme.label}</div>
+                                <div style={{ fontSize: '0.875rem', opacity: 0.8 }}>
+                                    {theme.description}
+                                </div>
+                            </button>
+                        ))}
+                    </div>
+
+                    <div className="demo-section">
+                        <h2>DynamicForm with {themeName} theme</h2>
+                        <DynamicForm
+                            fields={formFields}
+                            onSubmit={(values) => console.log('Form submitted:', values)}
+                        />
+                    </div>
+
+                    <div className="demo-section">
+                        <h2>DataTable with {themeName} theme</h2>
+                        <DataTable
+                            data={tableData}
+                            columns={tableColumns}
+                            rowKey="id"
+                            pagination
+                            sortable
+                            striped
+                            hoverable
+                        />
+                    </div>
+                </>
+            );
+        }
+
+        function App() {
+            return (
+                <ThemeProvider defaultTheme="modern">
+                    <I18nProvider defaultLocale="en">
+                        <ThemesExample />
+                    </I18nProvider>
+                </ThemeProvider>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+
+</html>
