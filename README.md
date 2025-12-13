@@ -6,7 +6,7 @@ A modern, TypeScript-based React component library designed for flexibility, acc
     <img src="./banner.png" alt="Mabesi React Components Banner" width="100%" />
 </p>
 
-## � Overview
+## 👀 Overview
 
 **Mabesi React Components** is a comprehensive UI library built to accelerate web development with React. It focuses on providing a set of high-quality, customizable, and accessible components that fit seamlessly into modern applications.
 
@@ -14,7 +14,7 @@ Built with **TypeScript**, it ensures type safety and excellent developer experi
 
 Whether you are building a simple dashboard or a complex enterprise application, this library provides the building blocks you need to create stunning and functional user interfaces.
 
-## �📦 Components
+## 📦 Components
 
 | Component | Description | Key Features |
 |:---|:---|:---|
