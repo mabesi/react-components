@@ -66,8 +66,10 @@ export interface Translations {
         rowsPerPage: string;
         page: string;
         of: string;
+        firstPage: string;
         previous: string;
         next: string;
+        lastPage: string;
         selectAll: string;
         selected: (count: number) => string;
         showing: (params: { start: number; end: number; total: number }) => string;

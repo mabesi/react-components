@@ -82,9 +82,10 @@ export function TableBody<T>({
                                                 }`}
                                             onClick={() => action.onClick(row, rowIndex)}
                                             disabled={isDisabled}
+                                            aria-label={action.label}
+                                            title={action.label}
                                         >
                                             {action.icon && <span>{action.icon}</span>}
-                                            {action.label}
                                         </button>
                                     );
                                 })}

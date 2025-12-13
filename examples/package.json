@@ -4,11 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "dev": "vite --config vite.config.ts --host",
+    "build": "vite build --config vite.config.ts",
+    "preview": "vite preview --config vite.config.ts"
   },
   "dependencies": {
-    "react-app-polyfill": "^1.0.0"
+    "@mabesi/react-components": "file:..",
+    "react-app-polyfill": "^1.0.0",
+    "react-router-dom": "^7.10.1"
   },
   "alias": {
     "react": "../node_modules/react",
@@ -16,9 +19,11 @@
     "scheduler/tracing": "../node_modules/scheduler/tracing-profiling"
   },
   "devDependencies": {
-    "@types/react": "^16.9.11",
-    "@types/react-dom": "^16.8.4",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^5.1.2",
     "parcel": "^1.12.3",
-    "typescript": "^3.4.5"
+    "typescript": "^5.7.2",
+    "vite": "^7.2.7"
   }
 }

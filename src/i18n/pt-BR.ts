@@ -61,8 +61,10 @@ export const ptBR: Translations = {
         rowsPerPage: 'Linhas por página:',
         page: 'Página',
         of: 'de',
+        firstPage: 'Primeira',
         previous: 'Anterior',
         next: 'Próximo',
+        lastPage: 'Última',
         selectAll: 'Selecionar todos',
         selected: (count: number) => `${count} selecionados`,
         showing: ({ start, end, total }: { start: number; end: number; total: number }) =>

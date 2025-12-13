@@ -17,16 +17,18 @@ Build complex forms from simple JSON configurations with automatic validation an
 - Custom validation (sync & async)
 - Field dependencies
 
-[📖 Full Documentation](./docs/DYNAMICFORM.md) • [🎯 Examples](./examples/dynamicform-example.html)
+[📖 Full Documentation](./docs/DYNAMICFORM.md)
 
-### � [DataTable](./docs/DATATABLE.md)
+### 📊 [DataTable](./docs/DATATABLE.md)
 Feature-rich table component for displaying and interacting with tabular data.
 - Sortable columns
 - Pagination with page size selector
-- Row selection
+- Row selection (single/multiple)
+- Row actions (edit, delete, custom)
 - Responsive design (mobile cards)
+- Loading states
 
-[📖 Full Documentation](./docs/DATATABLE.md) • [🎯 Examples](./examples/datatable-example.html)
+[📖 Full Documentation](./docs/DATATABLE.md)
 
 ## ✨ Features
 
@@ -118,19 +120,20 @@ function LanguageSwitcher() {
 
 ## 🎯 Examples
 
-Interactive examples are available in the `examples` folder:
+Interactive examples are available in the `examples` folder as a React application:
 
-- **[Examples Index](./examples/index.html)** - Browse all examples
-- **[DynamicForm Examples](./examples/dynamicform-example.html)** - Form building demos
-- **[DataTable Examples](./examples/datatable-example.html)** - Table interaction demos
-- **[Themes Examples](./examples/themes-example.html)** - All 4 themes showcase
+- **DynamicForm Examples** - Form building demos with all features
+- **DataTable Examples** - Table interaction demos with sorting, pagination, and actions
+- **Theme Switcher** - Test all 4 themes in real-time
+- **Language Switcher** - Test i18n support (English/Portuguese)
 
 To run examples locally:
 
 ```bash
-cd /path/to/react-components
-python3 -m http.server 8000
-# Open: http://localhost:8000/examples/
+cd examples
+npm install
+npm run dev
+# Open: http://localhost:3000/
 ```
 
 ## 🛠️ Development

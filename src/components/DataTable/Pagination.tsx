@@ -57,15 +57,26 @@ export const Pagination: React.FC<PaginationProps> = ({
                 <div className={styles.paginationButtons}>
                     <button
                         className={styles.paginationButton}
+                        onClick={() => onPageChange(1)}
+                        disabled={!canGoPrevious}
+                        aria-label={t.dataTable.firstPage}
+                        title={t.dataTable.firstPage}
+                    >
+                        ⏮️
+                    </button>
+
+                    <button
+                        className={styles.paginationButton}
                         onClick={() => onPageChange(currentPage - 1)}
                         disabled={!canGoPrevious}
                         aria-label={t.dataTable.previous}
+                        title={t.dataTable.previous}
                     >
-                        {t.dataTable.previous}
+                        ◀️
                     </button>
 
                     <span className={styles.paginationInfo}>
-                        {t.dataTable.page} {currentPage} {t.dataTable.of} {totalPages}
+                        {currentPage}/{totalPages}
                     </span>
 
                     <button
@@ -73,8 +84,19 @@ export const Pagination: React.FC<PaginationProps> = ({
                         onClick={() => onPageChange(currentPage + 1)}
                         disabled={!canGoNext}
                         aria-label={t.dataTable.next}
+                        title={t.dataTable.next}
                     >
-                        {t.dataTable.next}
+                        ▶️
+                    </button>
+
+                    <button
+                        className={styles.paginationButton}
+                        onClick={() => onPageChange(totalPages)}
+                        disabled={!canGoNext}
+                        aria-label={t.dataTable.lastPage}
+                        title={t.dataTable.lastPage}
+                    >
+                        ⏭️
                     </button>
                 </div>
             </div>

@@ -1,0 +1,54 @@
+import { Link } from 'react-router-dom';
+import './HomePage.css';
+
+export default function HomePage() {
+    return (
+        <div className="home-page">
+            <header>
+                <h1>📦 Mabesi React Components</h1>
+                <p className="subtitle">Interactive Examples & Demonstrations</p>
+            </header>
+
+            <div className="cards-grid">
+                <Link to="/dynamicform" className="card">
+                    <div className="card-icon">📝</div>
+                    <h2 className="card-title">DynamicForm</h2>
+                    <p className="card-description">
+                        Build complex forms from simple JSON configurations with automatic validation and i18n support.
+                    </p>
+                    <ul className="card-features">
+                        <li>30+ Field Presets</li>
+                        <li>Auto-Translation</li>
+                        <li>Collapsible Sections</li>
+                        <li>Custom Validation</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
+
+                <Link to="/datatable" className="card">
+                    <div className="card-icon">📊</div>
+                    <h2 className="card-title">DataTable</h2>
+                    <p className="card-description">
+                        Display and interact with tabular data featuring sorting, pagination, and responsive design.
+                    </p>
+                    <ul className="card-features">
+                        <li>Sortable Columns</li>
+                        <li>Pagination Controls</li>
+                        <li>Row Selection</li>
+                        <li>Mobile Responsive</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
+            </div>
+
+            <footer>
+                <p>
+                    <strong>Mabesi React Components</strong> v0.1.0<br />
+                    <a href="https://github.com/mabesi/react-components" target="_blank" rel="noopener noreferrer">
+                        GitHub
+                    </a>
+                </p>
+            </footer>
+        </div>
+    );
+}

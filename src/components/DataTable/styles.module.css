@@ -6,22 +6,22 @@
 .table {
     width: 100%;
     border-collapse: collapse;
-    background-color: var(--background-color);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
+    background-color: var(--theme-background);
+    border: 1px solid var(--theme-border);
+    border-radius: var(--theme-radius-md);
 }
 
 /* Table Header */
 .thead {
-    background-color: var(--primary-color);
+    background-color: var(--theme-primary);
     color: white;
 }
 
 .th {
-    padding: var(--spacing-md);
+    padding: var(--theme-spacing-md);
     text-align: left;
     font-weight: 600;
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--theme-border);
     white-space: nowrap;
 }
 
@@ -37,7 +37,7 @@
     cursor: pointer;
     user-select: none;
     position: relative;
-    padding-right: calc(var(--spacing-md) + 20px);
+    padding-right: calc(var(--theme-spacing-md) + 20px);
 }
 
 .sortable:hover {
@@ -46,7 +46,7 @@
 
 .sortIcon {
     position: absolute;
-    right: var(--spacing-sm);
+    right: var(--theme-spacing-sm);
     top: 50%;
     transform: translateY(-50%);
     display: inline-flex;
@@ -81,11 +81,11 @@
 
 /* Table Body */
 .tbody {
-    background-color: var(--background-color);
+    background-color: var(--theme-background);
 }
 
 .tr {
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--theme-border);
 }
 
 .tr.striped:nth-child(even) {
@@ -97,12 +97,12 @@
 }
 
 .tr.selected {
-    background-color: rgba(var(--primary-color-rgb), 0.1);
+    background-color: rgba(0, 123, 255, 0.1);
 }
 
 .td {
-    padding: var(--spacing-md);
-    border-bottom: 1px solid var(--border-color);
+    padding: var(--theme-spacing-md);
+    border-bottom: 1px solid var(--theme-border);
 }
 
 .td.center {
@@ -128,23 +128,23 @@
 /* Actions */
 .actions {
     display: flex;
-    gap: var(--spacing-sm);
+    gap: var(--theme-spacing-sm);
     justify-content: flex-end;
 }
 
 .actionButton {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    background-color: var(--primary-color);
+    padding: var(--theme-spacing-xs) var(--theme-spacing-sm);
+    background-color: var(--theme-primary);
     color: white;
     border: none;
-    border-radius: var(--border-radius);
+    border-radius: var(--theme-radius-md);
     cursor: pointer;
     font-size: 0.875rem;
     transition: background-color 0.2s;
 }
 
 .actionButton:hover:not(:disabled) {
-    background-color: var(--primary-hover);
+    background-color: var(--theme-primary-hover);
 }
 
 .actionButton:disabled {
@@ -152,12 +152,72 @@
     cursor: not-allowed;
 }
 
+/* Delete button specific styling - Global to work with className prop */
+:global(.action-delete) {
+    position: relative;
+    background-color: transparent !important;
+    border: 1px solid var(--theme-error) !important;
+    color: var(--theme-error) !important;
+    overflow: hidden;
+}
+
+:global(.action-delete::before) {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--theme-error);
+    opacity: 0.15;
+    z-index: -1;
+}
+
+:global(.action-delete:hover:not(:disabled)::before) {
+    opacity: 0.25;
+}
+
+:global(.action-delete:disabled) {
+    background-color: var(--theme-disabled) !important;
+    border-color: var(--theme-disabled) !important;
+    color: var(--theme-disabled-text) !important;
+}
+
+:global(.action-delete:disabled::before) {
+    display: none;
+}
+
+/* Edit button specific styling - Global to work with className prop */
+:global(.action-edit) {
+    position: relative;
+    background-color: transparent !important;
+    border: 1px solid var(--theme-primary) !important;
+    color: var(--theme-primary) !important;
+    overflow: hidden;
+}
+
+:global(.action-edit::before) {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--theme-primary);
+    opacity: 0.15;
+    z-index: -1;
+}
+
+:global(.action-edit:hover:not(:disabled)::before) {
+    opacity: 0.25;
+}
+
 /* States */
 .loading,
 .empty {
     text-align: center;
-    padding: var(--spacing-xl);
-    color: var(--text-muted);
+    padding: var(--theme-spacing-xl);
+    color: var(--theme-text-secondary);
 }
 
 .loading {
@@ -169,57 +229,57 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--spacing-md);
-    border-top: 1px solid var(--border-color);
+    padding: var(--theme-spacing-md);
+    border-top: 1px solid var(--theme-border);
     flex-wrap: wrap;
-    gap: var(--spacing-md);
+    gap: var(--theme-spacing-md);
 }
 
 .paginationInfo {
-    color: var(--text-muted);
+    color: var(--theme-text-secondary);
     font-size: 0.875rem;
 }
 
 .paginationControls {
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: var(--theme-spacing-md);
 }
 
 .pageSize {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
+    gap: var(--theme-spacing-sm);
     font-size: 0.875rem;
 }
 
 .pageSize select {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    background-color: var(--background-color);
+    padding: var(--theme-spacing-xs) var(--theme-spacing-sm);
+    border: 1px solid var(--theme-border);
+    border-radius: var(--theme-radius-md);
+    background-color: var(--theme-background);
     cursor: pointer;
 }
 
 .paginationButtons {
     display: flex;
-    gap: var(--spacing-sm);
+    gap: var(--theme-spacing-sm);
 }
 
 .paginationButton {
-    padding: var(--spacing-xs) var(--spacing-md);
-    background-color: var(--background-color);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
+    padding: var(--theme-spacing-xs) var(--theme-spacing-md);
+    background-color: var(--theme-background);
+    color: var(--theme-text);
+    border: 1px solid var(--theme-border);
+    border-radius: var(--theme-radius-md);
     cursor: pointer;
     transition: all 0.2s;
 }
 
 .paginationButton:hover:not(:disabled) {
-    background-color: var(--primary-color);
+    background-color: var(--theme-primary);
     color: white;
-    border-color: var(--primary-color);
+    border-color: var(--theme-primary);
 }
 
 .paginationButton:disabled {
@@ -227,7 +287,64 @@
     cursor: not-allowed;
 }
 
+/* Mobile Pagination - Compact Layout */
+@media (max-width: 768px) {
+    .pagination {
+        flex-direction: column;
+        gap: var(--theme-spacing-sm);
+        padding: var(--theme-spacing-sm);
+    }
+
+    .paginationInfo {
+        display: none;
+        /* Hide "Showing X to Y of Z records" */
+    }
+
+    .paginationControls {
+        width: 100%;
+        flex-direction: column;
+        gap: var(--theme-spacing-sm);
+    }
+
+    .pageSize {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .pageSize select {
+        flex: 1;
+        max-width: 120px;
+    }
+
+    .paginationButtons {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .paginationButton {
+        min-width: 40px;
+        height: 40px;
+        padding: var(--theme-spacing-xs);
+        font-size: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Show page info in compact format */
+    .paginationInfo {
+        display: inline-block !important;
+        font-size: 0.875rem;
+        padding: 0 var(--theme-spacing-sm);
+    }
+}
+
 /* Responsive - Card Layout */
+.cards {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .dataTable.responsive .table {
         display: none;
@@ -237,65 +354,76 @@
         display: block;
     }
 
-    .cards {
-        display: none;
+    .card {
+        background-color: var(--theme-background);
+        border: 1px solid var(--theme-border);
+        border-radius: var(--theme-radius-md);
+        padding: var(--theme-spacing-md);
+        margin-bottom: var(--theme-spacing-md);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
     }
 
-    .card {
-        background-color: var(--background-color);
-        border: 1px solid var(--border-color);
-        border-radius: var(--border-radius);
-        padding: var(--spacing-md);
-        margin-bottom: var(--spacing-md);
+    .card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        transform: translateY(-2px);
     }
 
     .card.selected {
-        background-color: rgba(var(--primary-color-rgb), 0.1);
-        border-color: var(--primary-color);
+        background-color: rgba(0, 123, 255, 0.1);
+        border-color: var(--theme-primary);
+        box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
     }
 
     .cardHeader {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: var(--spacing-sm);
-        padding-bottom: var(--spacing-sm);
-        border-bottom: 1px solid var(--border-color);
+        margin-bottom: var(--theme-spacing-md);
+        padding-bottom: var(--theme-spacing-md);
+        border-bottom: 2px solid var(--theme-border);
     }
 
     .cardBody {
         display: flex;
         flex-direction: column;
-        gap: var(--spacing-sm);
+        gap: var(--theme-spacing-md);
     }
 
     .cardRow {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: var(--theme-spacing-xs) 0;
     }
 
     .cardLabel {
         font-weight: 600;
-        color: var(--text-muted);
+        color: var(--theme-text-secondary);
         font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
 
     .cardValue {
         text-align: right;
+        font-weight: 500;
+        color: var(--theme-text);
     }
 
     .cardActions {
-        margin-top: var(--spacing-md);
-        padding-top: var(--spacing-md);
-        border-top: 1px solid var(--border-color);
+        margin-top: var(--theme-spacing-md);
+        padding-top: var(--theme-spacing-md);
+        border-top: 2px solid var(--theme-border);
         display: flex;
-        gap: var(--spacing-sm);
+        gap: var(--theme-spacing-sm);
         flex-wrap: wrap;
     }
 
     .cardActions .actionButton {
         flex: 1;
         min-width: 100px;
+        font-weight: 600;
+        padding: var(--theme-spacing-sm) var(--theme-spacing-md);
     }
 }
