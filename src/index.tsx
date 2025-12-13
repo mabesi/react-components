@@ -6,6 +6,7 @@ export * from './components/Button';
 export * from './components/Card';
 export * from './components/Tabs';
 export { Badge, type BadgeProps } from './components/Badge';
+export { Avatar, type AvatarProps } from './components/Avatar';
 export * from './components/Modal';
 
 // Themes

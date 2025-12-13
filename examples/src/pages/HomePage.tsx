@@ -106,6 +106,19 @@ export default function HomePage() {
                     </ul>
                     <span className="card-link">View Examples →</span>
                 </Link>
+
+                <Link to="/avatar" className="card">
+                    <div className="card-icon">👤</div>
+                    <h2 className="card-title">Avatar</h2>
+                    <p className="card-description">User profile images.</p>
+                    <ul className="card-features">
+                        <li>Image/Initials</li>
+                        <li>Status Dots</li>
+                        <li>Shapes</li>
+                        <li>Sizes</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
             </div>
 
             <footer>

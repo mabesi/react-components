@@ -1,0 +1,97 @@
+.avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    overflow: hidden;
+    user-select: none;
+    background-color: var(--theme-surface-secondary, #e2e8f0);
+    color: var(--theme-text-secondary, #64748b);
+    font-weight: 600;
+    transition: all 0.2s ease;
+    font-family: var(--theme-font-family, inherit);
+    position: relative;
+    border: 1px solid transparent;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+/* Variants */
+.avatar.circle {
+    border-radius: 50%;
+}
+
+.avatar.square {
+    border-radius: 0;
+}
+
+.avatar.rounded {
+    border-radius: 8px;
+    /* Standard radius */
+}
+
+/* Sizes */
+.avatar.small {
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
+}
+
+.avatar.medium {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+}
+
+.avatar.large {
+    width: 56px;
+    height: 56px;
+    font-size: 1.25rem;
+}
+
+.avatar.xlarge {
+    width: 80px;
+    height: 80px;
+    font-size: 1.75rem;
+}
+
+/* Status Indicator Container */
+.avatarContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.statusIndicator {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+    /* Relative to avatar size roughly */
+    height: 25%;
+    min-width: 8px;
+    min-height: 8px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-sizing: content-box;
+}
+
+.statusIndicator.online {
+    background-color: var(--theme-success, #10b981);
+}
+
+.statusIndicator.offline {
+    background-color: var(--theme-secondary, #94a3b8);
+}
+
+.statusIndicator.busy {
+    background-color: var(--theme-error, #ef4444);
+}
+
+.statusIndicator.away {
+    background-color: var(--theme-warning, #f59e0b);
+}
