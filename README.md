@@ -19,6 +19,15 @@ Build complex forms from simple JSON configurations with automatic validation an
 
 [📖 Full Documentation](./docs/DYNAMICFORM.md)
 
+### 🔘 [Button](./docs/BUTTON.md)
+Standardized, theme-aware buttons with multiple variants, sizes, icon support, and loading states.
+- 9 Variants (Primary, Secondary, Ghost, etc.)
+- 3 Sizes
+- Icon support
+- Full width option
+
+[📖 Full Documentation](./docs/BUTTON.md)
+
 ### 📊 [DataTable](./docs/DATATABLE.md)
 Feature-rich table component for displaying and interacting with tabular data.
 - Sortable columns
@@ -76,6 +85,7 @@ function App() {
 - **[DynamicForm Documentation](./docs/DYNAMICFORM.md)** - Complete guide for form building
 - **[DataTable Documentation](./docs/DATATABLE.md)** - Complete guide for data tables
 - **[Modal Documentation](./docs/MODAL.md)** - Complete guide for modals
+- **[Button Documentation](./docs/BUTTON.md)** - Complete guide for buttons
 
 ## 🎨 Themes
 
@@ -136,6 +146,7 @@ Interactive examples are available in the `examples` folder as a React applicati
 - **DataTable Examples** - Table interaction demos with sorting, pagination, and actions
 - **Modal Examples** - Dialogs, popups, and confirmation flows
 - **Theme Switcher** - Test all 4 themes in real-time
+- **Button Examples** - Showcase variants, sizes, and states
 - **Language Switcher** - Test i18n support (English/Portuguese)
 
 To run examples locally:

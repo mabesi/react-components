@@ -1,6 +1,7 @@
 import type { ModalHeaderProps } from './types';
 import { useI18n } from '../../context/I18nContext';
 import styles from './styles.module.css';
+import { Button } from '../Button';
 
 export function ModalHeader({
     title,
@@ -17,14 +18,15 @@ export function ModalHeader({
                 {subtitle && <p className={styles.modalSubtitle}>{subtitle}</p>}
             </div>
             {showCloseButton && onClose && (
-                <button
-                    type="button"
+                <Button
+                    variant="ghost"
+                    size="small"
                     className={styles.closeButton}
                     onClick={onClose}
                     aria-label={t.modal.close}
                 >
                     ✕
-                </button>
+                </Button>
             )}
         </div>
     );

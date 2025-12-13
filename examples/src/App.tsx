@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import DynamicFormPage from './pages/DynamicFormPage';
 import DataTablePage from './pages/DataTablePage';
 import ModalPage from './pages/ModalPage';
+import { ButtonPage } from './pages/ButtonPage';
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                         <Route path="/dynamicform" element={<DynamicFormPage />} />
                         <Route path="/datatable" element={<DataTablePage />} />
                         <Route path="/modal" element={<ModalPage />} />
+                        <Route path="/button" element={<ButtonPage />} />
                     </Routes>
                 </I18nProvider>
             </ThemeProvider>

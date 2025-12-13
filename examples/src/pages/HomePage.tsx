@@ -54,6 +54,21 @@ export default function HomePage() {
                     </ul>
                     <span className="card-link">View Examples →</span>
                 </Link>
+
+                <Link to="/button" className="card">
+                    <div className="card-icon">🔘</div>
+                    <h2 className="card-title">Button</h2>
+                    <p className="card-description">
+                        Standardized buttons with various variants, sizes, and states.
+                    </p>
+                    <ul className="card-features">
+                        <li>Multiple Variants</li>
+                        <li>Size Options</li>
+                        <li>Icon Support</li>
+                        <li>Loading State</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
             </div>
 
             <footer>
@@ -64,6 +79,6 @@ export default function HomePage() {
                     </a>
                 </p>
             </footer>
-        </div>
+        </div >
     );
 }

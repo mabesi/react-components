@@ -1,5 +1,6 @@
 import type { Column, RowAction } from './types';
 import styles from './styles.module.css';
+import { Button } from '../Button';
 
 interface TableBodyProps<T> {
     data: T[];
@@ -76,17 +77,17 @@ export function TableBody<T>({
                                     const isDisabled = action.disabled?.(row) ?? false;
 
                                     return (
-                                        <button
+                                        <Button
                                             key={actionIndex}
-                                            className={`${styles.actionButton} ${action.className || ''
-                                                }`}
+                                            variant="ghost"
+                                            size="small"
+                                            className={`${styles.actionButton} ${action.className || ''}`}
                                             onClick={() => action.onClick(row, rowIndex)}
                                             disabled={isDisabled}
                                             aria-label={action.label}
                                             title={action.label}
-                                        >
-                                            {action.icon && <span>{action.icon}</span>}
-                                        </button>
+                                            startIcon={action.icon}
+                                        />
                                     );
                                 })}
                             </td>

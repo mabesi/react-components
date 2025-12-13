@@ -7,6 +7,7 @@ import { flattenFields, isSection } from './fieldUtils';
 import { Section } from '../Section';
 import { useI18n } from '../../context/I18nContext';
 import styles from './styles.module.css';
+import { Button } from '../Button';
 
 export const DynamicForm = ({
     fields,
@@ -208,23 +209,24 @@ export const DynamicForm = ({
             {renderFieldsWithSections(fields)}
 
             <div className={styles.buttonGroup}>
-                <button
+                <Button
                     type="submit"
-                    className={styles.submitButton}
+                    variant="primary"
                     disabled={loading || isSubmitting}
+                    loading={loading || isSubmitting}
                 >
-                    {loading || isSubmitting ? 'Loading...' : submitLabel}
-                </button>
+                    {submitLabel}
+                </Button>
 
                 {onCancel && (
-                    <button
+                    <Button
                         type="button"
-                        className={styles.cancelButton}
+                        variant="secondary"
                         onClick={onCancel}
                         disabled={loading || isSubmitting}
                     >
                         {cancelLabel}
-                    </button>
+                    </Button>
                 )}
             </div>
         </form>

@@ -5,6 +5,7 @@ import {
     ModalHeader,
     ModalBody,
     ModalFooter,
+    Button,
     DynamicForm,
     type FormField,
     type FormValues,
@@ -95,8 +96,8 @@ export default function ModalPage() {
                     <p className="section-description">Standard modal with header, body, and footer.</p>
                 </div>
                 <div className="demo-actions">
-                    <button onClick={() => setBasicOpen(true)}>Open Basic Modal</button>
-                    <button onClick={() => setConfirmOpen(true)} className="danger">Delete Item (Confirmation)</button>
+                    <Button onClick={() => setBasicOpen(true)}>Open Basic Modal</Button>
+                    <Button onClick={() => setConfirmOpen(true)} variant="danger">Delete Item (Confirmation)</Button>
                 </div>
 
                 <div className="section-header">
@@ -104,10 +105,10 @@ export default function ModalPage() {
                     <p className="section-description">Modals come in 4 standard sizes.</p>
                 </div>
                 <div className="demo-actions">
-                    <button onClick={() => setSizesOpen('small')}>Small (400px)</button>
-                    <button onClick={() => setSizesOpen('medium')}>Medium (600px)</button>
-                    <button onClick={() => setSizesOpen('large')}>Large (900px)</button>
-                    <button onClick={() => setSizesOpen('fullscreen')}>Fullscreen</button>
+                    <Button onClick={() => setSizesOpen('small')}>Small (400px)</Button>
+                    <Button onClick={() => setSizesOpen('medium')}>Medium (600px)</Button>
+                    <Button onClick={() => setSizesOpen('large')}>Large (900px)</Button>
+                    <Button onClick={() => setSizesOpen('fullscreen')}>Fullscreen</Button>
                 </div>
 
                 <div className="section-header">
@@ -115,9 +116,9 @@ export default function ModalPage() {
                     <p className="section-description">Control where the modal appears on screen.</p>
                 </div>
                 <div className="demo-actions">
-                    <button onClick={() => setPositionsOpen('top')}>Top Aligned</button>
-                    <button onClick={() => setPositionsOpen('center')}>Center (Default)</button>
-                    <button onClick={() => setPositionsOpen('bottom')}>Bottom Aligned</button>
+                    <Button onClick={() => setPositionsOpen('top')}>Top Aligned</Button>
+                    <Button onClick={() => setPositionsOpen('center')}>Center (Default)</Button>
+                    <Button onClick={() => setPositionsOpen('bottom')}>Bottom Aligned</Button>
                 </div>
 
                 <div className="section-header">
@@ -125,8 +126,8 @@ export default function ModalPage() {
                     <p className="section-description">Modals with forms and long scrollable content.</p>
                 </div>
                 <div className="demo-actions">
-                    <button onClick={() => setFormOpen(true)}>Modal with Form</button>
-                    <button onClick={() => setLongContentOpen(true)}>Long Scrollable Content</button>
+                    <Button onClick={() => setFormOpen(true)}>Modal with Form</Button>
+                    <Button onClick={() => setLongContentOpen(true)}>Long Scrollable Content</Button>
                 </div>
             </div>
 
@@ -142,8 +143,8 @@ export default function ModalPage() {
                     <p>You can close it by knowing the X button, clicking the backdrop, or pressing ESC.</p>
                 </ModalBody>
                 <ModalFooter>
-                    <button onClick={() => setBasicOpen(false)} className="secondary">{t.modal.close}</button>
-                    <button onClick={() => setBasicOpen(false)} className="primary">{t.modal.ok}</button>
+                    <Button onClick={() => setBasicOpen(false)} variant="secondary">{t.modal.close}</Button>
+                    <Button onClick={() => setBasicOpen(false)} variant="primary">{t.modal.ok}</Button>
                 </ModalFooter>
             </Modal>
 
@@ -162,7 +163,7 @@ export default function ModalPage() {
                     <p>Resize your browser to see how it responds.</p>
                 </ModalBody>
                 <ModalFooter>
-                    <button onClick={() => setSizesOpen(null)} className="secondary">{t.modal.close}</button>
+                    <Button onClick={() => setSizesOpen(null)} variant="secondary">{t.modal.close}</Button>
                 </ModalFooter>
             </Modal>
 
@@ -180,7 +181,7 @@ export default function ModalPage() {
                     <p>This modal is positioned at the <strong>{positionsOpen}</strong> of the screen.</p>
                 </ModalBody>
                 <ModalFooter>
-                    <button onClick={() => setPositionsOpen(null)} className="secondary">{t.modal.close}</button>
+                    <Button onClick={() => setPositionsOpen(null)} variant="secondary">{t.modal.close}</Button>
                 </ModalFooter>
             </Modal>
 
@@ -191,8 +192,8 @@ export default function ModalPage() {
                     <p>Are you sure you want to delete this item? This action cannot be undone.</p>
                 </ModalBody>
                 <ModalFooter align="space-between">
-                    <button onClick={() => setConfirmOpen(false)} className="secondary">{t.modal.cancel}</button>
-                    <button onClick={() => setConfirmOpen(false)} className="danger">{t.modal.confirm}</button>
+                    <Button onClick={() => setConfirmOpen(false)} variant="secondary">{t.modal.cancel}</Button>
+                    <Button onClick={() => setConfirmOpen(false)} variant="danger">{t.modal.confirm}</Button>
                 </ModalFooter>
             </Modal>
 
@@ -222,7 +223,7 @@ export default function ModalPage() {
                     ))}
                 </ModalBody>
                 <ModalFooter>
-                    <button onClick={() => setLongContentOpen(false)} className="primary">{t.modal.ok}</button>
+                    <Button onClick={() => setLongContentOpen(false)} variant="primary">{t.modal.ok}</Button>
                 </ModalFooter>
             </Modal>
         </div>

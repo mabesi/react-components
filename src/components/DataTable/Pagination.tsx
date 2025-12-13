@@ -2,6 +2,7 @@ import React from 'react';
 import { useI18n } from '../../context/I18nContext';
 import type { PaginationConfig } from './types';
 import styles from './styles.module.css';
+import { Button } from '../Button';
 
 interface PaginationProps {
     config: PaginationConfig;
@@ -55,49 +56,53 @@ export const Pagination: React.FC<PaginationProps> = ({
                 )}
 
                 <div className={styles.paginationButtons}>
-                    <button
-                        className={styles.paginationButton}
+                    <Button
+                        variant="ghost"
+                        size="small"
                         onClick={() => onPageChange(1)}
                         disabled={!canGoPrevious}
                         aria-label={t.dataTable.firstPage}
                         title={t.dataTable.firstPage}
                     >
                         ⏮️
-                    </button>
+                    </Button>
 
-                    <button
-                        className={styles.paginationButton}
+                    <Button
+                        variant="ghost"
+                        size="small"
                         onClick={() => onPageChange(currentPage - 1)}
                         disabled={!canGoPrevious}
                         aria-label={t.dataTable.previous}
                         title={t.dataTable.previous}
                     >
                         ◀️
-                    </button>
+                    </Button>
 
                     <span className={styles.paginationInfo}>
                         {currentPage}/{totalPages}
                     </span>
 
-                    <button
-                        className={styles.paginationButton}
+                    <Button
+                        variant="ghost"
+                        size="small"
                         onClick={() => onPageChange(currentPage + 1)}
                         disabled={!canGoNext}
                         aria-label={t.dataTable.next}
                         title={t.dataTable.next}
                     >
                         ▶️
-                    </button>
+                    </Button>
 
-                    <button
-                        className={styles.paginationButton}
+                    <Button
+                        variant="ghost"
+                        size="small"
                         onClick={() => onPageChange(totalPages)}
                         disabled={!canGoNext}
                         aria-label={t.dataTable.lastPage}
                         title={t.dataTable.lastPage}
                     >
                         ⏭️
-                    </button>
+                    </Button>
                 </div>
             </div>
         </div>

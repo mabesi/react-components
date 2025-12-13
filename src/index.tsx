@@ -2,6 +2,7 @@
 export * from './components/DynamicForm';
 export * from './components/Section';
 export * from './components/DataTable';
+export * from './components/Button';
 export * from './components/Modal';
 
 // Themes
