@@ -1,21 +1,39 @@
 # MABESI REACT COMPONENTS
 
-A modern, TypeScript-based React component library designed for flexibility and ease of use.
+A modern, TypeScript-based React component library designed for flexibility, accessibility, and ease of use.
 
 <p align="center">
     <img src="./banner.png" alt="Mabesi React Components Banner" width="100%" />
 </p>
 
-## 📦 Components
+## � Overview
 
-| | | |
+**Mabesi React Components** is a comprehensive UI library built to accelerate web development with React. It focuses on providing a set of high-quality, customizable, and accessible components that fit seamlessly into modern applications.
+
+Built with **TypeScript**, it ensures type safety and excellent developer experience with full IntelliSense support. The library is designed with **accessibility (a11y)** in mind, following WAI-ARIA best practices to ensure your applications are usable by everyone. It also features a robust **theming system** and built-in **internationalization (i18n)** support, making it ready for global products right out of the box.
+
+Whether you are building a simple dashboard or a complex enterprise application, this library provides the building blocks you need to create stunning and functional user interfaces.
+
+## �📦 Components
+
+| Component | Description | Key Features |
 |:---|:---|:---|
-| **[Accordion](./docs/ACCORDION.md)**<br>Expandable content sections | **[Alert](./docs/ALERT.md)**<br>Feedback messages | **[Avatar](./docs/AVATAR.md)**<br>User profile images |
-| **[Badge](./docs/BADGE.md)**<br>Status indicators | **[Button](./docs/BUTTON.md)**<br>Interactive buttons | **[Card](./docs/CARD.md)**<br>Content containers |
-| **[Checkbox](./docs/CHECKBOX.md)**<br>Boolean selection | **[DataTable](./docs/DATATABLE.md)**<br>Data grids with features | **[DynamicForm](./docs/DYNAMICFORM.md)**<br>JSON-based forms |
-| **[Input](./docs/INPUT.md)**<br>Text input fields | **[Modal](./docs/MODAL.md)**<br>Dialog overlays | **[Select](./docs/SELECT.md)**<br>Dropdown menus |
-| **[Spinner](./docs/SPINNER.md)**<br>Loading indicators | **[Tabs](./docs/TABS.md)**<br>Content organization | **[Toast](./docs/TOAST.md)**<br>Notification messages |
-| **[Tooltip](./docs/TOOLTIP.md)**<br>Contextual hints | | |
+| **[Accordion](./docs/ACCORDION.md)** | Expandable content sections for organizing large amounts of information. | • Allow multiple open<br>• Default expanded state<br>• Smooth animations<br>• Accessible (WAI-ARIA) |
+| **[Alert](./docs/ALERT.md)** | standard feedback messages for user actions and system states. | • 4 Semantic variants (Info, Success, Warning, Error)<br>• Dismissible<br>• Custom icons<br>• Title support |
+| **[Avatar](./docs/AVATAR.md)** | visual representation of a user or entity. | • Image, text (initials), or icon fallback<br>• Status indicators (online, busy, etc.)<br>• Multiple sizes and shapes |
+| **[Badge](./docs/BADGE.md)** | Small status indicators for numbers or text labels. | • Semantic color variants<br>• Pill and rounded shapes<br>• Counter visualization<br>• Outlined mode |
+| **[Button](./docs/BUTTON.md)** | Standardized, theme-aware interactive buttons. | • 9 Variants (Primary, Ghost, Danger, etc.)<br>• 3 Sizes<br>• Loading states<br>• Icon support (start/end) |
+| **[Card](./docs/CARD.md)** | Flexible content containers for organizing related information. | • Header, Body, Footer, and Image subcomponents<br>• 3 Variants (Elevated, Outlined, Filled)<br>• Interactive states |
+| **[Checkbox](./docs/CHECKBOX.md)** | Selection control for boolean values. | • Indeterminate state support<br>• Error states<br>• Custom SVG icons<br>• Keyboard accessible |
+| **[DataTable](./docs/DATATABLE.md)** | Feature-rich component for displaying and interacting with tabular data. | • Sortable columns<br>• Pagination and page size control<br>• Row selection (single/multi)<br>• Mobile responsive (card view) |
+| **[DynamicForm](./docs/DYNAMICFORM.md)** | Powerful engine to build complex forms from JSON configurations. | • 30+ Field presets<br>• Auto-translation (i18n)<br>• Sync/Async validation<br>• Conditional logic & dependencies |
+| **[Input](./docs/INPUT.md)** | Enhanced text input fields for data entry. | • Validation states (error, success)<br>• Leading and trailing icons<br>• Helper text<br>• Accessible labels |
+| **[Modal](./docs/MODAL.md)** | Dialogs, popups, and actionable overlays. | • 4 Sizes (Small to Fullscreen)<br>• Focus trapping<br>• Portal rendering<br>• Keyboard navigation (Esc to close) |
+| **[Select](./docs/SELECT.md)** | Customizable dropdown menus for option selection. | • Single and multiple selection<br>• Searchable options<br>• Custom option rendering<br>• Form integration |
+| **[Spinner](./docs/SPINNER.md)** | Visual indicators for loading states. | • Multiple sizes<br>• Color variants<br>• Lightweight implementation |
+| **[Tabs](./docs/TABS.md)** | Content organization into flexible, switchable sections. | • 4 Visual variants<br>• Controlled & Uncontrolled modes<br>• Keyboard navigation<br>• Disabled states |
+| **[Toast](./docs/TOAST.md)** | Brief, non-blocking notification messages. | • Auto-dismiss with configurable duration<br>• Global `useToast` hook<br>• 4 Semantic variants<br>• Positioning options |
+| **[Tooltip](./docs/TOOLTIP.md)** | Contextual information displayed on hover or focus. | • 4 Positioning options<br>• Custom delays<br>• Rich content support<br>• Keyboard accessible |
 
 [📖 Browse all documentation](./docs/)
 
@@ -53,19 +71,7 @@ function App() {
 
 ## 📚 Documentation
 
-- **[DynamicForm Documentation](./docs/DYNAMICFORM.md)** - Complete guide for form building
-- **[DataTable Documentation](./docs/DATATABLE.md)** - Complete guide for data tables
-- **[Card Documentation](./docs/CARD.md)** - Complete guide for cards
-- **[Tabs Documentation](./docs/TABS.md)** - Complete guide for tabs
-- **[Badge Documentation](./docs/BADGE.md)** - Complete guide for badges
-- **[Avatar Documentation](./docs/AVATAR.md)** - Complete guide for avatars
-- **[Tooltip Documentation](./docs/TOOLTIP.md)** - Complete guide for tooltips
-- **[Alert Documentation](./docs/ALERT.md)** - Complete guide for alerts
-- **[Input Documentation](./docs/INPUT.md)** - Complete guide for inputs
-- **[Select Documentation](./docs/SELECT.md)** - Complete guide for selects
-- **[Checkbox Documentation](./docs/CHECKBOX.md)** - Complete guide for checkboxes
-- **[Modal Documentation](./docs/MODAL.md)** - Complete guide for modals
-- **[Button Documentation](./docs/BUTTON.md)** - Complete guide for buttons
+Detailed documentation for each component is available in the [`docs`](./docs/) directory.
 
 ## 🎨 Themes
 
@@ -120,23 +126,7 @@ function LanguageSwitcher() {
 
 ## 🎯 Examples
 
-Interactive examples are available in the `examples` folder as a React application:
-
-- **DynamicForm Examples** - Form building demos with all features
-- **DataTable Examples** - Table interaction demos with sorting, pagination, and actions
-- **Card Examples** - Flexible content container demos with variants and media
-- **Tabs Examples** - Content organization demos with variants
-- **Badge Examples** - Status indicators status and counters
-- **Avatar Examples** - Profile images and fallbacks
-- **Tooltip Examples** - Contextual info on hover/focus
-- **Alert Examples** - Feedback messages and notifications
-- **Input Examples** - Text fields with validation and icons
-- **Select Examples** - Dropdown menus with custom styling
-- **Checkbox Examples** - Boolean selection controls
-- **Button Examples** - Showcase variants, sizes, and states
-- **Modal Examples** - Dialogs, popups, and confirmation flows
-- **Theme Switcher** - Test all 4 themes in real-time
-- **Language Switcher** - Test i18n support (English/Portuguese)
+Interactive examples are available in the `examples` folder as a React application. Use them to see the components in action and test different configurations.
 
 To run examples locally:
 
@@ -144,7 +134,7 @@ To run examples locally:
 cd examples
 npm install
 npm run dev
-# Open: http://localhost:3000/
+# Open: http://localhost:3000/ (or the port shown in terminal)
 ```
 
 ## 🛠️ Development
@@ -165,44 +155,6 @@ npm run build
 ```bash
 npm test
 ```
-
-## 📖 API Reference
-
-### Core Exports
-
-```tsx
-// Components
-export { DynamicForm } from './components/DynamicForm';
-export { DataTable } from './components/DataTable';
-export { Section } from './components/Section';
-export { Button } from './components/Button';
-export { Card, CardHeader, CardBody, CardFooter, CardImage } from './components/Card';
-export { Tabs, TabList, Tab, TabPanel } from './components/Tabs';
-export { Modal } from './components/Modal';
-
-// Themes
-export { ThemeProvider, useTheme } from './context/ThemeContext';
-export * from './themes';
-
-// i18n
-export { I18nProvider, useI18n } from './context/I18nContext';
-export * from './i18n';
-
-// Types
-export type { FormField, FormValues, DynamicFormProps } from './components/DynamicForm';
-export type { Column, RowAction, DataTableProps } from './components/DataTable';
-```
-
-## 🤝 Contributing
-
-Please first ask us for the details of code of conduct. After this follow these steps:
-
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Add your changes: `git add .`
-4. Commit your changes: `git commit -am 'Add some feature'`
-5. Push to the branch: `git push origin my-new-feature`
-6. Submit a pull request 🎉
 
 ## 👥 Authors & Contributors
 
