@@ -32,8 +32,9 @@ These are the key features of the library:
 
 - **🎨 Theme System**: 4 pre-built themes (default, minimal, modern, compact) with CSS variables
 - **🌍 Internationalization**: Full i18n support with English and Portuguese (Brazil)
+- **🔄 Auto-Translation**: Field presets automatically translate labels, placeholders, and validation messages
 - **📋 Field Presets**: 30+ pre-configured field types (email, phone, address, CPF, etc.) with automatic validation
-- **🗂️ Section Component**: Organize forms with standard or collapsible sections
+- **🗂️ JSON-based Sections**: Organize forms with collapsible/non-collapsible sections defined in JSON
 - **🌐 Country Select**: 50 countries with localized names in multiple languages
 - **📝 DynamicForm**: Generate complex forms from a simple JSON configuration
 - **✅ TypeScript First**: Full type safety and intellisense support
@@ -118,27 +119,15 @@ function ThemeSwitcher() {
 - `modern` - Rounded corners, vibrant colors
 - `compact` - Dense layout, reduced spacing
 
-#### Internationalization
+#### Internationalization (i18n)
 
-Switch between languages dynamically:
+Switch languages dynamically:
 
 ```tsx
-import { useI18n, useTranslation } from '@mabesi/react-components';
+import { useI18n } from '@mabesi/react-components';
 
 function LanguageSwitcher() {
   const { locale, setLocale } = useI18n();
-  const t = useTranslation();
-  
-  return (
-    <div>
-      <button onClick={() => setLocale('en')}>English</button>
-      <button onClick={() => setLocale('pt-BR')}>Português</button>
-      <p>{t.fields.email}</p> {/* Translates automatically */}
-    </div>
-  );
-}
-```
-
 **Supported Languages:**
 - English (default)
 - Portuguese (Brazil)
