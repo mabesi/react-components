@@ -171,6 +171,19 @@ export default function HomePage() {
                     </ul>
                     <span className="card-link">View Examples →</span>
                 </Link>
+
+                <Link to="/checkbox" className="card">
+                    <div className="card-icon">☑️</div>
+                    <h2 className="card-title">Checkbox</h2>
+                    <p className="card-description">Boolean selections.</p>
+                    <ul className="card-features">
+                        <li>Indeterminate</li>
+                        <li>Error States</li>
+                        <li>Custom SVG</li>
+                        <li>Fully Accessible</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
             </div>
 
             <footer>

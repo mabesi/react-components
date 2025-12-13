@@ -109,6 +109,7 @@ function App() {
 - **[Alert Documentation](./docs/ALERT.md)** - Complete guide for alerts
 - **[Input Documentation](./docs/INPUT.md)** - Complete guide for inputs
 - **[Select Documentation](./docs/SELECT.md)** - Complete guide for selects
+- **[Checkbox Documentation](./docs/CHECKBOX.md)** - Complete guide for checkboxes
 - **[Modal Documentation](./docs/MODAL.md)** - Complete guide for modals
 - **[Button Documentation](./docs/BUTTON.md)** - Complete guide for buttons
 
@@ -177,6 +178,7 @@ Interactive examples are available in the `examples` folder as a React applicati
 - **Alert Examples** - Feedback messages and notifications
 - **Input Examples** - Text fields with validation and icons
 - **Select Examples** - Dropdown menus with custom styling
+- **Checkbox Examples** - Boolean selection controls
 - **Button Examples** - Showcase variants, sizes, and states
 - **Modal Examples** - Dialogs, popups, and confirmation flows
 - **Theme Switcher** - Test all 4 themes in real-time

@@ -8,6 +8,12 @@ import { ButtonPage } from './pages/ButtonPage';
 import { TabsPage } from './pages/TabsPage';
 import { CardPage } from './pages/CardPage';
 import { BadgePage } from './pages/BadgePage';
+import { AvatarPage } from './pages/AvatarPage';
+import { TooltipPage } from './pages/TooltipPage';
+import { AlertPage } from './pages/AlertPage';
+import { InputPage } from './pages/InputPage';
+import { SelectPage } from './pages/SelectPage';
+import { CheckboxPage } from './pages/CheckboxPage';
 import './App.css';
 
 function App() {
@@ -29,6 +35,7 @@ function App() {
                         <Route path="/alert" element={<AlertPage />} />
                         <Route path="/input" element={<InputPage />} />
                         <Route path="/select" element={<SelectPage />} />
+                        <Route path="/checkbox" element={<CheckboxPage />} />
                     </Routes>
                 </I18nProvider>
             </ThemeProvider>
