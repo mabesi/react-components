@@ -72,13 +72,13 @@ export const TooltipPage: React.FC = () => {
                     <h2 className="section-title">Contextual Help</h2>
                 </div>
                 <div className="example-item">
-                    <Card variant="outlined">
+                    <Card variant="outlined" style={{ overflow: 'visible' }}>
                         <CardBody>
                             <h3>Settings</h3>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '16px' }}>
                                 <label>Enable Notifications</label>
                                 <Tooltip content="Receive daily email digest" position="right">
-                                    <span style={{ cursor: 'pointer', borderRadius: '50%', background: '#eee', wibth: '20px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', width: '20px' }}>?</span>
+                                    <span style={{ cursor: 'pointer', borderRadius: '50%', background: '#eee', width: '20px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem' }}>?</span>
                                 </Tooltip>
                             </div>
                         </CardBody>

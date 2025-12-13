@@ -36,7 +36,7 @@ export const Tooltip: React.FC<TooltipProps> = ({
         };
     }, []);
 
-    const tooltipId = `tooltip-${Math.random().toString(36).substr(2, 9)}`;
+    const tooltipId = React.useMemo(() => `tooltip-${Math.random().toString(36).substr(2, 9)}`, []);
 
     return (
         <div
