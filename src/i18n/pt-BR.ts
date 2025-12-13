@@ -54,4 +54,18 @@ export const ptBR: Translations = {
         zipCode: '01234-567',
         selectCountry: 'Selecione um país',
     },
+
+    dataTable: {
+        noData: 'Nenhum dado disponível',
+        loading: 'Carregando...',
+        rowsPerPage: 'Linhas por página:',
+        page: 'Página',
+        of: 'de',
+        previous: 'Anterior',
+        next: 'Próximo',
+        selectAll: 'Selecionar todos',
+        selected: (count: number) => `${count} selecionados`,
+        showing: ({ start, end, total }: { start: number; end: number; total: number }) =>
+            `Mostrando ${start} a ${end} de ${total} registros`,
+    },
 };

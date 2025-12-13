@@ -1,0 +1,301 @@
+.dataTable {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+/* Table Header */
+.thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.th {
+    padding: var(--spacing-md);
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-color);
+    white-space: nowrap;
+}
+
+.th.center {
+    text-align: center;
+}
+
+.th.right {
+    text-align: right;
+}
+
+.sortable {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    padding-right: calc(var(--spacing-md) + 20px);
+}
+
+.sortable:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sortIcon {
+    position: absolute;
+    right: var(--spacing-sm);
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sortIcon::before,
+.sortIcon::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+
+.sortIcon::before {
+    border-bottom: 5px solid rgba(255, 255, 255, 0.3);
+}
+
+.sortIcon::after {
+    border-top: 5px solid rgba(255, 255, 255, 0.3);
+}
+
+.sortIcon.asc::before {
+    border-bottom-color: white;
+}
+
+.sortIcon.desc::after {
+    border-top-color: white;
+}
+
+/* Table Body */
+.tbody {
+    background-color: var(--background-color);
+}
+
+.tr {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tr.striped:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.tr.hoverable:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.tr.selected {
+    background-color: rgba(var(--primary-color-rgb), 0.1);
+}
+
+.td {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.td.center {
+    text-align: center;
+}
+
+.td.right {
+    text-align: right;
+}
+
+/* Checkbox */
+.checkbox {
+    width: 40px;
+    text-align: center;
+}
+
+.checkbox input[type="checkbox"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: flex-end;
+}
+
+.actionButton {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background-color 0.2s;
+}
+
+.actionButton:hover:not(:disabled) {
+    background-color: var(--primary-hover);
+}
+
+.actionButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* States */
+.loading,
+.empty {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--text-muted);
+}
+
+.loading {
+    font-style: italic;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.paginationInfo {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.paginationControls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.pageSize {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.875rem;
+}
+
+.pageSize select {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--background-color);
+    cursor: pointer;
+}
+
+.paginationButtons {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.paginationButton {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.paginationButton:hover:not(:disabled) {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.paginationButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Responsive - Card Layout */
+@media (max-width: 768px) {
+    .dataTable.responsive .table {
+        display: none;
+    }
+
+    .dataTable.responsive .cards {
+        display: block;
+    }
+
+    .cards {
+        display: none;
+    }
+
+    .card {
+        background-color: var(--background-color);
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .card.selected {
+        background-color: rgba(var(--primary-color-rgb), 0.1);
+        border-color: var(--primary-color);
+    }
+
+    .cardHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: var(--spacing-sm);
+        padding-bottom: var(--spacing-sm);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .cardBody {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .cardRow {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .cardLabel {
+        font-weight: 600;
+        color: var(--text-muted);
+        font-size: 0.875rem;
+    }
+
+    .cardValue {
+        text-align: right;
+    }
+
+    .cardActions {
+        margin-top: var(--spacing-md);
+        padding-top: var(--spacing-md);
+        border-top: 1px solid var(--border-color);
+        display: flex;
+        gap: var(--spacing-sm);
+        flex-wrap: wrap;
+    }
+
+    .cardActions .actionButton {
+        flex: 1;
+        min-width: 100px;
+    }
+}

@@ -58,6 +58,20 @@ export interface Translations {
         zipCode: string;
         selectCountry: string;
     };
+
+    // DataTable
+    dataTable: {
+        noData: string;
+        loading: string;
+        rowsPerPage: string;
+        page: string;
+        of: string;
+        previous: string;
+        next: string;
+        selectAll: string;
+        selected: (count: number) => string;
+        showing: (params: { start: number; end: number; total: number }) => string;
+    };
 }
 
 export interface I18nContextValue {

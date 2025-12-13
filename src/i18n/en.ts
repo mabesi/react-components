@@ -54,4 +54,17 @@ export const en: Translations = {
         zipCode: '12345-678',
         selectCountry: 'Select a country',
     },
+
+    dataTable: {
+        noData: 'No data available',
+        loading: 'Loading...',
+        rowsPerPage: 'Rows per page:',
+        page: 'Page',
+        of: 'of',
+        previous: 'Previous',
+        next: 'Next',
+        selectAll: 'Select all',
+        selected: (count) => `${count} selected`,
+        showing: ({ start, end, total }) => `Showing ${start} to ${end} of ${total} records`,
+    },
 };
