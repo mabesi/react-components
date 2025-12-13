@@ -158,6 +158,19 @@ export default function HomePage() {
                     </ul>
                     <span className="card-link">View Examples →</span>
                 </Link>
+
+                <Link to="/select" className="card">
+                    <div className="card-icon">🔽</div>
+                    <h2 className="card-title">Select</h2>
+                    <p className="card-description">Dropdown menus.</p>
+                    <ul className="card-features">
+                        <li>Native Controls</li>
+                        <li>Custom Styling</li>
+                        <li>Option Arrays</li>
+                        <li>Validation</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
             </div>
 
             <footer>

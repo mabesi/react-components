@@ -10,6 +10,7 @@ export { Avatar, type AvatarProps } from './components/Avatar';
 export { Tooltip, type TooltipProps } from './components/Tooltip';
 export { Alert, type AlertProps } from './components/Alert';
 export { Input, type InputProps } from './components/Input';
+export { Select, type SelectProps, type SelectOption } from './components/Select';
 export * from './components/Modal';
 
 // Themes

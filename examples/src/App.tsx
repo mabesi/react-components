@@ -28,6 +28,7 @@ function App() {
                         <Route path="/tooltip" element={<TooltipPage />} />
                         <Route path="/alert" element={<AlertPage />} />
                         <Route path="/input" element={<InputPage />} />
+                        <Route path="/select" element={<SelectPage />} />
                     </Routes>
                 </I18nProvider>
             </ThemeProvider>
