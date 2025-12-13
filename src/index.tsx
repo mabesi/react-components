@@ -13,6 +13,9 @@ export { Input, type InputProps } from './components/Input';
 export { Select, type SelectProps, type SelectOption } from './components/Select';
 export { Checkbox, type CheckboxProps } from './components/Checkbox';
 export * from './components/Modal';
+export * from './components/Spinner';
+export * from './components/Accordion';
+export * from './components/Toast';
 
 // Themes
 export * from './themes';

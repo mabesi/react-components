@@ -10,47 +10,54 @@ export default function HomePage() {
             </header>
 
             <div className="cards-grid">
-                <Link to="/dynamicform" className="card">
-                    <div className="card-icon">📝</div>
-                    <h2 className="card-title">DynamicForm</h2>
-                    <p className="card-description">
-                        Build complex forms from simple JSON configurations with automatic validation and i18n support.
-                    </p>
+                <Link to="/accordion" className="card">
+                    <div className="card-icon">📂</div>
+                    <h2 className="card-title">Accordion</h2>
+                    <p className="card-description">Expandable content sections.</p>
                     <ul className="card-features">
-                        <li>30+ Field Presets</li>
-                        <li>Auto-Translation</li>
-                        <li>Collapsible Sections</li>
-                        <li>Custom Validation</li>
+                        <li>Allow Multiple</li>
+                        <li>Accessible</li>
+                        <li>Smooth Animation</li>
+                        <li>Customizable</li>
                     </ul>
                     <span className="card-link">View Examples →</span>
                 </Link>
 
-                <Link to="/datatable" className="card">
-                    <div className="card-icon">📊</div>
-                    <h2 className="card-title">DataTable</h2>
-                    <p className="card-description">
-                        Display and interact with tabular data featuring sorting, pagination, and responsive design.
-                    </p>
+                <Link to="/alert" className="card">
+                    <div className="card-icon">⚠️</div>
+                    <h2 className="card-title">Alert</h2>
+                    <p className="card-description">Feedback messages.</p>
                     <ul className="card-features">
-                        <li>Sortable Columns</li>
-                        <li>Pagination Controls</li>
-                        <li>Row Selection</li>
-                        <li>Mobile Responsive</li>
+                        <li>4 Semantic Variants</li>
+                        <li>Dismissible</li>
+                        <li>Custom Icons</li>
+                        <li>Titles</li>
                     </ul>
                     <span className="card-link">View Examples →</span>
                 </Link>
 
-                <Link to="/modal" className="card">
-                    <div className="card-icon">🪟</div>
-                    <h2 className="card-title">Modal</h2>
-                    <p className="card-description">
-                        Accessible dialogs, popups, and actionable overlays.
-                    </p>
+                <Link to="/avatar" className="card">
+                    <div className="card-icon">👤</div>
+                    <h2 className="card-title">Avatar</h2>
+                    <p className="card-description">User profile images.</p>
                     <ul className="card-features">
-                        <li>Keyboard Navigation</li>
-                        <li>Focus Trapping</li>
-                        <li>Customizable Content</li>
-                        <li>Stackable</li>
+                        <li>Image/Initials</li>
+                        <li>Status Dots</li>
+                        <li>Shapes</li>
+                        <li>Sizes</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
+
+                <Link to="/badge" className="card">
+                    <div className="card-icon">📛</div>
+                    <h2 className="card-title">Badge</h2>
+                    <p className="card-description">Status indicators.</p>
+                    <ul className="card-features">
+                        <li>Colors & Variants</li>
+                        <li>Outlined Mode</li>
+                        <li>Dot Mode</li>
+                        <li>Sizes</li>
                     </ul>
                     <span className="card-link">View Examples →</span>
                 </Link>
@@ -81,67 +88,45 @@ export default function HomePage() {
                     <span className="card-link">View Examples →</span>
                 </Link>
 
-                <Link to="/tabs" className="card">
-                    <div className="card-icon">📑</div>
-                    <h2 className="card-title">Tabs</h2>
-                    <p className="card-description">Organize content into sections.</p>
+                <Link to="/checkbox" className="card">
+                    <div className="card-icon">☑️</div>
+                    <h2 className="card-title">Checkbox</h2>
+                    <p className="card-description">Boolean selections.</p>
                     <ul className="card-features">
-                        <li>Theme Variants</li>
-                        <li>Controlled Mode</li>
-                        <li>Accessible</li>
-                        <li>Responsive</li>
+                        <li>Indeterminate</li>
+                        <li>Error States</li>
+                        <li>Custom SVG</li>
+                        <li>Fully Accessible</li>
                     </ul>
                     <span className="card-link">View Examples →</span>
                 </Link>
 
-                <Link to="/badge" className="card">
-                    <div className="card-icon">📛</div>
-                    <h2 className="card-title">Badge</h2>
-                    <p className="card-description">Status indicators.</p>
+                <Link to="/datatable" className="card">
+                    <div className="card-icon">📊</div>
+                    <h2 className="card-title">DataTable</h2>
+                    <p className="card-description">
+                        Display and interact with tabular data featuring sorting, pagination, and responsive design.
+                    </p>
                     <ul className="card-features">
-                        <li>Colors & Variants</li>
-                        <li>Outlined Mode</li>
-                        <li>Dot Mode</li>
-                        <li>Sizes</li>
+                        <li>Sortable Columns</li>
+                        <li>Pagination Controls</li>
+                        <li>Row Selection</li>
+                        <li>Mobile Responsive</li>
                     </ul>
                     <span className="card-link">View Examples →</span>
                 </Link>
 
-                <Link to="/avatar" className="card">
-                    <div className="card-icon">👤</div>
-                    <h2 className="card-title">Avatar</h2>
-                    <p className="card-description">User profile images.</p>
+                <Link to="/dynamicform" className="card">
+                    <div className="card-icon">📝</div>
+                    <h2 className="card-title">DynamicForm</h2>
+                    <p className="card-description">
+                        Build complex forms from simple JSON configurations with automatic validation and i18n support.
+                    </p>
                     <ul className="card-features">
-                        <li>Image/Initials</li>
-                        <li>Status Dots</li>
-                        <li>Shapes</li>
-                        <li>Sizes</li>
-                    </ul>
-                    <span className="card-link">View Examples →</span>
-                </Link>
-
-                <Link to="/tooltip" className="card">
-                    <div className="card-icon">💬</div>
-                    <h2 className="card-title">Tooltip</h2>
-                    <p className="card-description">Floating contextual info.</p>
-                    <ul className="card-features">
-                        <li>4 Positions</li>
-                        <li>Custom Delays</li>
-                        <li>Keyboard Access</li>
-                        <li>Rich Content</li>
-                    </ul>
-                    <span className="card-link">View Examples →</span>
-                </Link>
-
-                <Link to="/alert" className="card">
-                    <div className="card-icon">⚠️</div>
-                    <h2 className="card-title">Alert</h2>
-                    <p className="card-description">Feedback messages.</p>
-                    <ul className="card-features">
-                        <li>4 Semantic Variants</li>
-                        <li>Dismissible</li>
-                        <li>Custom Icons</li>
-                        <li>Titles</li>
+                        <li>30+ Field Presets</li>
+                        <li>Auto-Translation</li>
+                        <li>Collapsible Sections</li>
+                        <li>Custom Validation</li>
                     </ul>
                     <span className="card-link">View Examples →</span>
                 </Link>
@@ -159,6 +144,21 @@ export default function HomePage() {
                     <span className="card-link">View Examples →</span>
                 </Link>
 
+                <Link to="/modal" className="card">
+                    <div className="card-icon">🪟</div>
+                    <h2 className="card-title">Modal</h2>
+                    <p className="card-description">
+                        Accessible dialogs, popups, and actionable overlays.
+                    </p>
+                    <ul className="card-features">
+                        <li>Keyboard Navigation</li>
+                        <li>Focus Trapping</li>
+                        <li>Customizable Content</li>
+                        <li>Stackable</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
+
                 <Link to="/select" className="card">
                     <div className="card-icon">🔽</div>
                     <h2 className="card-title">Select</h2>
@@ -172,15 +172,54 @@ export default function HomePage() {
                     <span className="card-link">View Examples →</span>
                 </Link>
 
-                <Link to="/checkbox" className="card">
-                    <div className="card-icon">☑️</div>
-                    <h2 className="card-title">Checkbox</h2>
-                    <p className="card-description">Boolean selections.</p>
+                <Link to="/spinner" className="card">
+                    <div className="card-icon">↻</div>
+                    <h2 className="card-title">Spinner</h2>
+                    <p className="card-description">Loading indicators.</p>
                     <ul className="card-features">
-                        <li>Indeterminate</li>
-                        <li>Error States</li>
-                        <li>Custom SVG</li>
-                        <li>Fully Accessible</li>
+                        <li>Sizes</li>
+                        <li>Color Variants</li>
+                        <li>Customizable</li>
+                        <li>Lightweight</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
+
+                <Link to="/tabs" className="card">
+                    <div className="card-icon">📑</div>
+                    <h2 className="card-title">Tabs</h2>
+                    <p className="card-description">Organize content into sections.</p>
+                    <ul className="card-features">
+                        <li>Theme Variants</li>
+                        <li>Controlled Mode</li>
+                        <li>Accessible</li>
+                        <li>Responsive</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
+
+                <Link to="/toast" className="card">
+                    <div className="card-icon">🍞</div>
+                    <h2 className="card-title">Toast</h2>
+                    <p className="card-description">Notification messages.</p>
+                    <ul className="card-features">
+                        <li>Auto Dismiss</li>
+                        <li>Variants</li>
+                        <li>Positioning</li>
+                        <li>Global Hook</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
+
+                <Link to="/tooltip" className="card">
+                    <div className="card-icon">💬</div>
+                    <h2 className="card-title">Tooltip</h2>
+                    <p className="card-description">Floating contextual info.</p>
+                    <ul className="card-features">
+                        <li>4 Positions</li>
+                        <li>Custom Delays</li>
+                        <li>Keyboard Access</li>
+                        <li>Rich Content</li>
                     </ul>
                     <span className="card-link">View Examples →</span>
                 </Link>

@@ -8,118 +8,16 @@ A modern, TypeScript-based React component library designed for flexibility and 
 
 ## 📦 Components
 
-This library provides a set of reusable, high-quality React components:
+| | | |
+|:---|:---|:---|
+| **[Accordion](./docs/ACCORDION.md)**<br>Expandable content sections | **[Alert](./docs/ALERT.md)**<br>Feedback messages | **[Avatar](./docs/AVATAR.md)**<br>User profile images |
+| **[Badge](./docs/BADGE.md)**<br>Status indicators | **[Button](./docs/BUTTON.md)**<br>Interactive buttons | **[Card](./docs/CARD.md)**<br>Content containers |
+| **[Checkbox](./docs/CHECKBOX.md)**<br>Boolean selection | **[DataTable](./docs/DATATABLE.md)**<br>Data grids with features | **[DynamicForm](./docs/DYNAMICFORM.md)**<br>JSON-based forms |
+| **[Input](./docs/INPUT.md)**<br>Text input fields | **[Modal](./docs/MODAL.md)**<br>Dialog overlays | **[Select](./docs/SELECT.md)**<br>Dropdown menus |
+| **[Spinner](./docs/SPINNER.md)**<br>Loading indicators | **[Tabs](./docs/TABS.md)**<br>Content organization | **[Toast](./docs/TOAST.md)**<br>Notification messages |
+| **[Tooltip](./docs/TOOLTIP.md)**<br>Contextual hints | | |
 
-### 📝 [DynamicForm](./docs/DYNAMICFORM.md)
-Build complex forms from simple JSON configurations with automatic validation and i18n support.
-- 30+ field presets with auto-translation
-- Collapsible sections
-- Custom validation (sync & async)
-- Field dependencies
-
-[📖 Full Documentation](./docs/DYNAMICFORM.md)
-
-### 🔘 [Button](./docs/BUTTON.md)
-Standardized, theme-aware buttons with multiple variants, sizes, icon support, and loading states.
-- 9 Variants (Primary, Secondary, Ghost, etc.)
-- 3 Sizes
-- Icon support
-- Full width option
-
-[📖 Full Documentation](./docs/BUTTON.md)
-
-### 📊 [DataTable](./docs/DATATABLE.md)
-Feature-rich table component for displaying and interacting with tabular data.
-- Sortable columns
-- Pagination with page size selector
-- Row selection (single/multiple)
-- Row actions (edit, delete, custom)
-- Responsive design (mobile cards)
-- Loading states
-
-[📖 Full Documentation](./docs/DATATABLE.md)
-
-### 🎴 [Card](./docs/CARD.md)
-Flexible content container used to organize information and actions.
-- 3 Variants (Elevated, Outlined, Filled)
-- Structured subcomponents (Header, Body, Footer, Image)
-- Theme-aware styling
-- Interactive capabilities
-
-[📖 Full Documentation](./docs/CARD.md)
-
-### 🪟 [Modal](./docs/MODAL.md)
-Accessible dialogs, popups, and actionable overlays.
-- 4 Sizes (Small, Medium, Large, Fullscreen)
-- Position options (Top, Center, Bottom)
-- Focus trap & Accessibility
-- Portal rendering
-
-[📖 Full Documentation](./docs/MODAL.md)
-
-### 📑 [Tabs](./docs/TABS.md)
-Organize content into flexible, theme-aware sections.
-- 4 Variants (Default, Minimal, Modern, Compact)
-- Controlled & Uncontrolled usage
-- Accessible keyboard navigation
-
-[📖 Full Documentation](./docs/TABS.md)
-
-### 🏷️ [Badge](./docs/BADGE.md)
-Small status indicators for numbers or text labels.
-- Multiple variants (success, warning, error, etc.)
-- Pill and rounded shapes
-- Counter visualization
-
-[📖 Full Documentation](./docs/BADGE.md)
-
-### 👤 [Avatar](./docs/AVATAR.md)
-User profile images with support for fallbacks and initials.
-- Image, text (initials), or icon support
-- Various sizes and shapes
-- Status indicators
-
-[📖 Full Documentation](./docs/AVATAR.md)
-
-### 💡 [Tooltip](./docs/TOOLTIP.md)
-Contextual information displayed on hover or focus.
-- Customizable position (top, bottom, left, right)
-- Click or hover triggers
-- Custom content support
-
-[📖 Full Documentation](./docs/TOOLTIP.md)
-
-### ⚠️ [Alert](./docs/ALERT.md)
-Feedback messages for user actions.
-- 4 variants (Info, Success, Warning, Error)
-- Dismissible option
-- Icon support
-
-[📖 Full Documentation](./docs/ALERT.md)
-
-### ⌨️ [Input](./docs/INPUT.md)
-Enhanced text input fields.
-- Validation states
-- Leading and trailing icons
-- Accessible labels
-
-[📖 Full Documentation](./docs/INPUT.md)
-
-### 🔽 [Select](./docs/SELECT.md)
-Customizable dropdown selection component.
-- Single and multiple selection
-- Searchable options
-- Custom option rendering
-
-[📖 Full Documentation](./docs/SELECT.md)
-
-### ☑️ [Checkbox](./docs/CHECKBOX.md)
-Selection control for boolean values.
-- Indeterminate state support
-- Custom labeling
-- Validation states
-
-[📖 Full Documentation](./docs/CHECKBOX.md)
+[📖 Browse all documentation](./docs/)
 
 ## ✨ Features
 
