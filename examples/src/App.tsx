@@ -26,6 +26,7 @@ function App() {
                         <Route path="/badge" element={<BadgePage />} />
                         <Route path="/avatar" element={<AvatarPage />} />
                         <Route path="/tooltip" element={<TooltipPage />} />
+                        <Route path="/alert" element={<AlertPage />} />
                     </Routes>
                 </I18nProvider>
             </ThemeProvider>

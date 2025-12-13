@@ -132,6 +132,19 @@ export default function HomePage() {
                     </ul>
                     <span className="card-link">View Examples →</span>
                 </Link>
+
+                <Link to="/alert" className="card">
+                    <div className="card-icon">⚠️</div>
+                    <h2 className="card-title">Alert</h2>
+                    <p className="card-description">Feedback messages.</p>
+                    <ul className="card-features">
+                        <li>4 Semantic Variants</li>
+                        <li>Dismissible</li>
+                        <li>Custom Icons</li>
+                        <li>Titles</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
             </div>
 
             <footer>
