@@ -148,7 +148,6 @@ Interactive examples are available in the `examples` folder as a React applicati
 - **Button Examples** - Showcase variants, sizes, and states
 - **Modal Examples** - Dialogs, popups, and confirmation flows
 - **Theme Switcher** - Test all 4 themes in real-time
-- **Button Examples** - Showcase variants, sizes, and states
 - **Language Switcher** - Test i18n support (English/Portuguese)
 
 To run examples locally:
@@ -188,6 +187,9 @@ npm test
 export { DynamicForm } from './components/DynamicForm';
 export { DataTable } from './components/DataTable';
 export { Section } from './components/Section';
+export { Button } from './components/Button';
+export { Card, CardHeader, CardBody, CardFooter, CardImage } from './components/Card';
+export { Modal } from './components/Modal';
 
 // Themes
 export { ThemeProvider, useTheme } from './context/ThemeContext';
