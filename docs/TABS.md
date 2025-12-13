@@ -32,7 +32,7 @@ function MyTabs() {
 ### Tabs
 
 | Prop | Type | Default | Description |
-|Args|---|---|---|
+|---|---|---|---|
 | `defaultActiveTab` | `string` | - | The ID of the tab to be active by default (uncontrolled mode). |
 | `activeTab` | `string` | - | The ID of the currently active tab (controlled mode). |
 | `onTabChange` | `(id: string) => void` | - | Callback fired when the active tab changes. |

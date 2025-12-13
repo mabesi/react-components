@@ -38,7 +38,7 @@ function Example() {
 | `label` | `string` | - | Text label displayed above the select. |
 | `helperText` | `string` | - | Descriptive text or error message below the select. |
 | `error` | `boolean` | `false` | If true, applies error styling. |
-| `size` | `'small' | 'medium' | 'large'` | `'medium'` | The height/size of the input. |
+| `size` | `'small' \| 'medium' \| 'large'` | `'medium'` | The height/size of the input. |
 | `options` | `SelectOption[]` | - | Array of options ({ label, value, disabled }). |
 | `children` | `ReactNode` | - | Child `<option>` elements (alternative to `options`). |
 | `fullWidth` | `boolean` | `true` | If true, takes 100% width of container. |

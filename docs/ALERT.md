@@ -26,11 +26,11 @@ function Example() {
 
 | Prop | Type | Default | Description |
 |---|---|---|---|
-| `variant` | `'info' | 'success' | 'warning' | 'error'` | `'info'` | Visual style of the alert. |
+| `variant` | `'info' \| 'success' \| 'warning' \| 'error'` | `'info'` | Visual style of the alert. |
 | `title` | `string` | - | Optional bold title above content. |
 | `dismissible` | `boolean` | `false` | If true, shows a close button. |
 | `onDismiss` | `() => void` | - | Callback fired when dismissed. |
-| `icon` | `ReactNode | boolean` | `true` | Show default icon, custom icon, or no icon. |
+| `icon` | `ReactNode \| boolean` | `true` | Show default icon, custom icon, or no icon. |
 | `className` | `string` | - | Additional CSS classes. |
 
 ## Accessibility
