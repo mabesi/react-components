@@ -1,0 +1,139 @@
+.tabs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.tabList {
+    display: flex;
+    border-bottom: 2px solid var(--theme-border, #e2e8f0);
+    margin-bottom: var(--theme-spacing-md, 16px);
+}
+
+.tab {
+    padding: var(--theme-spacing-sm, 12px) var(--theme-spacing-md, 16px);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: var(--theme-font-family, inherit);
+    font-size: var(--theme-font-size-md, 1rem);
+    color: var(--theme-text-secondary, #718096);
+    transition: all var(--theme-transition-fast, 150ms) ease;
+    outline: none;
+    position: relative;
+    white-space: nowrap;
+}
+
+.tab:hover:not(:disabled) {
+    color: var(--theme-primary-hover, #0056b3);
+}
+
+.tab:focus-visible {
+    /* Using CSS outline property for accessibility */
+    outline: 2px solid var(--theme-primary, #007bff);
+    outline-offset: -2px;
+}
+
+.tab.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    color: var(--theme-disabled-text, #a0aec0);
+}
+
+.tabPanel {
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Variants --- */
+
+/* Default: Bottom border highlight */
+.default .tab.active {
+    color: var(--theme-primary, #007bff);
+    font-weight: var(--theme-font-weight-medium, 500);
+}
+
+.default .tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    /* Overlaps the tabList border */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--theme-primary, #007bff);
+}
+
+/* Minimal: Text color only, no borders in tabList */
+.minimal .tabList {
+    border-bottom: none;
+    gap: var(--theme-spacing-sm, 8px);
+}
+
+.minimal .tab {
+    padding: var(--theme-spacing-xs, 8px) var(--theme-spacing-sm, 12px);
+    border-radius: var(--theme-radius-md, 6px);
+}
+
+.minimal .tab:hover:not(:disabled) {
+    background-color: var(--theme-background-secondary, #edf2f7);
+}
+
+.minimal .tab.active {
+    color: var(--theme-text, #1a202c);
+    font-weight: var(--theme-font-weight-semibold, 600);
+    background-color: var(--theme-background-secondary, #edf2f7);
+}
+
+/* Modern: Pill shape / Card-like */
+.modern .tabList {
+    background-color: var(--theme-background-secondary, #edf2f7);
+    padding: 4px;
+    border-radius: var(--theme-radius-lg, 8px);
+    border: none;
+    display: inline-flex;
+    /* Doesn't take full width */
+}
+
+.modern .tab {
+    border-radius: var(--theme-radius-md, 6px);
+    padding: var(--theme-spacing-xs, 8px) var(--theme-spacing-md, 16px);
+    margin: 0 2px;
+    color: var(--theme-text-secondary, #718096);
+}
+
+.modern .tab.active {
+    background-color: var(--theme-background, #ffffff);
+    color: var(--theme-primary, #007bff);
+    box-shadow: var(--theme-shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+    font-weight: var(--theme-font-weight-medium, 500);
+}
+
+/* Compact: Smaller, denser */
+.compact .tabList {
+    margin-bottom: var(--theme-spacing-sm, 8px);
+    border-bottom: 1px solid var(--theme-border, #cbd5e0);
+}
+
+.compact .tab {
+    padding: 4px 8px;
+    font-size: var(--theme-font-size-sm, 0.875rem);
+}
+
+.compact .tab.active {
+    color: var(--theme-primary, #007bff);
+    border-bottom: 2px solid var(--theme-primary, #007bff);
+    margin-bottom: -1px;
+    /* Align with border */
+}

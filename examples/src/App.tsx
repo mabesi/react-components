@@ -5,6 +5,7 @@ import DynamicFormPage from './pages/DynamicFormPage';
 import DataTablePage from './pages/DataTablePage';
 import ModalPage from './pages/ModalPage';
 import { ButtonPage } from './pages/ButtonPage';
+import { TabsPage } from './pages/TabsPage';
 import { CardPage } from './pages/CardPage';
 import './App.css';
 
@@ -20,6 +21,7 @@ function App() {
                         <Route path="/modal" element={<ModalPage />} />
                         <Route path="/button" element={<ButtonPage />} />
                         <Route path="/card" element={<CardPage />} />
+                        <Route path="/tabs" element={<TabsPage />} />
                     </Routes>
                 </I18nProvider>
             </ThemeProvider>

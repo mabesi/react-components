@@ -57,6 +57,14 @@ Accessible dialogs, popups, and actionable overlays.
 
 [📖 Full Documentation](./docs/MODAL.md)
 
+### 📑 [Tabs](./docs/TABS.md)
+Organize content into flexible, theme-aware sections.
+- 4 Variants (Default, Minimal, Modern, Compact)
+- Controlled & Uncontrolled usage
+- Accessible keyboard navigation
+
+[📖 Full Documentation](./docs/TABS.md)
+
 ## ✨ Features
 
 - **🎨 Theme System**: 4 pre-built themes (default, minimal, modern, compact)
@@ -93,6 +101,8 @@ function App() {
 
 - **[DynamicForm Documentation](./docs/DYNAMICFORM.md)** - Complete guide for form building
 - **[DataTable Documentation](./docs/DATATABLE.md)** - Complete guide for data tables
+- **[Card Documentation](./docs/CARD.md)** - Complete guide for cards
+- **[Tabs Documentation](./docs/TABS.md)** - Complete guide for tabs
 - **[Modal Documentation](./docs/MODAL.md)** - Complete guide for modals
 - **[Button Documentation](./docs/BUTTON.md)** - Complete guide for buttons
 
@@ -154,6 +164,7 @@ Interactive examples are available in the `examples` folder as a React applicati
 - **DynamicForm Examples** - Form building demos with all features
 - **DataTable Examples** - Table interaction demos with sorting, pagination, and actions
 - **Card Examples** - Flexible content container demos with variants and media
+- **Tabs Examples** - Content organization demos with variants
 - **Button Examples** - Showcase variants, sizes, and states
 - **Modal Examples** - Dialogs, popups, and confirmation flows
 - **Theme Switcher** - Test all 4 themes in real-time
@@ -198,6 +209,7 @@ export { DataTable } from './components/DataTable';
 export { Section } from './components/Section';
 export { Button } from './components/Button';
 export { Card, CardHeader, CardBody, CardFooter, CardImage } from './components/Card';
+export { Tabs, TabList, Tab, TabPanel } from './components/Tabs';
 export { Modal } from './components/Modal';
 
 // Themes

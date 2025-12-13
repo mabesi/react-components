@@ -80,6 +80,19 @@ export default function HomePage() {
                     </ul>
                     <span className="card-link">View Examples →</span>
                 </Link>
+
+                <Link to="/tabs" className="card">
+                    <div className="card-icon">📑</div>
+                    <h2 className="card-title">Tabs</h2>
+                    <p className="card-description">Organize content into sections.</p>
+                    <ul className="card-features">
+                        <li>Theme Variants</li>
+                        <li>Controlled Mode</li>
+                        <li>Accessible</li>
+                        <li>Responsive</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
             </div>
 
             <footer>
