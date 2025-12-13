@@ -8,7 +8,7 @@ import { Section } from '../Section';
 import { useI18n } from '../../context/I18nContext';
 import styles from './styles.module.css';
 
-export const DynamicForm: React.FC<DynamicFormProps> = ({
+export const DynamicForm = ({
     fields,
     initialValues = {},
     onSubmit,
@@ -20,7 +20,7 @@ export const DynamicForm: React.FC<DynamicFormProps> = ({
     loading = false,
     validateOnBlur = true,
     validateOnChange = false,
-}) => {
+}: DynamicFormProps): JSX.Element => {
     const { locale } = useI18n();
 
     // Process fields: flatten sections and apply presets

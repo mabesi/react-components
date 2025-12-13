@@ -53,7 +53,7 @@ const SectionExample: React.FC = () => {
     };
 
     return (
-        <ThemeProvider theme={currentTheme}>
+        <ThemeProvider defaultTheme={currentTheme}>
             <I18nProvider locale={currentLocale}>
                 <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem' }}>
                     <h1>DynamicForm - Sections Example</h1>

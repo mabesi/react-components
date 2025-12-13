@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useMemo, type ReactNode } from 'react';
+import { createContext, useContext, useState, useMemo, type ReactNode } from 'react';
 import type { Locale, Translations, I18nContextValue } from '../i18n/types';
 import { en } from '../i18n/en';
 import { ptBR } from '../i18n/pt-BR';
@@ -13,13 +13,20 @@ const translations: Record<Locale, Translations> = {
 export interface I18nProviderProps {
     children: ReactNode;
     defaultLocale?: Locale;
+    locale?: Locale;
 }
 
-export const I18nProvider: React.FC<I18nProviderProps> = ({
+export function I18nProvider({
     children,
     defaultLocale = 'en',
-}) => {
-    const [locale, setLocale] = useState<Locale>(defaultLocale);
+    locale: controlledLocale,
+}: I18nProviderProps) {
+    const [internalLocale, setInternalLocale] = useState<Locale>(defaultLocale);
+
+    // Use controlled locale if provided, otherwise use internal state
+    const locale = controlledLocale ?? internalLocale;
+    const setLocale = controlledLocale !== undefined ? () => { } : setInternalLocale;
+
     const t = useMemo(() => translations[locale], [locale]);
 
     const value: I18nContextValue = {
@@ -29,7 +36,7 @@ export const I18nProvider: React.FC<I18nProviderProps> = ({
     };
 
     return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
-};
+}
 
 export const useI18n = (): I18nContextValue => {
     const context = useContext(I18nContext);

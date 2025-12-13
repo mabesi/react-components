@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, useMemo, type ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, useMemo, type ReactNode } from 'react';
 import type { ThemeName, ThemeContextValue } from '../themes/types';
 import { getTheme } from '../themes';
 
@@ -9,10 +9,10 @@ export interface ThemeProviderProps {
     defaultTheme?: ThemeName;
 }
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({
+export function ThemeProvider({
     children,
     defaultTheme = 'default',
-}) => {
+}: ThemeProviderProps) {
     const [themeName, setThemeName] = useState<ThemeName>(defaultTheme);
     const theme = useMemo(() => getTheme(themeName), [themeName]);
 
@@ -90,7 +90,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     };
 
     return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
-};
+}
 
 export const useTheme = (): ThemeContextValue => {
     const context = useContext(ThemeContext);
