@@ -83,7 +83,7 @@ export const DynamicForm = ({
         return processedFields.filter((field) => checkDependencies(field, values));
     }, [processedFields, values, checkDependencies]);
 
-    const handleChange = async (name: string, value: any) => {
+    const handleChange = async (name: string, value: unknown) => {
         const newValues = { ...values, [name]: value };
         setValues(newValues);
 

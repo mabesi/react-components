@@ -4,9 +4,9 @@ import styles from './styles.module.css';
 
 interface FormFieldProps {
     field: RegularFormField;
-    value: any;
+    value: unknown;
     error?: string;
-    onChange: (value: any) => void;
+    onChange: (value: unknown) => void;
     onBlur: () => void;
 }
 
@@ -57,7 +57,7 @@ export const FormField: React.FC<FormFieldProps> = ({
                     <textarea
                         id={inputId}
                         name={name}
-                        value={value || ''}
+                        value={(value as string) || ''}
                         onChange={(e) => onChange(e.target.value)}
                         onBlur={onBlur}
                         placeholder={placeholder}
@@ -72,7 +72,7 @@ export const FormField: React.FC<FormFieldProps> = ({
                     <select
                         id={inputId}
                         name={name}
-                        value={value || ''}
+                        value={(value as string) || ''}
                         onChange={(e) => onChange(e.target.value)}
                         onBlur={onBlur}
                         disabled={disabled}
@@ -124,7 +124,7 @@ export const FormField: React.FC<FormFieldProps> = ({
                                             const currentValues = Array.isArray(value) ? value : [];
                                             const newValues = e.target.checked
                                                 ? [...currentValues, opt.value]
-                                                : currentValues.filter((v: any) => v !== opt.value);
+                                                : currentValues.filter((v: unknown) => v !== opt.value);
                                             onChange(newValues);
                                         }}
                                         onBlur={onBlur}
@@ -176,7 +176,7 @@ export const FormField: React.FC<FormFieldProps> = ({
                         type={type}
                         id={inputId}
                         name={name}
-                        value={value || ''}
+                        value={(value as string) || ''}
                         onChange={(e) => onChange(e.target.value)}
                         onBlur={onBlur}
                         placeholder={placeholder}

@@ -125,7 +125,7 @@ export const FIELD_PRESETS: Record<FieldPresetType, FieldPresetConfig> = {
             {
                 type: 'custom',
                 message: 'As senhas não coincidem',
-                validator: (value: any, formValues: any) => value === formValues.password,
+                validator: (value: unknown, formValues: any) => value === formValues.password,
             },
         ],
     },
@@ -347,7 +347,7 @@ export const applyFieldPreset = (
     const translatedLabel = translations.fields[preset] || presetConfig.label;
 
     // Get translated placeholder if exists
-    const translatedPlaceholder = (translations.placeholders as any)[preset] || presetConfig.placeholder;
+    const translatedPlaceholder = (translations.placeholders as Record<string, string>)[preset] || presetConfig.placeholder;
 
     // Translate validation messages
     const translatedValidation = presetConfig.validation?.map((rule) => {
@@ -366,13 +366,13 @@ export const applyFieldPreset = (
         if (rule.type === 'minLength' && 'value' in rule) {
             return {
                 ...rule,
-                message: rule.message || translations.validation.minLength(rule.value)
+                message: rule.message || translations.validation.minLength(rule.value as number)
             };
         }
         if (rule.type === 'maxLength' && 'value' in rule) {
             return {
                 ...rule,
-                message: rule.message || translations.validation.maxLength(rule.value)
+                message: rule.message || translations.validation.maxLength(rule.value as number)
             };
         }
         if (rule.type === 'pattern') {

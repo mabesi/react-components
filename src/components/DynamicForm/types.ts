@@ -20,8 +20,8 @@ export type FieldType =
 export interface ValidationRule {
     type: 'required' | 'email' | 'minLength' | 'maxLength' | 'min' | 'max' | 'pattern' | 'custom';
     message: string;
-    value?: any;
-    validator?: (value: any, formValues?: FormValues) => boolean | Promise<boolean>;
+    value?: unknown;
+    validator?: (value: unknown, formValues?: FormValues) => boolean | Promise<boolean>;
 }
 
 export interface SelectOption {
@@ -31,7 +31,7 @@ export interface SelectOption {
 
 export interface FieldDependency {
     field: string;
-    value: any;
+    value: unknown;
     operator?: 'equals' | 'notEquals' | 'contains';
 }
 
@@ -45,7 +45,7 @@ export interface RegularFormField {
     label?: string;
     type?: FieldType;
     placeholder?: string;
-    defaultValue?: any;
+    defaultValue?: unknown;
     validation?: ValidationRule[];
     options?: SelectOption[];
     dependencies?: FieldDependency[];
@@ -55,8 +55,8 @@ export interface RegularFormField {
     description?: string;
     render?: (props: {
         field: RegularFormField;
-        value: any;
-        onChange: (value: any) => void;
+        value: unknown;
+        onChange: (value: unknown) => void;
         error?: string;
     }) => ReactNode;
 }
@@ -77,7 +77,7 @@ export interface SectionField {
  */
 export type FormField = RegularFormField | SectionField;
 
-export type FormValues = Record<string, any>;
+export type FormValues = Record<string, unknown>;
 export type FormErrors = Record<string, string>;
 
 export interface DynamicFormProps {
