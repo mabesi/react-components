@@ -65,9 +65,9 @@ export function TableBody<T>({
 
                             return (
                                 <td key={column.id} className={`${styles.td} ${alignClass}`}>
-                                    {column.render
+                                    {(column.render
                                         ? column.render(value, row, rowIndex)
-                                        : value}
+                                        : (value as import('react').ReactNode))}
                                 </td>
                             );
                         })}
