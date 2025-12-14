@@ -81,7 +81,7 @@ export function SkeletonPage() {
                     <h2 className="section-title">Example Usage (Card Loading)</h2>
                 </div>
                 <div className="example-item">
-                    <Card>
+                    <Card style={{ width: 340, maxWidth: '100%' }}>
                         <CardBody>
                             <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
                                 <Skeleton variant="circular" width={40} height={40} style={{ marginRight: '1rem' }} />

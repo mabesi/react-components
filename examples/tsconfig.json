@@ -24,7 +24,13 @@
     /* Additional */
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@mabesi/react-components": [
+        "../src"
+      ]
+    }
   },
   "include": [
     "src"
