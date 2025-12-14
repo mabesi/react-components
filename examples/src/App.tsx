@@ -20,6 +20,7 @@ import { ToastPage } from './pages/ToastPage';
 import { SwitchPage } from './pages/SwitchPage';
 import { SkeletonPage } from './pages/SkeletonPage';
 import { BreadcrumbPage } from './pages/BreadcrumbPage';
+import { DrawerPage } from './pages/DrawerPage';
 import './App.css';
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
                             <Route path="/switch" element={<SwitchPage />} />
                             <Route path="/skeleton" element={<SkeletonPage />} />
                             <Route path="/breadcrumb" element={<BreadcrumbPage />} />
+                            <Route path="/drawer" element={<DrawerPage />} />
                         </Routes>
                     </ToastProvider>
                 </I18nProvider>

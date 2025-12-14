@@ -19,6 +19,7 @@ export * from './components/Toast';
 export * from './components/Switch';
 export * from './components/Skeleton';
 export * from './components/Breadcrumb';
+export * from './components/Drawer';
 
 // Themes
 export * from './themes';

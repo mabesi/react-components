@@ -129,6 +129,19 @@ export default function HomePage() {
                     <span className="card-link">View Examples →</span>
                 </Link>
 
+                <Link to="/drawer" className="card">
+                    <div className="card-icon">🚪</div>
+                    <h2 className="card-title">Drawer</h2>
+                    <p className="card-description">Sliding side panels.</p>
+                    <ul className="card-features">
+                        <li>4 Placements</li>
+                        <li>Backdrop Support</li>
+                        <li>Sizes</li>
+                        <li>Focus Trap</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
+
                 <Link to="/dynamicform" className="card">
                     <div className="card-icon">📝</div>
                     <h2 className="card-title">DynamicForm</h2>
