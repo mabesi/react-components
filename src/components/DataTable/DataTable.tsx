@@ -6,7 +6,7 @@ import { TableBody } from './TableBody';
 import { Pagination } from './Pagination';
 import styles from './styles.module.css';
 
-export function DataTable<T = any>({
+export function DataTable<T = unknown>({
     data,
     columns,
     rowKey,
@@ -59,8 +59,8 @@ export function DataTable<T = any>({
             const column = columns.find((col) => col.id === sortConfig.column);
             if (!column) return 0;
 
-            let aValue: any;
-            let bValue: any;
+            let aValue: unknown;
+            let bValue: unknown;
 
             if (typeof column.accessor === 'function') {
                 aValue = column.accessor(a);
@@ -75,8 +75,8 @@ export function DataTable<T = any>({
             if (bValue == null) return -1;
 
             // Compare values
-            if (aValue < bValue) return sortConfig.direction === 'asc' ? -1 : 1;
-            if (aValue > bValue) return sortConfig.direction === 'asc' ? 1 : -1;
+            if ((aValue as string | number) < (bValue as string | number)) return sortConfig.direction === 'asc' ? -1 : 1;
+            if ((aValue as string | number) > (bValue as string | number)) return sortConfig.direction === 'asc' ? 1 : -1;
             return 0;
         });
 
@@ -216,7 +216,7 @@ export function DataTable<T = any>({
                                                 <span className={styles.cardValue}>
                                                     {column.render
                                                         ? column.render(value, row, rowIndex)
-                                                        : value}
+                                                        : (value as import('react').ReactNode)}
                                                 </span>
                                             </div>
                                         );

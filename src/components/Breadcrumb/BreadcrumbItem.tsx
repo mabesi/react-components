@@ -13,7 +13,7 @@ export const BreadcrumbItem = forwardRef<HTMLAnchorElement, BreadcrumbItemProps>
 
     return (
         <Component
-            ref={ref as any}
+            ref={ref as unknown as React.LegacyRef<HTMLAnchorElement>}
             href={href}
             className={`
                 ${styles.item}

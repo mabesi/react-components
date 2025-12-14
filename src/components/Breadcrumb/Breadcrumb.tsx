@@ -24,7 +24,7 @@ export const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(({
 
                     return (
                         <li key={index} className={styles.itemWrapper}>
-                            {isValidElement(child) ? cloneElement(child as any, { active: isLast }) : child}
+                            {isValidElement(child) ? cloneElement(child as React.ReactElement, { active: isLast }) : child}
 
                             {!isLast && (
                                 <span className={styles.separator} aria-hidden="true">

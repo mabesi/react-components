@@ -25,17 +25,17 @@ export interface PaginationConfig {
 /**
  * Column definition
  */
-export interface Column<T = any> {
+export interface Column<T = unknown> {
     /** Unique column identifier */
     id: string;
     /** Column header label */
     header: string;
     /** Data accessor - can be a key or function */
-    accessor: keyof T | ((row: T) => any);
+    accessor: keyof T | ((row: T) => unknown);
     /** Whether this column is sortable */
     sortable?: boolean;
     /** Custom cell renderer */
-    render?: (value: any, row: T, index: number) => ReactNode;
+    render?: (value: unknown, row: T, index: number) => ReactNode;
     /** Column width (CSS value) */
     width?: string;
     /** Align content (left, center, right) */
@@ -45,7 +45,7 @@ export interface Column<T = any> {
 /**
  * Row action button
  */
-export interface RowAction<T = any> {
+export interface RowAction<T = unknown> {
     /** Action label */
     label: string;
     /** Action icon (optional) */
@@ -61,7 +61,7 @@ export interface RowAction<T = any> {
 /**
  * DataTable component props
  */
-export interface DataTableProps<T = any> {
+export interface DataTableProps<T = unknown> {
     /** Array of data to display */
     data: T[];
     /** Column definitions */
