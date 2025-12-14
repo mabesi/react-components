@@ -23,7 +23,7 @@ export const Tabs: React.FC<TabsProps> = ({
             // This is tricky without inspecting children deeper, leaving basic logic for now.
             // Ideally the user should provide defaultActiveTab.
         }
-    }, []);
+    }, [activeTab, children]);
 
     const setActiveTab = (id: string) => {
         if (!isControlled) {

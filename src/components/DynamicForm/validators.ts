@@ -20,12 +20,13 @@ export const validateValue = async (
                 }
                 break;
 
-            case 'email':
+            case 'email': {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (typeof value === 'string' && !emailRegex.test(value)) {
                     return message;
                 }
                 break;
+            }
 
             case 'minLength':
                 if (typeof value === 'string' && value.length < ruleValue) {

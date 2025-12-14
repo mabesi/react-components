@@ -76,6 +76,7 @@ export const CardFooter = forwardRef<HTMLDivElement, CardFooterProps>(({
 export const CardImage = forwardRef<HTMLImageElement, CardImageProps>(({
     src,
     alt,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     position = 'top',
     className,
     ...props
@@ -90,3 +91,9 @@ export const CardImage = forwardRef<HTMLImageElement, CardImageProps>(({
         />
     );
 });
+
+Card.displayName = 'Card';
+CardHeader.displayName = 'CardHeader';
+CardBody.displayName = 'CardBody';
+CardFooter.displayName = 'CardFooter';
+CardImage.displayName = 'CardImage';
