@@ -31,8 +31,10 @@ jobs:
       - name: Verify and Build
         run: npm run prepublishOnly
 
-      # Publish to NPM using the secret token
+      # Publish to NPM using Trusted Publishing (OIDC)
+      # Requires "id-token: write" permission (already set)
+      # and the repository to be connected in npm settings.
       - name: Publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
