@@ -21,6 +21,7 @@ import { SwitchPage } from './pages/SwitchPage';
 import { SkeletonPage } from './pages/SkeletonPage';
 import { BreadcrumbPage } from './pages/BreadcrumbPage';
 import { DrawerPage } from './pages/DrawerPage';
+import { ProgressPage } from './pages/ProgressPage';
 import './App.css';
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
                             <Route path="/skeleton" element={<SkeletonPage />} />
                             <Route path="/breadcrumb" element={<BreadcrumbPage />} />
                             <Route path="/drawer" element={<DrawerPage />} />
+                            <Route path="/progress" element={<ProgressPage />} />
                         </Routes>
                     </ToastProvider>
                 </I18nProvider>

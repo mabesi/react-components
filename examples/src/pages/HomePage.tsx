@@ -185,6 +185,19 @@ export default function HomePage() {
                     <span className="card-link">View Examples →</span>
                 </Link>
 
+                <Link to="/progress" className="card">
+                    <div className="card-icon">🔋</div>
+                    <h2 className="card-title">ProgressBar</h2>
+                    <p className="card-description">Completion visuals.</p>
+                    <ul className="card-features">
+                        <li>Striped / Animated</li>
+                        <li>Colors & Sizes</li>
+                        <li>Indeterminate</li>
+                        <li>Labels</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
+
                 <Link to="/select" className="card">
                     <div className="card-icon">🔽</div>
                     <h2 className="card-title">Select</h2>

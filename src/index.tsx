@@ -20,6 +20,7 @@ export * from './components/Switch';
 export * from './components/Skeleton';
 export * from './components/Breadcrumb';
 export * from './components/Drawer';
+export * from './components/ProgressBar';
 
 // Themes
 export * from './themes';
