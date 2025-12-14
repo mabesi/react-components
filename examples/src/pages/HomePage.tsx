@@ -185,6 +185,19 @@ export default function HomePage() {
                     <span className="card-link">View Examples →</span>
                 </Link>
 
+                <Link to="/switch" className="card">
+                    <div className="card-icon">🔛</div>
+                    <h2 className="card-title">Switch</h2>
+                    <p className="card-description">Toggle switches.</p>
+                    <ul className="card-features">
+                        <li>Sizes</li>
+                        <li>Colors</li>
+                        <li>Labels</li>
+                        <li>States</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
+
                 <Link to="/tabs" className="card">
                     <div className="card-icon">📑</div>
                     <h2 className="card-title">Tabs</h2>

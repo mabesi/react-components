@@ -16,6 +16,7 @@ export * from './components/Modal';
 export * from './components/Spinner';
 export * from './components/Accordion';
 export * from './components/Toast';
+export * from './components/Switch';
 
 // Themes
 export * from './themes';

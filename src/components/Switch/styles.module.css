@@ -1,0 +1,165 @@
+.switchWrapper {
+    display: inline-flex;
+    flex-direction: column;
+    font-family: var(--theme-font-family, inherit);
+    margin-bottom: 8px;
+    vertical-align: middle;
+}
+
+.switchLabel {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    gap: 12px;
+}
+
+.switchInput {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+}
+
+/* Track (The background) */
+.switchTrack {
+    position: relative;
+    display: inline-block;
+    background-color: var(--theme-border, #cbd5e1);
+    border-radius: 9999px;
+    transition: background-color 0.2s ease-in-out;
+    flex-shrink: 0;
+    pointer-events: none;
+}
+
+/* Thumb (The circle) */
+.switchThumb {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    top: 2px;
+    left: 2px;
+}
+
+/* Sizes */
+.small .switchTrack {
+    width: 32px;
+    height: 18px;
+}
+
+.small .switchThumb {
+    width: 14px;
+    height: 14px;
+}
+
+.medium .switchTrack {
+    width: 44px;
+    height: 24px;
+}
+
+.medium .switchThumb {
+    width: 20px;
+    height: 20px;
+}
+
+.large .switchTrack {
+    width: 56px;
+    height: 30px;
+}
+
+.large .switchThumb {
+    width: 26px;
+    height: 26px;
+}
+
+/* Checked State */
+.switchInput:checked+.switchTrack {
+    background-color: var(--theme-primary, #3b82f6);
+}
+
+.small .switchInput:checked+.switchTrack .switchThumb {
+    transform: translateX(14px);
+}
+
+.medium .switchInput:checked+.switchTrack .switchThumb {
+    transform: translateX(20px);
+}
+
+.large .switchInput:checked+.switchTrack .switchThumb {
+    transform: translateX(26px);
+}
+
+/* Colors */
+.primary .switchInput:checked+.switchTrack {
+    background-color: var(--theme-primary, #3b82f6);
+}
+
+.success .switchInput:checked+.switchTrack {
+    background-color: var(--theme-success, #22c55e);
+}
+
+.danger .switchInput:checked+.switchTrack {
+    background-color: var(--theme-error, #ef4444);
+}
+
+.warning .switchInput:checked+.switchTrack {
+    background-color: var(--theme-warning, #f59e0b);
+}
+
+.info .switchInput:checked+.switchTrack {
+    background-color: var(--theme-info, #06b6d4);
+}
+
+/* Error State */
+.error .switchInput:not(:checked)+.switchTrack {
+    background-color: var(--theme-error-light, #fca5a5);
+}
+
+.error .switchInput:checked+.switchTrack {
+    background-color: var(--theme-error, #ef4444);
+}
+
+/* Disabled State */
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.disabled .switchTrack {
+    background-color: var(--theme-disabled, #e2e8f0);
+}
+
+/* Label Text */
+.labelText {
+    font-size: 1rem;
+    color: var(--theme-text-primary, #1e293b);
+    line-height: normal;
+}
+
+.small .labelText {
+    font-size: 0.875rem;
+}
+
+.large .labelText {
+    font-size: 1.125rem;
+}
+
+/* Helper Text */
+.helperText {
+    margin-top: 4px;
+    font-size: 0.75rem;
+    color: var(--theme-text-secondary, #64748b);
+}
+
+.helperText.error {
+    color: var(--theme-error, #ef4444);
+}
+
+/* Focus State */
+.switchInput:focus-visible+.switchTrack {
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
