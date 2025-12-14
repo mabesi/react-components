@@ -17,6 +17,7 @@ export * from './components/Spinner';
 export * from './components/Accordion';
 export * from './components/Toast';
 export * from './components/Switch';
+export * from './components/Skeleton';
 
 // Themes
 export * from './themes';

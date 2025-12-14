@@ -18,6 +18,7 @@ import { SpinnerPage } from './pages/SpinnerPage';
 import { AccordionPage } from './pages/AccordionPage';
 import { ToastPage } from './pages/ToastPage';
 import { SwitchPage } from './pages/SwitchPage';
+import { SkeletonPage } from './pages/SkeletonPage';
 import './App.css';
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
                             <Route path="/accordion" element={<AccordionPage />} />
                             <Route path="/toast" element={<ToastPage />} />
                             <Route path="/switch" element={<SwitchPage />} />
+                            <Route path="/skeleton" element={<SkeletonPage />} />
                         </Routes>
                     </ToastProvider>
                 </I18nProvider>

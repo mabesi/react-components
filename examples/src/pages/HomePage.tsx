@@ -172,6 +172,21 @@ export default function HomePage() {
                     <span className="card-link">View Examples →</span>
                 </Link>
 
+
+
+                <Link to="/skeleton" className="card">
+                    <div className="card-icon">💀</div>
+                    <h2 className="card-title">Skeleton</h2>
+                    <p className="card-description">Loading placeholders.</p>
+                    <ul className="card-features">
+                        <li>Text & Shapes</li>
+                        <li>Animations</li>
+                        <li>Responsive</li>
+                        <li>Themable</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
+
                 <Link to="/spinner" className="card">
                     <div className="card-icon">↻</div>
                     <h2 className="card-title">Spinner</h2>
