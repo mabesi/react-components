@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
+import { Drawer, Button, Card, CardBody, type DrawerPlacement } from '@mabesi/react-components';
 import { useState } from 'react';
-import { Drawer, Button, Card, type DrawerPlacement } from '@mabesi/react-components';
+import './ExamplePage.css';
 
 export function DrawerPage() {
     const [open, setOpen] = useState(false);
@@ -13,34 +15,50 @@ export function DrawerPage() {
     };
 
     return (
-        <div className="page-container">
-            <h1>Drawer</h1>
-            <p className="page-description">
-                A navigation panel that slides in from the edge of the screen.
-            </p>
+        <div className="example-page">
+            <Link to="/" className="back-link">← Back to Examples</Link>
 
-            <section className="component-section">
-                <h2>Placements</h2>
-                <Card>
-                    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                        <Button onClick={() => openDrawer('right')}>Right (Default)</Button>
-                        <Button variant="secondary" onClick={() => openDrawer('left')}>Left</Button>
-                        <Button variant="secondary" onClick={() => openDrawer('top')}>Top</Button>
-                        <Button variant="secondary" onClick={() => openDrawer('bottom')}>Bottom</Button>
-                    </div>
-                </Card>
-            </section>
+            <header className="page-header">
+                <h1>Drawer</h1>
+                <p className="subtitle">
+                    A navigation panel that slides in from the edge of the screen.
+                </p>
+            </header>
 
-            <section className="component-section">
-                <h2>Sizes</h2>
-                <Card>
-                    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                        <Button onClick={() => openDrawer('right', 'default')}>Default Size</Button>
-                        <Button variant="secondary" onClick={() => openDrawer('right', 'large')}>Large</Button>
-                        <Button variant="outline" onClick={() => openDrawer('right', 'full')}>Full Width</Button>
-                    </div>
-                </Card>
-            </section>
+            <div className="content-container">
+                <div className="section-header">
+                    <h2 className="section-title">Placements</h2>
+                </div>
+                <div className="example-item">
+                    <Card>
+                        <CardBody>
+                            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                                <Button onClick={() => openDrawer('right')}>Right (Default)</Button>
+                                <Button variant="secondary" onClick={() => openDrawer('left')}>Left</Button>
+                                <Button variant="secondary" onClick={() => openDrawer('top')}>Top</Button>
+                                <Button variant="secondary" onClick={() => openDrawer('bottom')}>Bottom</Button>
+                            </div>
+                        </CardBody>
+                    </Card>
+                </div>
+            </div>
+
+            <div className="content-container">
+                <div className="section-header">
+                    <h2 className="section-title">Sizes</h2>
+                </div>
+                <div className="example-item">
+                    <Card>
+                        <CardBody>
+                            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                                <Button onClick={() => openDrawer('right', 'default')}>Default Size</Button>
+                                <Button variant="secondary" onClick={() => openDrawer('right', 'large')}>Large</Button>
+                                <Button variant="outline" onClick={() => openDrawer('right', 'full')}>Full Width</Button>
+                            </div>
+                        </CardBody>
+                    </Card>
+                </div>
+            </div>
 
             <Drawer
                 open={open}

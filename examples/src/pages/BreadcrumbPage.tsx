@@ -1,49 +1,67 @@
-import { Breadcrumb, BreadcrumbItem, Card } from '@mabesi/react-components';
+import { Link } from 'react-router-dom';
+import { Breadcrumb, BreadcrumbItem, Card, CardBody } from '@mabesi/react-components';
+import './ExamplePage.css';
 
 export function BreadcrumbPage() {
     return (
-        <div className="page-container">
-            <h1>Breadcrumb</h1>
-            <p className="page-description">
-                Indicate the current page's location within a navigational hierarchy.
-            </p>
+        <div className="example-page">
+            <Link to="/" className="back-link">← Back to Examples</Link>
 
-            <section className="component-section">
-                <h2>Basic Usage</h2>
-                <Card>
-                    <Breadcrumb>
-                        <BreadcrumbItem href="/">Home</BreadcrumbItem>
-                        <BreadcrumbItem href="/components">Components</BreadcrumbItem>
-                        <BreadcrumbItem href="/breadcrumb">Breadcrumb</BreadcrumbItem>
-                    </Breadcrumb>
-                </Card>
-            </section>
+            <header className="page-header">
+                <h1>Breadcrumb</h1>
+                <p className="subtitle">
+                    Indicate the current page's location within a navigational hierarchy.
+                </p>
+            </header>
 
-            <section className="component-section">
-                <h2>Custom Separator</h2>
-                <Card>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                        <Breadcrumb separator=">">
-                            <BreadcrumbItem href="#">Home</BreadcrumbItem>
-                            <BreadcrumbItem href="#">Products</BreadcrumbItem>
-                            <BreadcrumbItem href="#">Electronics</BreadcrumbItem>
-                            <BreadcrumbItem>Laptops</BreadcrumbItem>
-                        </Breadcrumb>
+            <div className="content-container">
+                <div className="section-header">
+                    <h2 className="section-title">Basic Usage</h2>
+                </div>
+                <div className="example-item">
+                    <Card>
+                        <CardBody>
+                            <Breadcrumb>
+                                <BreadcrumbItem href="/">Home</BreadcrumbItem>
+                                <BreadcrumbItem href="/components">Components</BreadcrumbItem>
+                                <BreadcrumbItem href="/breadcrumb">Breadcrumb</BreadcrumbItem>
+                            </Breadcrumb>
+                        </CardBody>
+                    </Card>
+                </div>
+            </div>
 
-                        <Breadcrumb separator="-">
-                            <BreadcrumbItem href="#">Admin</BreadcrumbItem>
-                            <BreadcrumbItem href="#">Users</BreadcrumbItem>
-                            <BreadcrumbItem>Edit</BreadcrumbItem>
-                        </Breadcrumb>
+            <div className="content-container">
+                <div className="section-header">
+                    <h2 className="section-title">Custom Separator</h2>
+                </div>
+                <div className="example-item">
+                    <Card>
+                        <CardBody>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                                <Breadcrumb separator=">">
+                                    <BreadcrumbItem href="#">Home</BreadcrumbItem>
+                                    <BreadcrumbItem href="#">Products</BreadcrumbItem>
+                                    <BreadcrumbItem href="#">Electronics</BreadcrumbItem>
+                                    <BreadcrumbItem>Laptops</BreadcrumbItem>
+                                </Breadcrumb>
 
-                        <Breadcrumb separator="→">
-                            <BreadcrumbItem href="#">Checkout</BreadcrumbItem>
-                            <BreadcrumbItem href="#">Shipping</BreadcrumbItem>
-                            <BreadcrumbItem>Payment</BreadcrumbItem>
-                        </Breadcrumb>
-                    </div>
-                </Card>
-            </section>
+                                <Breadcrumb separator="-">
+                                    <BreadcrumbItem href="#">Admin</BreadcrumbItem>
+                                    <BreadcrumbItem href="#">Users</BreadcrumbItem>
+                                    <BreadcrumbItem>Edit</BreadcrumbItem>
+                                </Breadcrumb>
+
+                                <Breadcrumb separator="→">
+                                    <BreadcrumbItem href="#">Checkout</BreadcrumbItem>
+                                    <BreadcrumbItem href="#">Shipping</BreadcrumbItem>
+                                    <BreadcrumbItem>Payment</BreadcrumbItem>
+                                </Breadcrumb>
+                            </div>
+                        </CardBody>
+                    </Card>
+                </div>
+            </div>
         </div>
     );
 }
