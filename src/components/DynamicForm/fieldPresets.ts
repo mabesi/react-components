@@ -125,7 +125,7 @@ export const FIELD_PRESETS: Record<FieldPresetType, FieldPresetConfig> = {
             {
                 type: 'custom',
                 message: 'As senhas não coincidem',
-                validator: (value: unknown, formValues: any) => value === formValues.password,
+                validator: (value: unknown, formValues?: import('./types').FormValues) => value === formValues?.password,
             },
         ],
     },

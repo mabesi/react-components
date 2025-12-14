@@ -1,7 +1,7 @@
 import type { FormValues, ValidationRule } from './types';
 
 export const validateValue = async (
-    value: any,
+    value: unknown,
     rules: ValidationRule[] = [],
     formValues: FormValues
 ): Promise<string | null> => {
@@ -67,9 +67,9 @@ export const validateValue = async (
 
             case 'pattern':
                 if (ruleValue instanceof RegExp) {
-                    if (!ruleValue.test(value)) return message;
+                    if (!ruleValue.test(value as string)) return message;
                 } else if (typeof ruleValue === 'string') {
-                    if (!new RegExp(ruleValue).test(value)) return message;
+                    if (!new RegExp(ruleValue as string).test(value as string)) return message;
                 }
                 break;
 
