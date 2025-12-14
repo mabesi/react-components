@@ -14,4 +14,5 @@ export default defineConfig({
             '@mabesi/react-components': path.resolve(__dirname, '../src'),
         },
     },
+    base: process.env.GITHUB_PAGES ? '/react-components/' : '/',
 });

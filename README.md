@@ -105,7 +105,7 @@ function ThemeSwitcher() {
 - `modern` - Rounded corners, vibrant colors
 - `compact` - Dense layout, reduced spacing
 
-[🎯 View Theme Examples within the Examples App](../examples)
+[🎯 View Theme Examples within the Examples App](./examples)
 
 ## 🌍 Internationalization
 
