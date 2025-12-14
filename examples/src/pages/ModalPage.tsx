@@ -12,7 +12,7 @@ import {
     useTheme,
     useI18n
 } from '@mabesi/react-components';
-import './ExamplePage.css';
+import './Pages.css';
 
 export default function ModalPage() {
     const { themeName, setTheme } = useTheme();

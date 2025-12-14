@@ -1,36 +1,68 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Alert, Card, CardBody } from '@mabesi/react-components';
-import './ExamplePage.css';
+import { Alert, Card, CardBody, useI18n } from '@mabesi/react-components';
+import './Pages.css';
 
 export const AlertPage: React.FC = () => {
+    const { locale, setLocale } = useI18n();
+
     return (
         <div className="example-page">
             <Link to="/" className="back-link">← Back to Examples</Link>
 
-            <header className="page-header">
+            <header className="component-page-header">
                 <h1>⚠️ Alert Component</h1>
-                <p className="subtitle">Feedback messages for user actions.</p>
+                <p className="subtitle">Feedback messages for user actions with automatic i18n support.</p>
             </header>
+
+            <div className="controls">
+                <div className="control-group">
+                    <label>Language:</label>
+                    <select value={locale} onChange={(e) => setLocale(e.target.value as any)}>
+                        <option value="en">English</option>
+                        <option value="pt-BR">Português (BR)</option>
+                    </select>
+                </div>
+            </div>
 
             <div className="content-container">
                 <div className="section-header">
-                    <h2 className="section-title">Variants</h2>
-                    <p className="section-description">Standard semantic states.</p>
+                    <h2 className="section-title">Automatic i18n Titles</h2>
+                    <p className="section-description">
+                        Alerts automatically display translated titles based on variant and locale.
+                        Switch the language above to see the titles change.
+                    </p>
                 </div>
                 <div className="example-item">
-                    <Alert variant="info" title="Information">
+                    <Alert variant="info">
                         This is a neutral info alert indicating something of interest.
                     </Alert>
-                    <Alert variant="success" title="Success!">
+                    <Alert variant="success">
                         Your operation completed successfully without errors.
                     </Alert>
-                    <Alert variant="warning" title="Warning">
+                    <Alert variant="warning">
                         This action has potential side effects. Proceed with caution.
                     </Alert>
-                    <Alert variant="error" title="Error">
+                    <Alert variant="error">
                         Something went wrong while processing your request.
+                    </Alert>
+                </div>
+            </div>
+
+            <div className="content-container">
+                <div className="section-header">
+                    <h2 className="section-title">Custom Titles</h2>
+                    <p className="section-description">
+                        You can override the automatic title by providing a custom one.
+                    </p>
+                </div>
+                <div className="example-item">
+                    <Alert variant="success" title="Congratulations!">
+                        You've successfully completed the tutorial.
+                    </Alert>
+                    <Alert variant="warning" title="Maintenance Notice">
+                        System maintenance scheduled for tonight at 2 AM.
                     </Alert>
                 </div>
             </div>
@@ -57,6 +89,23 @@ export const AlertPage: React.FC = () => {
                     </Alert>
                     <Alert variant="warning" icon={false}>
                         This alert has no icon.
+                    </Alert>
+                </div>
+            </div>
+
+            <div className="content-container">
+                <div className="section-header">
+                    <h2 className="section-title">Sizes</h2>
+                </div>
+                <div className="example-item">
+                    <Alert variant="info" size="small">
+                        Small alert for compact spaces.
+                    </Alert>
+                    <Alert variant="success" size="medium">
+                        Medium alert (default size).
+                    </Alert>
+                    <Alert variant="warning" size="large">
+                        Large alert for important messages.
                     </Alert>
                 </div>
             </div>

@@ -48,10 +48,21 @@ export const en: Translations = {
     },
 
     placeholders: {
+        firstName: 'John',
+        lastName: 'Smith',
+        fullName: 'John Smith',
         email: 'john@example.com',
         password: '••••••••',
         phone: '+1 (555) 123-4567',
-        zipCode: '12345-678',
+        mobile: '+1 (555) 987-6543',
+        address: 'Main Street',
+        addressNumber: '123',
+        complement: 'Apt 4B',
+        neighborhood: 'Downtown',
+        city: 'New York',
+        state: 'NY',
+        country: 'United States',
+        zipCode: '10001',
         selectCountry: 'Select a country',
     },
 
@@ -75,5 +86,25 @@ export const en: Translations = {
         confirm: 'Confirm',
         cancel: 'Cancel',
         ok: 'OK',
+    },
+
+    alert: {
+        info: 'Information',
+        success: 'Success',
+        warning: 'Warning',
+        error: 'Error',
+    },
+
+    status: {
+        active: 'Active',
+        inactive: 'Inactive',
+    },
+
+    departments: {
+        engineering: 'Engineering',
+        sales: 'Sales',
+        marketing: 'Marketing',
+        hr: 'HR',
+        finance: 'Finance',
     },
 };

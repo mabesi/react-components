@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@mabesi/react-components';
-import './ExamplePage.css';
+import './Pages.css';
 
 export const ButtonPage: React.FC = () => {
     return (
         <div className="example-page">
             <Link to="/" className="back-link">← Back to Examples</Link>
 
-            <header className="page-header">
+            <header className="component-page-header">
                 <h1>Button Component</h1>
                 <p className="subtitle">Standardized, theme-aware buttons with multiple variants and sizes.</p>
             </header>

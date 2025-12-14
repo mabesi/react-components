@@ -16,13 +16,13 @@ export const DynamicForm = ({
     onCancel,
     onChange,
     className,
-    submitLabel = 'Submit',
-    cancelLabel = 'Cancel',
+    submitLabel,
+    cancelLabel,
     loading = false,
     validateOnBlur = true,
     validateOnChange = false,
 }: DynamicFormProps): JSX.Element => {
-    const { locale } = useI18n();
+    const { locale, t } = useI18n();
 
     // Process fields: flatten sections and apply presets
     const processedFields = useMemo(() => {
@@ -215,7 +215,7 @@ export const DynamicForm = ({
                     disabled={loading || isSubmitting}
                     loading={loading || isSubmitting}
                 >
-                    {submitLabel}
+                    {submitLabel || t.common.submit}
                 </Button>
 
                 {onCancel && (
@@ -225,7 +225,7 @@ export const DynamicForm = ({
                         onClick={onCancel}
                         disabled={loading || isSubmitting}
                     >
-                        {cancelLabel}
+                        {cancelLabel || t.common.cancel}
                     </Button>
                 )}
             </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { DynamicForm, useTheme, useI18n } from '@mabesi/react-components';
-import './ExamplePage.css';
+import './Pages.css';
 
 export default function DynamicFormPage() {
     const { themeName, setTheme } = useTheme();

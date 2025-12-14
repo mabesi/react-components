@@ -2,14 +2,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Avatar, Card, CardBody } from '@mabesi/react-components';
-import './ExamplePage.css';
+import './Pages.css';
 
 export const AvatarPage: React.FC = () => {
     return (
         <div className="example-page">
             <Link to="/" className="back-link">← Back to Examples</Link>
 
-            <header className="page-header">
+            <header className="component-page-header">
                 <h1>👤 Avatar Component</h1>
                 <p className="subtitle">User profiles, entities, and status awareness.</p>
             </header>

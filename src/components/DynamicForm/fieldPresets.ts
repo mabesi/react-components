@@ -256,9 +256,41 @@ export const FIELD_PRESETS: Record<FieldPresetType, FieldPresetConfig> = {
         id: 'country',
         name: 'country',
         label: 'País',
-        type: 'text',
+        type: 'select',
         placeholder: 'Brasil',
-        defaultValue: 'Brasil',
+        defaultValue: 'BR',
+        options: [
+            { value: 'BR', label: 'Brasil' },
+            { value: 'US', label: 'Estados Unidos' },
+            { value: 'GB', label: 'Reino Unido' },
+            { value: 'CA', label: 'Canadá' },
+            { value: 'AU', label: 'Austrália' },
+            { value: 'DE', label: 'Alemanha' },
+            { value: 'FR', label: 'França' },
+            { value: 'IT', label: 'Itália' },
+            { value: 'ES', label: 'Espanha' },
+            { value: 'PT', label: 'Portugal' },
+            { value: 'MX', label: 'México' },
+            { value: 'AR', label: 'Argentina' },
+            { value: 'CL', label: 'Chile' },
+            { value: 'CO', label: 'Colômbia' },
+            { value: 'PE', label: 'Peru' },
+            { value: 'UY', label: 'Uruguai' },
+            { value: 'PY', label: 'Paraguai' },
+            { value: 'BO', label: 'Bolívia' },
+            { value: 'VE', label: 'Venezuela' },
+            { value: 'EC', label: 'Equador' },
+            { value: 'JP', label: 'Japão' },
+            { value: 'CN', label: 'China' },
+            { value: 'IN', label: 'Índia' },
+            { value: 'KR', label: 'Coreia do Sul' },
+            { value: 'RU', label: 'Rússia' },
+            { value: 'ZA', label: 'África do Sul' },
+            { value: 'NG', label: 'Nigéria' },
+            { value: 'EG', label: 'Egito' },
+            { value: 'NZ', label: 'Nova Zelândia' },
+            { value: 'SG', label: 'Singapura' },
+        ],
         validation: [
             { type: 'required', message: 'País é obrigatório' },
         ],
@@ -326,6 +358,75 @@ export const FIELD_PRESETS: Record<FieldPresetType, FieldPresetConfig> = {
 };
 
 /**
+ * Country lists by locale
+ */
+const COUNTRIES_PT_BR = [
+    { value: 'BR', label: 'Brasil' },
+    { value: 'US', label: 'Estados Unidos' },
+    { value: 'GB', label: 'Reino Unido' },
+    { value: 'CA', label: 'Canadá' },
+    { value: 'AU', label: 'Austrália' },
+    { value: 'DE', label: 'Alemanha' },
+    { value: 'FR', label: 'França' },
+    { value: 'IT', label: 'Itália' },
+    { value: 'ES', label: 'Espanha' },
+    { value: 'PT', label: 'Portugal' },
+    { value: 'MX', label: 'México' },
+    { value: 'AR', label: 'Argentina' },
+    { value: 'CL', label: 'Chile' },
+    { value: 'CO', label: 'Colômbia' },
+    { value: 'PE', label: 'Peru' },
+    { value: 'UY', label: 'Uruguai' },
+    { value: 'PY', label: 'Paraguai' },
+    { value: 'BO', label: 'Bolívia' },
+    { value: 'VE', label: 'Venezuela' },
+    { value: 'EC', label: 'Equador' },
+    { value: 'JP', label: 'Japão' },
+    { value: 'CN', label: 'China' },
+    { value: 'IN', label: 'Índia' },
+    { value: 'KR', label: 'Coreia do Sul' },
+    { value: 'RU', label: 'Rússia' },
+    { value: 'ZA', label: 'África do Sul' },
+    { value: 'NG', label: 'Nigéria' },
+    { value: 'EG', label: 'Egito' },
+    { value: 'NZ', label: 'Nova Zelândia' },
+    { value: 'SG', label: 'Singapura' },
+];
+
+const COUNTRIES_EN = [
+    { value: 'BR', label: 'Brazil' },
+    { value: 'US', label: 'United States' },
+    { value: 'GB', label: 'United Kingdom' },
+    { value: 'CA', label: 'Canada' },
+    { value: 'AU', label: 'Australia' },
+    { value: 'DE', label: 'Germany' },
+    { value: 'FR', label: 'France' },
+    { value: 'IT', label: 'Italy' },
+    { value: 'ES', label: 'Spain' },
+    { value: 'PT', label: 'Portugal' },
+    { value: 'MX', label: 'Mexico' },
+    { value: 'AR', label: 'Argentina' },
+    { value: 'CL', label: 'Chile' },
+    { value: 'CO', label: 'Colombia' },
+    { value: 'PE', label: 'Peru' },
+    { value: 'UY', label: 'Uruguay' },
+    { value: 'PY', label: 'Paraguay' },
+    { value: 'BO', label: 'Bolivia' },
+    { value: 'VE', label: 'Venezuela' },
+    { value: 'EC', label: 'Ecuador' },
+    { value: 'JP', label: 'Japan' },
+    { value: 'CN', label: 'China' },
+    { value: 'IN', label: 'India' },
+    { value: 'KR', label: 'South Korea' },
+    { value: 'RU', label: 'Russia' },
+    { value: 'ZA', label: 'South Africa' },
+    { value: 'NG', label: 'Nigeria' },
+    { value: 'EG', label: 'Egypt' },
+    { value: 'NZ', label: 'New Zealand' },
+    { value: 'SG', label: 'Singapore' },
+];
+
+/**
  * Apply a preset to a field configuration with i18n support
  * Merges preset defaults with user-provided overrides
  */
@@ -348,6 +449,12 @@ export const applyFieldPreset = (
 
     // Get translated placeholder if exists
     const translatedPlaceholder = (translations.placeholders as Record<string, string>)[preset] || presetConfig.placeholder;
+
+    // Translate country options if it's the country field
+    let translatedOptions = presetConfig.options;
+    if (preset === 'country' && !overrides.options) {
+        translatedOptions = locale === 'pt-BR' ? COUNTRIES_PT_BR : COUNTRIES_EN;
+    }
 
     // Translate validation messages
     const translatedValidation = presetConfig.validation?.map((rule) => {
@@ -393,6 +500,7 @@ export const applyFieldPreset = (
         label: overrides.label || translatedLabel,
         placeholder: overrides.placeholder || translatedPlaceholder,
         validation: overrides.validation || translatedValidation,
+        options: overrides.options || translatedOptions,
         // Ensure required fields are present
         id: overrides.id || presetConfig.id || preset,
         name: overrides.name || presetConfig.name || preset,

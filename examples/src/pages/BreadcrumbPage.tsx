@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody } from '@mabesi/react-components';
-import './ExamplePage.css';
+import './Pages.css';
 
 export function BreadcrumbPage() {
     return (
         <div className="example-page">
             <Link to="/" className="back-link">← Back to Examples</Link>
 
-            <header className="page-header">
+            <header className="component-page-header">
                 <h1>Breadcrumb</h1>
                 <p className="subtitle">
                     Indicate the current page's location within a navigational hierarchy.

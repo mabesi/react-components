@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { DataTable, useTheme, useI18n } from '@mabesi/react-components';
 import type { Column, RowAction } from '@mabesi/react-components';
-import './ExamplePage.css';
+import './Pages.css';
 
 interface User {
     id: number;
@@ -10,14 +10,19 @@ interface User {
     email: string;
     department: string;
     salary: number;
-    joinDate: string;
+    joinDate: Date;
     active: boolean;
 }
 
-const generateUsers = (count: number): User[] => {
-    const firstNames = ['John', 'Jane', 'Bob', 'Alice', 'Charlie', 'Diana', 'Eve', 'Frank'];
-    const lastNames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis'];
-    const departments = ['Engineering', 'Sales', 'Marketing', 'HR', 'Finance'];
+const generateUsers = (count: number, locale: string): User[] => {
+    const firstNamesEn = ['John', 'Jane', 'Bob', 'Alice', 'Charlie', 'Diana', 'Eve', 'Frank'];
+    const lastNamesEn = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis'];
+    const firstNamesPt = ['João', 'Maria', 'Pedro', 'Ana', 'Carlos', 'Diana', 'Eva', 'Francisco'];
+    const lastNamesPt = ['Silva', 'Santos', 'Oliveira', 'Souza', 'Pereira', 'Costa', 'Rodrigues', 'Almeida'];
+
+    const firstNames = locale === 'pt-BR' ? firstNamesPt : firstNamesEn;
+    const lastNames = locale === 'pt-BR' ? lastNamesPt : lastNamesEn;
+    const departments = ['engineering', 'sales', 'marketing', 'hr', 'finance'];
 
     return Array.from({ length: count }, (_, i) => ({
         id: i + 1,
@@ -25,15 +30,15 @@ const generateUsers = (count: number): User[] => {
         email: `user${i + 1}@example.com`,
         department: departments[i % departments.length],
         salary: Math.floor(Math.random() * 100000) + 40000,
-        joinDate: new Date(2020 + Math.floor(Math.random() * 4), Math.floor(Math.random() * 12), Math.floor(Math.random() * 28)).toLocaleDateString(),
+        joinDate: new Date(2020 + Math.floor(Math.random() * 4), Math.floor(Math.random() * 12), Math.floor(Math.random() * 28)),
         active: Math.random() > 0.3
     }));
 };
 
 export default function DataTablePage() {
     const { themeName, setTheme } = useTheme();
-    const { locale, setLocale } = useI18n();
-    const [data, setData] = useState<User[]>(generateUsers(100));
+    const { locale, setLocale, t } = useI18n();
+    const [data, setData] = useState<User[]>(generateUsers(100, locale));
     const [selectedRows, setSelectedRows] = useState<User[]>([]);
     const [loading, setLoading] = useState(false);
 
@@ -59,7 +64,7 @@ export default function DataTablePage() {
         },
         {
             id: 'department',
-            header: 'Department',
+            header: locale === 'pt-BR' ? 'Departamento' : 'Department',
             accessor: 'department',
             sortable: true,
             render: (value) => (
@@ -70,24 +75,25 @@ export default function DataTablePage() {
                     color: '#0066cc',
                     fontSize: '0.875rem'
                 }}>
-                    {value}
+                    {t.departments[value as keyof typeof t.departments]}
                 </span>
             )
         },
         {
             id: 'salary',
-            header: 'Salary',
+            header: locale === 'pt-BR' ? 'Salário' : 'Salary',
             accessor: 'salary',
             sortable: true,
             align: 'right',
-            render: (value) => `$${value.toLocaleString()}`
+            render: (value) => (value as number).toLocaleString(locale, { style: 'currency', currency: locale === 'pt-BR' ? 'BRL' : 'USD' })
         },
         {
             id: 'joinDate',
-            header: 'Join Date',
+            header: locale === 'pt-BR' ? 'Data de Entrada' : 'Join Date',
             accessor: 'joinDate',
             sortable: true,
-            align: 'center'
+            align: 'center',
+            render: (value) => (value as Date).toLocaleDateString(locale)
         },
         {
             id: 'status',
@@ -101,7 +107,7 @@ export default function DataTablePage() {
                     color: value ? '#155724' : '#721c24',
                     fontSize: '0.875rem'
                 }}>
-                    {value ? 'Active' : 'Inactive'}
+                    {(value as boolean) ? t.status.active : t.status.inactive}
                 </span>
             )
         }
@@ -109,16 +115,16 @@ export default function DataTablePage() {
 
     const actions: RowAction<User>[] = [
         {
-            label: 'Edit',
+            label: t.common.edit,
             icon: '✏️',
-            onClick: (row) => alert(`Editing ${row.name}`),
+            onClick: (row) => alert(`${locale === 'pt-BR' ? 'Editando' : 'Editing'} ${row.name}`),
             className: 'action-edit'
         },
         {
-            label: 'Delete',
+            label: t.common.delete,
             icon: '🗑️',
             onClick: (row) => {
-                if (confirm(`Delete ${row.name}?`)) {
+                if (confirm(`${locale === 'pt-BR' ? 'Excluir' : 'Delete'} ${row.name}?`)) {
                     setData(data.filter(d => d.id !== row.id));
                 }
             },
@@ -130,7 +136,7 @@ export default function DataTablePage() {
     const handleRefresh = () => {
         setLoading(true);
         setTimeout(() => {
-            setData(generateUsers(100));
+            setData(generateUsers(100, locale));
             setLoading(false);
         }, 1000);
     };
@@ -140,7 +146,10 @@ export default function DataTablePage() {
             <Link to="/" className="back-link">← Back to Examples</Link>
 
             <h1>📊 DataTable Component</h1>
-            <p className="subtitle">Demonstrating sorting, pagination, selection, and actions</p>
+            <p className="subtitle">
+                Demonstrating sorting, pagination, selection, and actions with automatic i18n support.
+                Switch languages to see locale-aware date, currency, and text formatting.
+            </p>
 
             <div className="controls">
                 <div className="control-group">
@@ -160,28 +169,43 @@ export default function DataTablePage() {
                         <option value="pt-BR">Português (BR)</option>
                     </select>
                 </div>
+            </div>
 
-                <div className="control-group">
-                    <button onClick={handleRefresh}>🔄 Refresh Data</button>
-                    <button onClick={() => setData([])}>🗑️ Clear Data</button>
-                    {data.length === 0 && (
-                        <button onClick={() => setData(generateUsers(50))}>↩️ Restore Data</button>
-                    )}
-                </div>
-
+            <div className="action-buttons">
+                <button className="btn-refresh" onClick={handleRefresh} disabled={loading}>
+                    <span className="btn-icon">🔄</span>
+                    <span className="btn-text">Refresh Data</span>
+                </button>
+                <button className="btn-clear" onClick={() => setData([])} disabled={data.length === 0}>
+                    <span className="btn-icon">🗑️</span>
+                    <span className="btn-text">Clear All</span>
+                </button>
+                {data.length === 0 && (
+                    <button className="btn-restore" onClick={() => setData(generateUsers(50, locale))}>
+                        <span className="btn-icon">↩️</span>
+                        <span className="btn-text">Restore Data</span>
+                    </button>
+                )}
                 {selectedRows.length > 0 && (
-                    <div className="control-group">
-                        <strong>{selectedRows.length} rows selected</strong>
-                        <button onClick={() => setSelectedRows([])}>Clear Selection</button>
-                    </div>
+                    <>
+                        <div className="selection-info">
+                            <span className="selection-count">{selectedRows.length}</span>
+                            <span className="selection-text">rows selected</span>
+                        </div>
+                        <button className="btn-clear-selection" onClick={() => setSelectedRows([])}>
+                            <span className="btn-icon">✖</span>
+                            <span className="btn-text">Clear Selection</span>
+                        </button>
+                    </>
                 )}
             </div>
 
             <div className="content-container">
                 <div className="section-header">
-                    <h2 className="section-title">📋 Table View Example</h2>
+                    <h2 className="section-title">📋 Locale-Aware Table Example</h2>
                     <p className="section-description">
-                        Full-featured table with sorting, pagination, selection, and row actions.
+                        Full-featured table with automatic i18n support. Notice how dates, currency,
+                        departments, status labels, and action buttons automatically adapt to the selected language.
                         Try sorting columns, selecting rows, and using the Edit/Delete buttons.
                     </p>
                 </div>

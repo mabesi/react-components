@@ -1,0 +1,900 @@
+/* ============================================
+   SHARED PAGE STYLES
+   ============================================ */
+
+/* Home Page Container */
+.home-page {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #f5f7fa;
+    overflow-x: hidden;
+}
+
+/* Example Page Container */
+.example-page {
+    min-height: 100vh;
+    background: #f5f7fa;
+    padding: 40px 20px;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: white;
+    border: 2px solid #667eea;
+    box-shadow: 0 2px 4px rgba(102, 126, 234, 0.1);
+}
+
+.back-link:hover {
+    background: #667eea;
+    color: white;
+    transform: translateX(-5px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* ============================================
+   HOME PAGE HEADER (Full Width)
+   ============================================ */
+
+.home-page .page-header {
+    background: #2d3748;
+    padding: 30px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.home-page .page-header>div {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-page .header-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.home-page .header-logo {
+    height: 100px;
+    width: auto;
+}
+
+.home-page .header-title {
+    font-size: 2.2rem;
+    margin: 0;
+    color: white;
+    font-weight: 600;
+}
+
+.home-page .header-right {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+/* Language Switcher */
+.home-page .language-switcher {
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+}
+
+.home-page .lang-button {
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-page .lang-button img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: block;
+}
+
+.home-page .lang-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.home-page .lang-button.active {
+    border-color: white;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.home-page .header-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.home-page .header-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.home-page .header-link svg {
+    width: 28px;
+    height: 28px;
+    fill: white;
+}
+
+.home-page .header-link.npm-link img {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+
+/* ============================================
+   COMPONENT PAGE HEADER (Centered, Limited Width)
+   ============================================ */
+
+.example-page .component-page-header {
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    text-align: center;
+    background: #2d3748;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.example-page .component-page-header h1 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.example-page .component-page-header .subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+/* Example Page Title/Subtitle (outside header) */
+.example-page>h1 {
+    max-width: 1200px;
+    margin: 0 auto 15px;
+    font-size: 2.5rem;
+    color: #2d3748;
+    font-weight: 700;
+    text-align: center;
+}
+
+.example-page>.subtitle {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    font-size: 1.2rem;
+    color: #4a5568;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* ============================================
+   HOME PAGE CONTENT
+   ============================================ */
+
+/* Library Description */
+.home-page .library-description {
+    max-width: 1200px;
+    margin: 20px auto 0;
+    padding: 40px;
+    text-align: center;
+    background: white;
+}
+
+.home-page .library-description p {
+    color: #4a5568;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Features Section */
+.home-page .features-section {
+    padding: 60px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #f5f7fa;
+}
+
+.home-page .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.home-page .feature-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.home-page .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.home-page .feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.home-page .feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.home-page .feature-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.home-page .feature-card ul li {
+    padding: 8px 0;
+    color: #4a5568;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.home-page .feature-card ul li::before {
+    content: "✓";
+    color: #667eea;
+    font-weight: bold;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+/* Gallery Section */
+.home-page .gallery-section {
+    padding: 20px 0 40px;
+    max-width: 100%;
+    margin: 0 auto;
+    background: #f5f7fa;
+}
+
+.home-page .section-title {
+    background: #305681;
+    color: white !important;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 20px 60px;
+    margin: 0 0 60px 0;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-page .section-title::before,
+.home-page .section-title::after {
+    content: '◆';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    opacity: 0.6;
+}
+
+.home-page .section-title::before {
+    left: 60px;
+}
+
+.home-page .section-title::after {
+    right: 60px;
+}
+
+.home-page .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.home-page .card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border: 1px solid #e2e8f0;
+}
+
+.home-page .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-color: #667eea;
+}
+
+.home-page .card-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.home-page .card-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #2d3748;
+}
+
+.home-page .card-description {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.home-page .card-features {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.home-page .card-features li {
+    padding: 8px 0;
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+}
+
+.home-page .card-features li::before {
+    content: "✓";
+    color: #667eea;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.home-page .card-link {
+    display: inline-flex;
+    align-items: center;
+    color: #667eea;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Footer */
+.home-page .page-footer {
+    background: #2d3748;
+    padding: 25px 60px;
+    color: white;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.home-page .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.home-page .footer-links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.home-page .footer-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.home-page .footer-links svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+.home-page .footer-info {
+    text-align: center;
+    opacity: 0.9;
+}
+
+.home-page .footer-info p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.home-page .footer-info a {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    transition: border-bottom-color 0.3s ease;
+}
+
+.home-page .footer-info a:hover {
+    border-bottom-color: white;
+}
+
+/* ============================================
+   COMPONENT PAGE CONTENT
+   ============================================ */
+
+.example-page .controls {
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.example-page .control-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.example-page .control-group label {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 0.95rem;
+}
+
+.example-page .control-group select {
+    padding: 8px 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    background: white;
+    color: #2d3748;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.example-page .control-group select:hover {
+    border-color: #667eea;
+}
+
+.example-page .control-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.example-page .content-container {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+}
+
+.example-page .section-header {
+    margin-bottom: 25px;
+    padding: 15px 20px;
+    background: #f7fafc;
+    border-left: 4px solid #667eea;
+    border-radius: 6px;
+}
+
+.example-page .section-title {
+    font-size: 1.4rem;
+    color: #2d3748;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.example-page .section-description {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.example-page .example-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+
+.example-page .result {
+    max-width: 1200px;
+    margin: 30px auto;
+    background: #d4fc79;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(150, 230, 161, 0.2);
+    border: 2px solid #96e6a1;
+}
+
+.example-page .result h3 {
+    color: #22543d;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.example-page .result pre {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    color: #2d3748;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    border: 1px solid rgba(34, 84, 61, 0.2);
+}
+
+/* Action Buttons */
+.example-page .action-buttons {
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.example-page .action-buttons button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.example-page .action-buttons button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.example-page .action-buttons button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.example-page .action-buttons button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.example-page .action-buttons .btn-icon {
+    font-size: 1.1rem;
+}
+
+.example-page .action-buttons .btn-refresh {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.example-page .action-buttons .btn-refresh:hover:not(:disabled) {
+    background: linear-gradient(135deg, #5568d3 0%, #653a8b 100%);
+}
+
+.example-page .action-buttons .btn-clear {
+    background: linear-gradient(135deg, #f56565 0%, #c53030 100%);
+    color: white;
+}
+
+.example-page .action-buttons .btn-clear:hover:not(:disabled) {
+    background: linear-gradient(135deg, #e53e3e 0%, #9b2c2c 100%);
+}
+
+.example-page .action-buttons .btn-restore {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+}
+
+.example-page .action-buttons .btn-restore:hover:not(:disabled) {
+    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+}
+
+.example-page .action-buttons .btn-clear-selection {
+    background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+    color: white;
+}
+
+.example-page .action-buttons .btn-clear-selection:hover:not(:disabled) {
+    background: linear-gradient(135deg, #dd6b20 0%, #c05621 100%);
+}
+
+.example-page .action-buttons .selection-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: #edf2f7;
+    border-radius: 8px;
+    margin-left: auto;
+}
+
+.example-page .action-buttons .selection-count {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.example-page .action-buttons .selection-text {
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .home-page .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Home Page */
+    .home-page .page-header {
+        padding: 20px 0;
+    }
+
+    .home-page .page-header>div {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .home-page .header-left {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .home-page .header-logo {
+        height: 50px;
+    }
+
+    .home-page .header-title {
+        font-size: 1.5rem;
+    }
+
+    .home-page .header-right {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .home-page .language-switcher {
+        order: -1;
+        justify-content: center;
+    }
+
+    .home-page .header-link {
+        justify-content: center;
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    .home-page .header-link svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .home-page .library-description {
+        padding: 30px 20px;
+    }
+
+    .home-page .library-description p {
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+
+    .home-page .features-section {
+        padding: 40px 20px;
+    }
+
+    .home-page .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-page .gallery-section {
+        padding: 40px 0;
+    }
+
+    .home-page .section-title {
+        font-size: 1.75rem;
+        padding: 30px 20px;
+    }
+
+    .home-page .cards-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .home-page .page-footer {
+        padding: 20px;
+    }
+
+    .home-page .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .home-page .footer-links a {
+        justify-content: center;
+    }
+
+    /* Example Page */
+    .example-page {
+        padding: 20px 15px;
+    }
+
+    .example-page>h1 {
+        font-size: 2rem;
+    }
+
+    .example-page>.subtitle {
+        font-size: 1rem;
+    }
+
+    .example-page .controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .example-page .control-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .example-page .control-group select {
+        width: 100%;
+    }
+
+    .example-page .component-page-header {
+        padding: 40px 25px;
+    }
+
+    .example-page .component-page-header h1 {
+        font-size: 2rem;
+    }
+
+    .example-page .component-page-header .subtitle {
+        font-size: 1rem;
+    }
+
+    .example-page .content-container {
+        padding: 30px 20px;
+    }
+
+    .example-page .section-header {
+        padding: 15px 20px;
+    }
+
+    .example-page .section-title {
+        font-size: 1.25rem;
+    }
+
+    .example-page .example-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .example-page .result {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Home Page */
+    .home-page .header-logo {
+        height: 120px;
+    }
+
+    .home-page .header-title {
+        font-size: 1.25rem;
+    }
+
+    .home-page .feature-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .home-page .section-title {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        padding: 25px 15px;
+    }
+
+    .home-page .cards-grid {
+        padding: 0 15px;
+        gap: 15px;
+    }
+
+    .home-page .card {
+        padding: 20px;
+    }
+
+    /* Example Page */
+    .example-page>h1 {
+        font-size: 1.75rem;
+    }
+
+    .example-page .component-page-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .example-page .section-title {
+        font-size: 1.1rem;
+    }
+
+    .example-page .section-description {
+        font-size: 0.9rem;
+    }
+}

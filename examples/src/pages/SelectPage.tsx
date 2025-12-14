@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Select, Card, CardBody } from '@mabesi/react-components';
-import './ExamplePage.css';
+import './Pages.css';
 
 export const SelectPage: React.FC = () => {
     const [value, setValue] = useState('option1');
@@ -17,7 +17,7 @@ export const SelectPage: React.FC = () => {
         <div className="example-page">
             <Link to="/" className="back-link">← Back to Examples</Link>
 
-            <header className="page-header">
+            <header className="component-page-header">
                 <h1>🔽 Select Component</h1>
                 <p className="subtitle">Dropdown menus for selection.</p>
             </header>

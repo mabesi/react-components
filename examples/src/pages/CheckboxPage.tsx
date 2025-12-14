@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Checkbox, Card, CardBody } from '@mabesi/react-components';
-import './ExamplePage.css';
+import './Pages.css';
 
 export const CheckboxPage: React.FC = () => {
     const [checked, setChecked] = useState(false);
@@ -12,7 +12,7 @@ export const CheckboxPage: React.FC = () => {
         <div className="example-page">
             <Link to="/" className="back-link">← Back to Examples</Link>
 
-            <header className="page-header">
+            <header className="component-page-header">
                 <h1>☑️ Checkbox Component</h1>
                 <p className="subtitle">Boolean selection controls.</p>
             </header>

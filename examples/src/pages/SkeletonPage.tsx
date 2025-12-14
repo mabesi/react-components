@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Skeleton, Card, CardBody } from '@mabesi/react-components';
-import './ExamplePage.css';
+import './Pages.css';
 
 export function SkeletonPage() {
     return (
         <div className="example-page">
             <Link to="/" className="back-link">← Back to Examples</Link>
 
-            <header className="page-header">
+            <header className="component-page-header">
                 <h1>Skeleton</h1>
                 <p className="subtitle">
                     Display a placeholder preview of your content before the data gets loaded to reduce load-time frustration.

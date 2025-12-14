@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Switch, Card, CardBody } from '@mabesi/react-components';
 import { useState } from 'react';
-import './ExamplePage.css';
+import './Pages.css';
 
 export function SwitchPage() {
     const [checked, setChecked] = useState(false);
@@ -12,7 +12,7 @@ export function SwitchPage() {
         <div className="example-page">
             <Link to="/" className="back-link">← Back to Examples</Link>
 
-            <header className="page-header">
+            <header className="component-page-header">
                 <h1>Switch</h1>
                 <p className="subtitle">
                     A toggle component for switching between two states, ON and OFF.

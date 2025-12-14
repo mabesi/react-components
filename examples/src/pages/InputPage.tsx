@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Input, Card, CardBody } from '@mabesi/react-components';
-import './ExamplePage.css';
+import './Pages.css';
 
 export const InputPage: React.FC = () => {
     const [value, setValue] = useState('');
@@ -11,7 +11,7 @@ export const InputPage: React.FC = () => {
         <div className="example-page">
             <Link to="/" className="back-link">← Back to Examples</Link>
 
-            <header className="page-header">
+            <header className="component-page-header">
                 <h1>⌨️ Input Component</h1>
                 <p className="subtitle">Text fields for user input.</p>
             </header>

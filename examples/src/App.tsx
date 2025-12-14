@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, I18nProvider, ToastProvider } from '@mabesi/react-components';
+import { LanguageProvider } from './contexts/LanguageContext';
 import HomePage from './pages/HomePage';
 import DynamicFormPage from './pages/DynamicFormPage';
 import DataTablePage from './pages/DataTablePage';
@@ -27,36 +28,38 @@ import './App.css';
 function App() {
     return (
         <BrowserRouter basename={import.meta.env.BASE_URL}>
-            <ThemeProvider defaultTheme="modern">
-                <I18nProvider defaultLocale="en">
-                    <ToastProvider>
-                        <Routes>
-                            <Route path="/" element={<HomePage />} />
-                            <Route path="/dynamicform" element={<DynamicFormPage />} />
-                            <Route path="/datatable" element={<DataTablePage />} />
-                            <Route path="/modal" element={<ModalPage />} />
-                            <Route path="/button" element={<ButtonPage />} />
-                            <Route path="/card" element={<CardPage />} />
-                            <Route path="/tabs" element={<TabsPage />} />
-                            <Route path="/badge" element={<BadgePage />} />
-                            <Route path="/avatar" element={<AvatarPage />} />
-                            <Route path="/tooltip" element={<TooltipPage />} />
-                            <Route path="/alert" element={<AlertPage />} />
-                            <Route path="/input" element={<InputPage />} />
-                            <Route path="/select" element={<SelectPage />} />
-                            <Route path="/checkbox" element={<CheckboxPage />} />
-                            <Route path="/spinner" element={<SpinnerPage />} />
-                            <Route path="/accordion" element={<AccordionPage />} />
-                            <Route path="/toast" element={<ToastPage />} />
-                            <Route path="/switch" element={<SwitchPage />} />
-                            <Route path="/skeleton" element={<SkeletonPage />} />
-                            <Route path="/breadcrumb" element={<BreadcrumbPage />} />
-                            <Route path="/drawer" element={<DrawerPage />} />
-                            <Route path="/progress" element={<ProgressPage />} />
-                        </Routes>
-                    </ToastProvider>
-                </I18nProvider>
-            </ThemeProvider>
+            <LanguageProvider>
+                <ThemeProvider defaultTheme="modern">
+                    <I18nProvider defaultLocale="en">
+                        <ToastProvider>
+                            <Routes>
+                                <Route path="/" element={<HomePage />} />
+                                <Route path="/dynamicform" element={<DynamicFormPage />} />
+                                <Route path="/datatable" element={<DataTablePage />} />
+                                <Route path="/modal" element={<ModalPage />} />
+                                <Route path="/button" element={<ButtonPage />} />
+                                <Route path="/card" element={<CardPage />} />
+                                <Route path="/tabs" element={<TabsPage />} />
+                                <Route path="/badge" element={<BadgePage />} />
+                                <Route path="/avatar" element={<AvatarPage />} />
+                                <Route path="/tooltip" element={<TooltipPage />} />
+                                <Route path="/alert" element={<AlertPage />} />
+                                <Route path="/input" element={<InputPage />} />
+                                <Route path="/select" element={<SelectPage />} />
+                                <Route path="/checkbox" element={<CheckboxPage />} />
+                                <Route path="/spinner" element={<SpinnerPage />} />
+                                <Route path="/accordion" element={<AccordionPage />} />
+                                <Route path="/toast" element={<ToastPage />} />
+                                <Route path="/switch" element={<SwitchPage />} />
+                                <Route path="/skeleton" element={<SkeletonPage />} />
+                                <Route path="/breadcrumb" element={<BreadcrumbPage />} />
+                                <Route path="/drawer" element={<DrawerPage />} />
+                                <Route path="/progress" element={<ProgressPage />} />
+                            </Routes>
+                        </ToastProvider>
+                    </I18nProvider>
+                </ThemeProvider>
+            </LanguageProvider>
         </BrowserRouter>
     );
 }

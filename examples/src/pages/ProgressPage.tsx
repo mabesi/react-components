@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ProgressBar, Card, CardBody, Button } from '@mabesi/react-components';
 import { useState, useEffect } from 'react';
-import './ExamplePage.css';
+import './Pages.css';
 
 export function ProgressPage() {
     const [progress, setProgress] = useState(0);
@@ -25,7 +25,7 @@ export function ProgressPage() {
         <div className="example-page">
             <Link to="/" className="back-link">← Back to Examples</Link>
 
-            <header className="page-header">
+            <header className="component-page-header">
                 <h1>ProgressBar</h1>
                 <p className="subtitle">
                     Visualize the completion status of an operation.

@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { useI18n } from '../../context/I18nContext';
 import type { AlertProps, AlertVariant } from './types';
 import styles from './styles.module.css';
 
@@ -21,6 +22,7 @@ export const Alert: React.FC<AlertProps> = ({
     children,
     ...props
 }) => {
+    const { t } = useI18n();
     const [isVisible, setIsVisible] = useState(true);
 
     const handleDismiss = () => {
@@ -29,6 +31,9 @@ export const Alert: React.FC<AlertProps> = ({
     };
 
     if (!isVisible) return null;
+
+    // Use provided title or default to i18n translation
+    const displayTitle = title ?? t.alert[variant];
 
     const renderIcon = () => {
         if (typeof icon === 'boolean') {
@@ -45,7 +50,7 @@ export const Alert: React.FC<AlertProps> = ({
         >
             {renderIcon()}
             <div className={styles.alertContent}>
-                {title && <h4 className={styles.alertTitle}>{title}</h4>}
+                <h4 className={styles.alertTitle}>{displayTitle}</h4>
                 <div>{children}</div>
             </div>
             {dismissible && (

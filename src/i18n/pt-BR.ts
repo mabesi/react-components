@@ -48,9 +48,20 @@ export const ptBR: Translations = {
     },
 
     placeholders: {
+        firstName: 'João',
+        lastName: 'Silva',
+        fullName: 'João Silva Santos',
         email: 'joao@exemplo.com',
         password: '••••••••',
-        phone: '+55 11 98765-4321',
+        phone: '+55 11 3456-7890',
+        mobile: '+55 11 98765-4321',
+        address: 'Rua das Flores',
+        addressNumber: '123',
+        complement: 'Apto 45',
+        neighborhood: 'Centro',
+        city: 'São Paulo',
+        state: 'SP',
+        country: 'Brasil',
         zipCode: '01234-567',
         selectCountry: 'Selecione um país',
     },
@@ -76,5 +87,25 @@ export const ptBR: Translations = {
         confirm: 'Confirmar',
         cancel: 'Cancelar',
         ok: 'OK',
+    },
+
+    alert: {
+        info: 'Informação',
+        success: 'Sucesso',
+        warning: 'Aviso',
+        error: 'Erro',
+    },
+
+    status: {
+        active: 'Ativo',
+        inactive: 'Inativo',
+    },
+
+    departments: {
+        engineering: 'Engenharia',
+        sales: 'Vendas',
+        marketing: 'Marketing',
+        hr: 'RH',
+        finance: 'Financeiro',
     },
 };

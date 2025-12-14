@@ -10,7 +10,7 @@ import {
     Button,
     useTheme
 } from '@mabesi/react-components';
-import './ExamplePage.css';
+import './Pages.css';
 
 export const CardPage: React.FC = () => {
     const { themeName, setTheme } = useTheme();
@@ -20,7 +20,7 @@ export const CardPage: React.FC = () => {
         <div className="example-page">
             <Link to="/" className="back-link">← Back to Examples</Link>
 
-            <header className="page-header">
+            <header className="component-page-header">
                 <h1>🎴 Card Component</h1>
                 <p className="subtitle">Flexible content container with transparent, theme-aware styling.</p>
             </header>

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Drawer, Button, Card, CardBody, type DrawerPlacement } from '@mabesi/react-components';
 import { useState } from 'react';
-import './ExamplePage.css';
+import './Pages.css';
 
 export function DrawerPage() {
     const [open, setOpen] = useState(false);
@@ -18,7 +18,7 @@ export function DrawerPage() {
         <div className="example-page">
             <Link to="/" className="back-link">← Back to Examples</Link>
 
-            <header className="page-header">
+            <header className="component-page-header">
                 <h1>Drawer</h1>
                 <p className="subtitle">
                     A navigation panel that slides in from the edge of the screen.

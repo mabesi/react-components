@@ -52,9 +52,20 @@ export interface Translations {
 
     // Placeholders
     placeholders: {
+        firstName: string;
+        lastName: string;
+        fullName: string;
         email: string;
         password: string;
         phone: string;
+        mobile: string;
+        address: string;
+        addressNumber: string;
+        complement: string;
+        neighborhood: string;
+        city: string;
+        state: string;
+        country: string;
         zipCode: string;
         selectCountry: string;
     };
@@ -81,6 +92,29 @@ export interface Translations {
         confirm: string;
         cancel: string;
         ok: string;
+    };
+
+    // Alert
+    alert: {
+        info: string;
+        success: string;
+        warning: string;
+        error: string;
+    };
+
+    // Status
+    status: {
+        active: string;
+        inactive: string;
+    };
+
+    // Departments
+    departments: {
+        engineering: string;
+        sales: string;
+        marketing: string;
+        hr: string;
+        finance: string;
     };
 }
 

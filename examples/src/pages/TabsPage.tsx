@@ -9,7 +9,7 @@ import {
     Card,
     CardBody
 } from '@mabesi/react-components';
-import './ExamplePage.css';
+import './Pages.css';
 
 export const TabsPage: React.FC = () => {
     // Global theme selector removed as per request
@@ -18,7 +18,7 @@ export const TabsPage: React.FC = () => {
         <div className="example-page">
             <Link to="/" className="back-link">← Back to Examples</Link>
 
-            <header className="page-header">
+            <header className="component-page-header">
                 <h1>📑 Tabs Component</h1>
                 <p className="subtitle">Organize content into flexible, theme-aware sections.</p>
             </header>

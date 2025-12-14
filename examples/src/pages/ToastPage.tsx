@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useToast, Button, Card, CardBody } from '@mabesi/react-components';
-import './ExamplePage.css';
+import './Pages.css';
 
 export const ToastPage: React.FC = () => {
     const { addToast } = useToast();
@@ -11,7 +11,7 @@ export const ToastPage: React.FC = () => {
         <div className="example-page">
             <Link to="/" className="back-link">← Back to Examples</Link>
 
-            <header className="page-header">
+            <header className="component-page-header">
                 <h1>🍞 Toast Component</h1>
                 <p className="subtitle">Dismissible notifications.</p>
             </header>
