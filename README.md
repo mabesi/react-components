@@ -32,6 +32,7 @@ Whether you are building a simple dashboard or a complex enterprise application,
 | **[Input](./docs/INPUT.md)** | Enhanced text input fields for data entry. | • Validation states (error, success)<br>• Leading and trailing icons<br>• Helper text<br>• Accessible labels |
 | **[Modal](./docs/MODAL.md)** | Dialogs, popups, and actionable overlays. | • 4 Sizes (Small to Fullscreen)<br>• Focus trapping<br>• Portal rendering<br>• Keyboard navigation (Esc to close) |
 | **[ProgressBar](./docs/PROGRESSBAR.md)** | Visual indicator of operation progress. | • Deterministic & Indeterminate<br>• Label support<br>• Striped/Animated variants<br>• Custom colors |
+| **[Section](./docs/SECTION.md)** | Container for grouping content with headers. | • Collapsible support<br>• Custom titles<br>• Styling support<br>• Default expanded state |
 | **[Select](./docs/SELECT.md)** | Customizable dropdown menus for option selection. | • Single and multiple selection<br>• Searchable options<br>• Custom option rendering<br>• Form integration |
 | **[Skeleton](./docs/SKELETON.md)** | Placeholder loading state for content. | • Text, Circular, Rectangular variants<br>• Pulse/Wave animations<br>• Responsive sizing<br>• Theme aware |
 | **[Spinner](./docs/SPINNER.md)** | Visual indicators for loading states. | • Multiple sizes<br>• Color variants<br>• Lightweight implementation |
