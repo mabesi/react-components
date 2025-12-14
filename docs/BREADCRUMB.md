@@ -21,14 +21,14 @@ import { Breadcrumb, BreadcrumbItem } from '@mabesi/react-components';
 ## Breadcrumb Props
 
 | Prop | Type | Default | Description |
-|Data | ---- | ------- | ----------- |
+| --- | ---- | ------- | ----------- |
 | separator | `ReactNode` | `'/'` | The separator between breadcrumb items |
 | children | `ReactNode` | - | The items to display |
 
 ## BreadcrumbItem Props
 
 | Prop | Type | Default | Description |
-|Data | ---- | ------- | ----------- |
+| --- | ---- | ------- | ----------- |
 | href | `string` | - | The URL to navigate to. If omitted, renders as a span. |
 | active | `boolean` | `false` | If `true`, the item is considered the current page. |
 | children | `ReactNode` | - | The content of the item |

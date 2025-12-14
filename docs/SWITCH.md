@@ -27,7 +27,7 @@ function App() {
 ## Props
 
 | Prop | Type | Default | Description |
-|Data | ---- | ------- | ----------- |
+| --- | ---- | ------- | ----------- |
 | label | `ReactNode` | - | Label to display beside the switch |
 | helperText | `ReactNode` | - | Helper text to display below the switch |
 | checked | `boolean` | - | If `true`, the component is checked |

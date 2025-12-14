@@ -33,7 +33,7 @@ function App() {
 ## Props
 
 | Prop | Type | Default | Description |
-|Data | ---- | ------- | ----------- |
+| --- | ---- | ------- | ----------- |
 | open | `boolean` | - | Whether the drawer is open |
 | onClose | `() => void` | - | Callback fired when closing |
 | placement | `'left' \| 'right' \| 'top' \| 'bottom'` | `'right'` | Drawer placement |

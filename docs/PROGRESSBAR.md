@@ -19,7 +19,7 @@ import { ProgressBar } from '@mabesi/react-components';
 ## Props
 
 | Prop | Type | Default | Description |
-|Data | ---- | ------- | ----------- |
+| --- | ---- | ------- | ----------- |
 | value | `number` | `0` | The percentage value (0-100) |
 | variant | `'default' \| 'success' \| 'warning' \| 'danger' \| 'info'` | `'default'` | The color variant |
 | size | `'small' \| 'medium' \| 'large'` | `'medium'` | The height of the bar |

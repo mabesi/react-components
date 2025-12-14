@@ -19,7 +19,7 @@ import { Skeleton } from '@mabesi/react-components';
 ## Props
 
 | Prop | Type | Default | Description |
-|Data | ---- | ------- | ----------- |
+| --- | ---- | ------- | ----------- |
 | variant | `'text' \| 'circular' \| 'rectangular' \| 'rounded'` | `'text'` | The variants of the skeleton |
 | animation | `'pulse' \| 'wave' \| 'none'` | `'pulse'` | The animation style |
 | width | `string \| number` | - | Width of the skeleton |
