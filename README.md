@@ -22,15 +22,20 @@ Whether you are building a simple dashboard or a complex enterprise application,
 | **[Alert](./docs/ALERT.md)** | standard feedback messages for user actions and system states. | • 4 Semantic variants (Info, Success, Warning, Error)<br>• Dismissible<br>• Custom icons<br>• Title support |
 | **[Avatar](./docs/AVATAR.md)** | visual representation of a user or entity. | • Image, text (initials), or icon fallback<br>• Status indicators (online, busy, etc.)<br>• Multiple sizes and shapes |
 | **[Badge](./docs/BADGE.md)** | Small status indicators for numbers or text labels. | • Semantic color variants<br>• Pill and rounded shapes<br>• Counter visualization<br>• Outlined mode |
+| **[Breadcrumb](./docs/BREADCRUMB.md)** | Navigation aid showing page hierarchy. | • Custom separators<br>• Truncation support<br>• Clickable items<br>• Accessible navigation |
 | **[Button](./docs/BUTTON.md)** | Standardized, theme-aware interactive buttons. | • 9 Variants (Primary, Ghost, Danger, etc.)<br>• 3 Sizes<br>• Loading states<br>• Icon support (start/end) |
 | **[Card](./docs/CARD.md)** | Flexible content containers for organizing related information. | • Header, Body, Footer, and Image subcomponents<br>• 3 Variants (Elevated, Outlined, Filled)<br>• Interactive states |
 | **[Checkbox](./docs/CHECKBOX.md)** | Selection control for boolean values. | • Indeterminate state support<br>• Error states<br>• Custom SVG icons<br>• Keyboard accessible |
 | **[DataTable](./docs/DATATABLE.md)** | Feature-rich component for displaying and interacting with tabular data. | • Sortable columns<br>• Pagination and page size control<br>• Row selection (single/multi)<br>• Mobile responsive (card view) |
+| **[Drawer](./docs/DRAWER.md)** | Side panel overlay for navigation or actions. | • Left/Right/Top/Bottom placement<br>• Backdrop options<br>• Smooth transitions<br>• Focus management |
 | **[DynamicForm](./docs/DYNAMICFORM.md)** | Powerful engine to build complex forms from JSON configurations. | • 30+ Field presets<br>• Auto-translation (i18n)<br>• Sync/Async validation<br>• Conditional logic & dependencies |
 | **[Input](./docs/INPUT.md)** | Enhanced text input fields for data entry. | • Validation states (error, success)<br>• Leading and trailing icons<br>• Helper text<br>• Accessible labels |
 | **[Modal](./docs/MODAL.md)** | Dialogs, popups, and actionable overlays. | • 4 Sizes (Small to Fullscreen)<br>• Focus trapping<br>• Portal rendering<br>• Keyboard navigation (Esc to close) |
+| **[ProgressBar](./docs/PROGRESSBAR.md)** | Visual indicator of operation progress. | • Deterministic & Indeterminate<br>• Label support<br>• Striped/Animated variants<br>• Custom colors |
 | **[Select](./docs/SELECT.md)** | Customizable dropdown menus for option selection. | • Single and multiple selection<br>• Searchable options<br>• Custom option rendering<br>• Form integration |
+| **[Skeleton](./docs/SKELETON.md)** | Placeholder loading state for content. | • Text, Circular, Rectangular variants<br>• Pulse/Wave animations<br>• Responsive sizing<br>• Theme aware |
 | **[Spinner](./docs/SPINNER.md)** | Visual indicators for loading states. | • Multiple sizes<br>• Color variants<br>• Lightweight implementation |
+| **[Switch](./docs/SWITCH.md)** | Toggle control for binary states. | • Controlled/Uncontrolled<br>• With icons/labels<br>• Sizes (Small/Medium/Large)<br>• Disabled state |
 | **[Tabs](./docs/TABS.md)** | Content organization into flexible, switchable sections. | • 4 Visual variants<br>• Controlled & Uncontrolled modes<br>• Keyboard navigation<br>• Disabled states |
 | **[Toast](./docs/TOAST.md)** | Brief, non-blocking notification messages. | • Auto-dismiss with configurable duration<br>• Global `useToast` hook<br>• 4 Semantic variants<br>• Positioning options |
 | **[Tooltip](./docs/TOOLTIP.md)** | Contextual information displayed on hover or focus. | • 4 Positioning options<br>• Custom delays<br>• Rich content support<br>• Keyboard accessible |
