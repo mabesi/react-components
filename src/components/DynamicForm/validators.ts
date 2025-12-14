@@ -29,33 +29,39 @@ export const validateValue = async (
             }
 
             case 'minLength':
-                if (typeof value === 'string' && value.length < ruleValue) {
+                if (typeof value === 'string' && value.length < (ruleValue as number)) {
                     return message;
                 }
                 break;
 
             case 'maxLength':
-                if (typeof value === 'string' && value.length > ruleValue) {
+                if (typeof value === 'string' && value.length > (ruleValue as number)) {
                     return message;
                 }
                 break;
 
             case 'min':
-                if (typeof value === 'number' && value < ruleValue) {
-                    return message;
-                }
-                // Handle string numbers
-                if (typeof value === 'string' && !isNaN(Number(value)) && Number(value) < ruleValue) {
-                    return message;
+                if ('value' in rule) {
+                    const ruleValue = rule.value as number;
+                    if (typeof value === 'number' && value < ruleValue) {
+                        return message;
+                    }
+                    // Handle string numbers
+                    if (typeof value === 'string' && !isNaN(Number(value)) && Number(value) < ruleValue) {
+                        return message;
+                    }
                 }
                 break;
 
             case 'max':
-                if (typeof value === 'number' && value > ruleValue) {
-                    return message;
-                }
-                if (typeof value === 'string' && !isNaN(Number(value)) && Number(value) > ruleValue) {
-                    return message;
+                if ('value' in rule) {
+                    const ruleValue = rule.value as number;
+                    if (typeof value === 'number' && value > ruleValue) {
+                        return message;
+                    }
+                    if (typeof value === 'string' && !isNaN(Number(value)) && Number(value) > ruleValue) {
+                        return message;
+                    }
                 }
                 break;
 
