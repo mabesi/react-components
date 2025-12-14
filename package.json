@@ -1,6 +1,6 @@
 {
     "name": "@mabesi/react-components",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Modern React component library with TypeScript support - DynamicForm, DataTable, Modal, and more",
     "author": "Plinio Mabesi",
     "license": "MIT",

@@ -41,7 +41,23 @@ export const Section: React.FC<SectionProps> = ({
             className={`${styles.section} ${collapsible ? styles.collapsible : ''} ${className || ''}`}
         >
             {title && (
-                <div className={styles.sectionHeader} onClick={handleToggle}>
+                <div
+                    className={styles.sectionHeader}
+                    onClick={handleToggle}
+                    {...(collapsible
+                        ? {
+                            role: 'button',
+                            tabIndex: 0,
+                            'aria-expanded': isExpanded,
+                            onKeyDown: (e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault();
+                                    handleToggle();
+                                }
+                            },
+                        }
+                        : {})}
+                >
                     <h3 className={styles.sectionTitle}>{title}</h3>
                     {collapsible && <ChevronIcon />}
                 </div>
