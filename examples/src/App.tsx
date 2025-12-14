@@ -26,7 +26,7 @@ import './App.css';
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.DEV ? '/' : '/react-components/'}>
             <ThemeProvider defaultTheme="modern">
                 <I18nProvider defaultLocale="en">
                     <ToastProvider>
