@@ -18,6 +18,7 @@ export * from './components/Accordion';
 export * from './components/Toast';
 export * from './components/Switch';
 export * from './components/Skeleton';
+export * from './components/Breadcrumb';
 
 // Themes
 export * from './themes';

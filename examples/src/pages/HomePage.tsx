@@ -62,6 +62,19 @@ export default function HomePage() {
                     <span className="card-link">View Examples →</span>
                 </Link>
 
+                <Link to="/breadcrumb" className="card">
+                    <div className="card-icon">🥖</div>
+                    <h2 className="card-title">Breadcrumb</h2>
+                    <p className="card-description">Navigation hierarchy.</p>
+                    <ul className="card-features">
+                        <li>Auto Separators</li>
+                        <li>Active State</li>
+                        <li>Accessible</li>
+                        <li>Customizable</li>
+                    </ul>
+                    <span className="card-link">View Examples →</span>
+                </Link>
+
                 <Link to="/button" className="card">
                     <div className="card-icon">🔘</div>
                     <h2 className="card-title">Button</h2>

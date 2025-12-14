@@ -1,0 +1,45 @@
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: var(--theme-font-family, inherit);
+    font-size: 0.95rem;
+}
+
+.itemWrapper {
+    display: inline-flex;
+    align-items: center;
+}
+
+.item {
+    text-decoration: none;
+    color: var(--theme-text-secondary, #64748b);
+    transition: color 0.2s ease;
+    cursor: pointer;
+}
+
+.item:hover {
+    color: var(--theme-text-primary, #1e293b);
+    text-decoration: underline;
+}
+
+.active {
+    color: var(--theme-text-primary, #1e293b);
+    font-weight: 500;
+    cursor: default;
+    pointer-events: none;
+}
+
+.active:hover {
+    text-decoration: none;
+}
+
+.separator {
+    margin: 0 8px;
+    color: var(--theme-text-tertiary, #94a3b8);
+    user-select: none;
+    font-size: 0.85em;
+}
