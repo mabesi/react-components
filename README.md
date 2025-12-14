@@ -105,7 +105,7 @@ function ThemeSwitcher() {
 - `modern` - Rounded corners, vibrant colors
 - `compact` - Dense layout, reduced spacing
 
-[🎯 View Theme Examples within the Examples App](./examples)
+
 
 ## 🌍 Internationalization
 
@@ -131,7 +131,11 @@ function LanguageSwitcher() {
 
 ## 🎯 Examples
 
-Interactive examples are available in the `examples` folder as a React application. Use them to see the components in action and test different configurations.
+Explore the live components in our example application:
+
+👉 **[Live Demo: https://mabesi.github.io/react-components/](https://mabesi.github.io/react-components/)**
+
+The examples source code is available in the `examples` folder. Use it to see usage patterns and implementation details for every component.
 
 To run examples locally:
 
