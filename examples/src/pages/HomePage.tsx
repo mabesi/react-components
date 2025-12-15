@@ -15,7 +15,7 @@ export default function HomePage() {
             <header className="page-header">
                 <div>
                     <div className="header-left">
-                        <img src="/logo.png" alt="Mabesi React Components" className="header-logo" />
+                        <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Mabesi React Components" className="header-logo" />
                         <h1 className="header-title">{t('header.title')}</h1>
                     </div>
                     <div className="header-right">
@@ -26,7 +26,7 @@ export default function HomePage() {
                             <span>{t('header.github')}</span>
                         </a>
                         <a href="https://www.npmjs.com/package/@mabesi/react-components" target="_blank" rel="noopener noreferrer" className="header-link npm-link">
-                            <img src="/npm-icon.png" alt="NPM" />
+                            <img src={`${import.meta.env.BASE_URL}npm-icon.png`} alt="NPM" />
                             <span>{t('header.npm')}</span>
                         </a>
                         <div className="language-switcher">
@@ -35,21 +35,21 @@ export default function HomePage() {
                                 onClick={() => handleLanguageChange('pt')}
                                 title="Português"
                             >
-                                <img src="/flag-pt.png" alt="PT" />
+                                <img src={`${import.meta.env.BASE_URL}flag-pt.png`} alt="PT" />
                             </button>
                             <button
                                 className={`lang-button ${language === 'en' ? 'active' : ''}`}
                                 onClick={() => handleLanguageChange('en')}
                                 title="English"
                             >
-                                <img src="/flag-en.png" alt="EN" />
+                                <img src={`${import.meta.env.BASE_URL}flag-en.png`} alt="EN" />
                             </button>
                             <button
                                 className={`lang-button ${language === 'es' ? 'active' : ''}`}
                                 onClick={() => handleLanguageChange('es')}
                                 title="Español"
                             >
-                                <img src="/flag-es.png" alt="ES" />
+                                <img src={`${import.meta.env.BASE_URL}flag-es.png`} alt="ES" />
                             </button>
                         </div>
                     </div>
@@ -65,7 +65,7 @@ export default function HomePage() {
             <section className="features-section">
                 <div className="features-grid">
                     <div className="feature-card">
-                        <img src="/icon-components.png" alt="Modern Components" className="feature-icon" />
+                        <img src={`${import.meta.env.BASE_URL}icon-components.png`} alt="Modern Components" className="feature-icon" />
                         <h3>{t('features.modern.title')}</h3>
                         <ul>
                             <li>{t('features.modern.item1')}</li>
@@ -75,7 +75,7 @@ export default function HomePage() {
                         </ul>
                     </div>
                     <div className="feature-card">
-                        <img src="/icon-typescript.png" alt="TypeScript First" className="feature-icon" />
+                        <img src={`${import.meta.env.BASE_URL}icon-typescript.png`} alt="TypeScript First" className="feature-icon" />
                         <h3>{t('features.typescript.title')}</h3>
                         <ul>
                             <li>{t('features.typescript.item1')}</li>
@@ -85,7 +85,7 @@ export default function HomePage() {
                         </ul>
                     </div>
                     <div className="feature-card">
-                        <img src="/icon-themes.png" alt="Customizable Themes" className="feature-icon" />
+                        <img src={`${import.meta.env.BASE_URL}icon-themes.png`} alt="Customizable Themes" className="feature-icon" />
                         <h3>{t('features.themes.title')}</h3>
                         <ul>
                             <li>{t('features.themes.item1')}</li>
@@ -95,7 +95,7 @@ export default function HomePage() {
                         </ul>
                     </div>
                     <div className="feature-card">
-                        <img src="/icon-i18n.png" alt="Internationalization" className="feature-icon" />
+                        <img src={`${import.meta.env.BASE_URL}icon-i18n.png`} alt="Internationalization" className="feature-icon" />
                         <h3>{t('features.i18n.title')}</h3>
                         <ul>
                             <li>{t('features.i18n.item1')}</li>
