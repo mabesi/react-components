@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Switch, Card, CardBody } from '@mabesi/react-components';
+import { CodeBlock } from '../components/CodeBlock';
 import { useState } from 'react';
 import './Pages.css';
 
@@ -37,6 +38,16 @@ export function SwitchPage() {
                         </CardBody>
                     </Card>
                 </div>
+                <CodeBlock
+                    code={`const [checked, setChecked] = useState(false);
+
+<Switch
+    label="Toggle me"
+    checked={checked}
+    onChange={(e) => setChecked(e.target.checked)}
+/>`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">

@@ -1,6 +1,8 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ProgressBar, Card, CardBody, Button } from '@mabesi/react-components';
 import { useState, useEffect } from 'react';
+import { CodeBlock } from '../components/CodeBlock';
 import './Pages.css';
 
 export function ProgressPage() {
@@ -49,6 +51,11 @@ export function ProgressPage() {
                         </CardBody>
                     </Card>
                 </div>
+                <CodeBlock
+                    code={`<ProgressBar value={50} />
+<ProgressBar value={progress} showLabel />`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">

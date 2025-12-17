@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { DynamicForm, useTheme, useI18n } from '@mabesi/react-components';
+import { CodeBlock } from '../components/CodeBlock';
 import './Pages.css';
 
 export default function DynamicFormPage() {
@@ -83,6 +84,44 @@ export default function DynamicFormPage() {
                     fields={fields as any}
                     onSubmit={handleSubmit}
                     onCancel={handleCancel}
+                />
+
+                <CodeBlock
+                    code={`const fields = [
+    { preset: 'fullName' },
+    { preset: 'email' },
+    {
+        type: 'section',
+        title: 'Contact Information',
+        collapsible: true,
+        defaultExpanded: true,
+        fields: [
+            { preset: 'mobile' },
+            { preset: 'phone' }
+        ]
+    },
+    {
+        type: 'section',
+        title: 'Address',
+        collapsible: true,
+        fields: [
+            { preset: 'zipCode' },
+            { preset: 'address' },
+            { preset: 'city' },
+            { preset: 'state' },
+            { preset: 'country' }
+        ]
+    },
+    { preset: 'password' },
+    { preset: 'confirmPassword' }
+];
+
+<DynamicForm
+    fields={fields}
+    onSubmit={handleSubmit}
+    onCancel={handleCancel}
+/>`}
+                    language="tsx"
                 />
             </div>
 

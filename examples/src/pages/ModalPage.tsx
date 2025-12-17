@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { CodeBlock } from '../components/CodeBlock';
 import {
     Modal,
     ModalHeader,
@@ -129,6 +130,23 @@ export default function ModalPage() {
                     <Button onClick={() => setFormOpen(true)}>Modal with Form</Button>
                     <Button onClick={() => setLongContentOpen(true)}>Long Scrollable Content</Button>
                 </div>
+                <CodeBlock
+                    code={`<Modal open={isOpen} onClose={() => setIsOpen(false)}>
+    <ModalHeader
+        title="Welcome to Modals"
+        subtitle="A simple way to present content"
+        onClose={() => setIsOpen(false)}
+    />
+    <ModalBody>
+        <p>This is a standard modal dialog.</p>
+    </ModalBody>
+    <ModalFooter>
+        <Button onClick={() => setIsOpen(false)} variant="secondary">Close</Button>
+        <Button onClick={() => setIsOpen(false)} variant="primary">OK</Button>
+    </ModalFooter>
+</Modal>`}
+                    language="tsx"
+                />
             </div>
 
             {/* Basic Modal */}

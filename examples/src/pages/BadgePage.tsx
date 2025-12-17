@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Badge, Card, CardBody } from '@mabesi/react-components';
+import { CodeBlock } from '../components/CodeBlock';
 import './Pages.css';
 
 export const BadgePage: React.FC = () => {
@@ -29,6 +30,13 @@ export const BadgePage: React.FC = () => {
                     <Badge variant="light">Light</Badge>
                     <Badge variant="dark">Dark</Badge>
                 </div>
+                <CodeBlock
+                    code={`<Badge variant="primary">Primary</Badge>
+<Badge variant="success">Success</Badge>
+<Badge variant="danger">Danger</Badge>
+<Badge variant="warning">Warning</Badge>`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">

@@ -1,7 +1,9 @@
+import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { DataTable, useTheme, useI18n } from '@mabesi/react-components';
 import type { Column, RowAction } from '@mabesi/react-components';
+import { CodeBlock } from '../components/CodeBlock';
 import './Pages.css';
 
 interface User {
@@ -225,6 +227,40 @@ export default function DataTablePage() {
                     responsive={true}
                     striped={true}
                     hoverable={true}
+                />
+                <CodeBlock
+                    code={`const columns: Column<User>[] = [
+    {
+        id: 'name',
+        header: 'Name',
+        accessor: 'name',
+        sortable: true
+    },
+    {
+        id: 'email',
+        header: 'Email',
+        accessor: 'email',
+        sortable: true
+    },
+    {
+        id: 'department',
+        header: 'Department',
+        accessor: 'department',
+        render: (value) => <Badge>{value}</Badge>
+    }
+];
+
+<DataTable
+    data={users}
+    columns={columns}
+    rowKey="id"
+    pagination={true}
+    pageSize={10}
+    sortable={true}
+    selectable={true}
+    actions={actions}
+/>`}
+                    language="tsx"
                 />
             </div>
         </div>

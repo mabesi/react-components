@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody } from '@mabesi/react-components';
+import { CodeBlock } from '../components/CodeBlock';
 import './Pages.css';
 
 export function BreadcrumbPage() {
@@ -29,6 +30,14 @@ export function BreadcrumbPage() {
                         </CardBody>
                     </Card>
                 </div>
+                <CodeBlock
+                    code={`<Breadcrumb>
+    <BreadcrumbItem href="/">Home</BreadcrumbItem>
+    <BreadcrumbItem href="/components">Components</BreadcrumbItem>
+    <BreadcrumbItem href="/breadcrumb">Breadcrumb</BreadcrumbItem>
+</Breadcrumb>`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Alert, Card, CardBody, useI18n } from '@mabesi/react-components';
+import { CodeBlock } from '../components/CodeBlock';
 import './Pages.css';
 
 export const AlertPage: React.FC = () => {
@@ -48,6 +49,21 @@ export const AlertPage: React.FC = () => {
                         Something went wrong while processing your request.
                     </Alert>
                 </div>
+                <CodeBlock
+                    code={`<Alert variant="info">
+    This is a neutral info alert indicating something of interest.
+</Alert>
+<Alert variant="success">
+    Your operation completed successfully without errors.
+</Alert>
+<Alert variant="warning">
+    This action has potential side effects. Proceed with caution.
+</Alert>
+<Alert variant="error">
+    Something went wrong while processing your request.
+</Alert>`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">
@@ -65,6 +81,15 @@ export const AlertPage: React.FC = () => {
                         System maintenance scheduled for tonight at 2 AM.
                     </Alert>
                 </div>
+                <CodeBlock
+                    code={`<Alert variant="success" title="Congratulations!">
+    You've successfully completed the tutorial.
+</Alert>
+<Alert variant="warning" title="Maintenance Notice">
+    System maintenance scheduled for tonight at 2 AM.
+</Alert>`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">
@@ -77,6 +102,12 @@ export const AlertPage: React.FC = () => {
                         You can close this alert by clicking the X.
                     </Alert>
                 </div>
+                <CodeBlock
+                    code={`<Alert variant="info" dismissible onDismiss={() => console.log('Dismissed!')}>
+    You can close this alert by clicking the X.
+</Alert>`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">
@@ -91,6 +122,15 @@ export const AlertPage: React.FC = () => {
                         This alert has no icon.
                     </Alert>
                 </div>
+                <CodeBlock
+                    code={`<Alert variant="success" icon="🎉">
+    <strong>Congratulations!</strong> You've leveled up!
+</Alert>
+<Alert variant="warning" icon={false}>
+    This alert has no icon.
+</Alert>`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">
@@ -108,6 +148,18 @@ export const AlertPage: React.FC = () => {
                         Large alert for important messages.
                     </Alert>
                 </div>
+                <CodeBlock
+                    code={`<Alert variant="info" size="small">
+    Small alert for compact spaces.
+</Alert>
+<Alert variant="success" size="medium">
+    Medium alert (default size).
+</Alert>
+<Alert variant="warning" size="large">
+    Large alert for important messages.
+</Alert>`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Drawer, Button, Card, CardBody, type DrawerPlacement } from '@mabesi/react-components';
 import { useState } from 'react';
+import { CodeBlock } from '../components/CodeBlock';
 import './Pages.css';
 
 export function DrawerPage() {
@@ -41,6 +42,21 @@ export function DrawerPage() {
                         </CardBody>
                     </Card>
                 </div>
+                <CodeBlock
+                    code={`const [open, setOpen] = useState(false);
+
+<Button onClick={() => setOpen(true)}>Open Drawer</Button>
+
+<Drawer
+    open={open}
+    onClose={() => setOpen(false)}
+    placement="right"
+    title="Drawer Title"
+>
+    <p>Drawer content here</p>
+</Drawer>`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Spinner, Card, CardBody, Button } from '@mabesi/react-components';
+import { CodeBlock } from '../components/CodeBlock';
 import './Pages.css';
 
 export const SpinnerPage: React.FC = () => {
@@ -25,6 +26,12 @@ export const SpinnerPage: React.FC = () => {
                         <Spinner size="large" />
                     </div>
                 </div>
+                <CodeBlock
+                    code={`<Spinner size="small" />
+<Spinner size="medium" />
+<Spinner size="large" />`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">

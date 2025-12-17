@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Select, Card, CardBody } from '@mabesi/react-components';
+import { CodeBlock } from '../components/CodeBlock';
 import './Pages.css';
 
 export const SelectPage: React.FC = () => {
@@ -42,6 +43,14 @@ export const SelectPage: React.FC = () => {
                         helperText="This select uses an array prop for options."
                     />
                 </div>
+                <CodeBlock
+                    code={`<Select label="Simple Select">
+    <option value="">Select an option...</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+</Select>`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">

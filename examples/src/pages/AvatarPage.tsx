@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Avatar, Card, CardBody } from '@mabesi/react-components';
+import { CodeBlock } from '../components/CodeBlock';
 import './Pages.css';
 
 export const AvatarPage: React.FC = () => {
@@ -33,6 +34,12 @@ export const AvatarPage: React.FC = () => {
                         <p style={{ marginTop: '8px', fontSize: '0.9rem' }}>Fallback</p>
                     </div>
                 </div>
+                <CodeBlock
+                    code={`<Avatar src="https://i.pravatar.cc/150?u=1" size="large" />
+<Avatar name="Jane Doe" size="large" />
+<Avatar size="large" />`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Accordion, AccordionItem, Card, CardBody } from '@mabesi/react-components';
+import { CodeBlock } from '../components/CodeBlock';
 import './Pages.css';
 
 export const AccordionPage: React.FC = () => {
@@ -36,6 +37,20 @@ export const AccordionPage: React.FC = () => {
                         </CardBody>
                     </Card>
                 </div>
+                <CodeBlock
+                    code={`<Accordion>
+    <AccordionItem id="1" title="What is React?">
+        React is a JavaScript library for building user interfaces.
+    </AccordionItem>
+    <AccordionItem id="2" title="Why use components?">
+        Components let you split the UI into independent, reusable pieces.
+    </AccordionItem>
+    <AccordionItem id="3" title="What is JSX?">
+        JSX is a syntax extension to JavaScript.
+    </AccordionItem>
+</Accordion>`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">
@@ -66,6 +81,20 @@ export const AccordionPage: React.FC = () => {
                         </CardBody>
                     </Card>
                 </div>
+                <CodeBlock
+                    code={`<Accordion allowMultiple defaultExpanded={['settings']}>
+    <AccordionItem id="profile" title="Profile Settings">
+        User profile configuration forms would go here.
+    </AccordionItem>
+    <AccordionItem id="notifications" title="Notifications">
+        Notification preferences would go here.
+    </AccordionItem>
+    <AccordionItem id="security" title="Security">
+        Password and 2FA settings would go here.
+    </AccordionItem>
+</Accordion>`}
+                    language="tsx"
+                />
             </div>
         </div>
     );

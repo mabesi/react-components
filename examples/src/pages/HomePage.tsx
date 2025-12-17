@@ -110,16 +110,31 @@ export default function HomePage() {
             {/* Components Gallery */}
             <section className="gallery-section">
                 <h2 className="section-title">{t('gallery.title')}</h2>
+                <p style={{ textAlign: 'center', marginTop: '-10px', marginBottom: '30px' }}>
+                    <a
+                        href="https://github.com/mabesi/react-components/tree/main/docs"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                            color: '#0066cc',
+                            textDecoration: 'none',
+                            fontSize: '0.95rem',
+                            fontWeight: '500'
+                        }}
+                    >
+                        📚 {language === 'pt' ? 'Documentação Completa' : language === 'es' ? 'Documentación Completa' : 'Complete Documentation'} →
+                    </a>
+                </p>
                 <div className="cards-grid">
                     <Link to="/accordion" className="card">
                         <div className="card-icon">📂</div>
                         <h2 className="card-title">Accordion</h2>
                         <p className="card-description">{t('component.accordion.description')}</p>
                         <ul className="card-features">
-                            <li>Allow Multiple</li>
-                            <li>Accessible</li>
-                            <li>Smooth Animation</li>
-                            <li>Customizable</li>
+                            <li>{t('component.accordion.feature1')}</li>
+                            <li>{t('component.accordion.feature2')}</li>
+                            <li>{t('component.accordion.feature3')}</li>
+                            <li>{t('component.accordion.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -129,10 +144,10 @@ export default function HomePage() {
                         <h2 className="card-title">Alert</h2>
                         <p className="card-description">{t('component.alert.description')}</p>
                         <ul className="card-features">
-                            <li>4 Semantic Variants</li>
-                            <li>Dismissible</li>
-                            <li>Custom Icons</li>
-                            <li>Titles</li>
+                            <li>{t('component.alert.feature1')}</li>
+                            <li>{t('component.alert.feature2')}</li>
+                            <li>{t('component.alert.feature3')}</li>
+                            <li>{t('component.alert.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -142,10 +157,10 @@ export default function HomePage() {
                         <h2 className="card-title">Avatar</h2>
                         <p className="card-description">{t('component.avatar.description')}</p>
                         <ul className="card-features">
-                            <li>Image/Initials</li>
-                            <li>Status Dots</li>
-                            <li>Shapes</li>
-                            <li>Sizes</li>
+                            <li>{t('component.avatar.feature1')}</li>
+                            <li>{t('component.avatar.feature2')}</li>
+                            <li>{t('component.avatar.feature3')}</li>
+                            <li>{t('component.avatar.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -155,10 +170,10 @@ export default function HomePage() {
                         <h2 className="card-title">Badge</h2>
                         <p className="card-description">{t('component.badge.description')}</p>
                         <ul className="card-features">
-                            <li>Colors & Variants</li>
-                            <li>Outlined Mode</li>
-                            <li>Dot Mode</li>
-                            <li>Sizes</li>
+                            <li>{t('component.badge.feature1')}</li>
+                            <li>{t('component.badge.feature2')}</li>
+                            <li>{t('component.badge.feature3')}</li>
+                            <li>{t('component.badge.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -168,10 +183,10 @@ export default function HomePage() {
                         <h2 className="card-title">Breadcrumb</h2>
                         <p className="card-description">{t('component.breadcrumb.description')}</p>
                         <ul className="card-features">
-                            <li>Auto Separators</li>
-                            <li>Active State</li>
-                            <li>Accessible</li>
-                            <li>Customizable</li>
+                            <li>{t('component.breadcrumb.feature1')}</li>
+                            <li>{t('component.breadcrumb.feature2')}</li>
+                            <li>{t('component.breadcrumb.feature3')}</li>
+                            <li>{t('component.breadcrumb.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -181,10 +196,10 @@ export default function HomePage() {
                         <h2 className="card-title">Button</h2>
                         <p className="card-description">{t('component.button.description')}</p>
                         <ul className="card-features">
-                            <li>Multiple Variants</li>
-                            <li>Size Options</li>
-                            <li>Icon Support</li>
-                            <li>Loading State</li>
+                            <li>{t('component.button.feature1')}</li>
+                            <li>{t('component.button.feature2')}</li>
+                            <li>{t('component.button.feature3')}</li>
+                            <li>{t('component.button.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -194,10 +209,10 @@ export default function HomePage() {
                         <h2 className="card-title">Card</h2>
                         <p className="card-description">{t('component.card.description')}</p>
                         <ul className="card-features">
-                            <li>Headers & Footers</li>
-                            <li>Image Support</li>
-                            <li>Theme Aware</li>
-                            <li>Interactive</li>
+                            <li>{t('component.card.feature1')}</li>
+                            <li>{t('component.card.feature2')}</li>
+                            <li>{t('component.card.feature3')}</li>
+                            <li>{t('component.card.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -207,10 +222,10 @@ export default function HomePage() {
                         <h2 className="card-title">Checkbox</h2>
                         <p className="card-description">{t('component.checkbox.description')}</p>
                         <ul className="card-features">
-                            <li>Indeterminate</li>
-                            <li>Error States</li>
-                            <li>Custom SVG</li>
-                            <li>Fully Accessible</li>
+                            <li>{t('component.checkbox.feature1')}</li>
+                            <li>{t('component.checkbox.feature2')}</li>
+                            <li>{t('component.checkbox.feature3')}</li>
+                            <li>{t('component.checkbox.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -220,10 +235,10 @@ export default function HomePage() {
                         <h2 className="card-title">DataTable</h2>
                         <p className="card-description">{t('component.datatable.description')}</p>
                         <ul className="card-features">
-                            <li>Sortable Columns</li>
-                            <li>Pagination Controls</li>
-                            <li>Row Selection</li>
-                            <li>Mobile Responsive</li>
+                            <li>{t('component.datatable.feature1')}</li>
+                            <li>{t('component.datatable.feature2')}</li>
+                            <li>{t('component.datatable.feature3')}</li>
+                            <li>{t('component.datatable.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -233,10 +248,10 @@ export default function HomePage() {
                         <h2 className="card-title">Drawer</h2>
                         <p className="card-description">{t('component.drawer.description')}</p>
                         <ul className="card-features">
-                            <li>4 Placements</li>
-                            <li>Backdrop Support</li>
-                            <li>Sizes</li>
-                            <li>Focus Trap</li>
+                            <li>{t('component.drawer.feature1')}</li>
+                            <li>{t('component.drawer.feature2')}</li>
+                            <li>{t('component.drawer.feature3')}</li>
+                            <li>{t('component.drawer.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -246,10 +261,10 @@ export default function HomePage() {
                         <h2 className="card-title">DynamicForm</h2>
                         <p className="card-description">{t('component.dynamicform.description')}</p>
                         <ul className="card-features">
-                            <li>30+ Field Presets</li>
-                            <li>Auto-Translation</li>
-                            <li>Collapsible Sections</li>
-                            <li>Custom Validation</li>
+                            <li>{t('component.dynamicform.feature1')}</li>
+                            <li>{t('component.dynamicform.feature2')}</li>
+                            <li>{t('component.dynamicform.feature3')}</li>
+                            <li>{t('component.dynamicform.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -259,10 +274,10 @@ export default function HomePage() {
                         <h2 className="card-title">Input</h2>
                         <p className="card-description">{t('component.input.description')}</p>
                         <ul className="card-features">
-                            <li>Labels & Helpers</li>
-                            <li>Validation States</li>
-                            <li>Adornments</li>
-                            <li>Sizes</li>
+                            <li>{t('component.input.feature1')}</li>
+                            <li>{t('component.input.feature2')}</li>
+                            <li>{t('component.input.feature3')}</li>
+                            <li>{t('component.input.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -272,10 +287,10 @@ export default function HomePage() {
                         <h2 className="card-title">Modal</h2>
                         <p className="card-description">{t('component.modal.description')}</p>
                         <ul className="card-features">
-                            <li>Keyboard Navigation</li>
-                            <li>Focus Trapping</li>
-                            <li>Customizable Content</li>
-                            <li>Stackable</li>
+                            <li>{t('component.modal.feature1')}</li>
+                            <li>{t('component.modal.feature2')}</li>
+                            <li>{t('component.modal.feature3')}</li>
+                            <li>{t('component.modal.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -285,10 +300,10 @@ export default function HomePage() {
                         <h2 className="card-title">ProgressBar</h2>
                         <p className="card-description">{t('component.progress.description')}</p>
                         <ul className="card-features">
-                            <li>Striped / Animated</li>
-                            <li>Colors & Sizes</li>
-                            <li>Indeterminate</li>
-                            <li>Labels</li>
+                            <li>{t('component.progress.feature1')}</li>
+                            <li>{t('component.progress.feature2')}</li>
+                            <li>{t('component.progress.feature3')}</li>
+                            <li>{t('component.progress.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -298,10 +313,10 @@ export default function HomePage() {
                         <h2 className="card-title">Select</h2>
                         <p className="card-description">{t('component.select.description')}</p>
                         <ul className="card-features">
-                            <li>Native Controls</li>
-                            <li>Custom Styling</li>
-                            <li>Option Arrays</li>
-                            <li>Validation</li>
+                            <li>{t('component.select.feature1')}</li>
+                            <li>{t('component.select.feature2')}</li>
+                            <li>{t('component.select.feature3')}</li>
+                            <li>{t('component.select.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -311,10 +326,10 @@ export default function HomePage() {
                         <h2 className="card-title">Skeleton</h2>
                         <p className="card-description">{t('component.skeleton.description')}</p>
                         <ul className="card-features">
-                            <li>Text & Shapes</li>
-                            <li>Animations</li>
-                            <li>Responsive</li>
-                            <li>Themable</li>
+                            <li>{t('component.skeleton.feature1')}</li>
+                            <li>{t('component.skeleton.feature2')}</li>
+                            <li>{t('component.skeleton.feature3')}</li>
+                            <li>{t('component.skeleton.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -324,10 +339,10 @@ export default function HomePage() {
                         <h2 className="card-title">Spinner</h2>
                         <p className="card-description">{t('component.spinner.description')}</p>
                         <ul className="card-features">
-                            <li>Sizes</li>
-                            <li>Color Variants</li>
-                            <li>Customizable</li>
-                            <li>Lightweight</li>
+                            <li>{t('component.spinner.feature1')}</li>
+                            <li>{t('component.spinner.feature2')}</li>
+                            <li>{t('component.spinner.feature3')}</li>
+                            <li>{t('component.spinner.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -337,10 +352,10 @@ export default function HomePage() {
                         <h2 className="card-title">Switch</h2>
                         <p className="card-description">{t('component.switch.description')}</p>
                         <ul className="card-features">
-                            <li>Sizes</li>
-                            <li>Colors</li>
-                            <li>Labels</li>
-                            <li>States</li>
+                            <li>{t('component.switch.feature1')}</li>
+                            <li>{t('component.switch.feature2')}</li>
+                            <li>{t('component.switch.feature3')}</li>
+                            <li>{t('component.switch.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -350,10 +365,10 @@ export default function HomePage() {
                         <h2 className="card-title">Tabs</h2>
                         <p className="card-description">{t('component.tabs.description')}</p>
                         <ul className="card-features">
-                            <li>Theme Variants</li>
-                            <li>Controlled Mode</li>
-                            <li>Accessible</li>
-                            <li>Responsive</li>
+                            <li>{t('component.tabs.feature1')}</li>
+                            <li>{t('component.tabs.feature2')}</li>
+                            <li>{t('component.tabs.feature3')}</li>
+                            <li>{t('component.tabs.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -363,10 +378,10 @@ export default function HomePage() {
                         <h2 className="card-title">Toast</h2>
                         <p className="card-description">{t('component.toast.description')}</p>
                         <ul className="card-features">
-                            <li>Auto Dismiss</li>
-                            <li>Variants</li>
-                            <li>Positioning</li>
-                            <li>Global Hook</li>
+                            <li>{t('component.toast.feature1')}</li>
+                            <li>{t('component.toast.feature2')}</li>
+                            <li>{t('component.toast.feature3')}</li>
+                            <li>{t('component.toast.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>
@@ -376,10 +391,10 @@ export default function HomePage() {
                         <h2 className="card-title">Tooltip</h2>
                         <p className="card-description">{t('component.tooltip.description')}</p>
                         <ul className="card-features">
-                            <li>4 Positions</li>
-                            <li>Custom Delays</li>
-                            <li>Keyboard Access</li>
-                            <li>Rich Content</li>
+                            <li>{t('component.tooltip.feature1')}</li>
+                            <li>{t('component.tooltip.feature2')}</li>
+                            <li>{t('component.tooltip.feature3')}</li>
+                            <li>{t('component.tooltip.feature4')}</li>
                         </ul>
                         <span className="card-link">{t('gallery.viewExamples')}</span>
                     </Link>

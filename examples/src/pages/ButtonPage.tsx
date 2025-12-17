@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@mabesi/react-components';
+import { CodeBlock } from '../components/CodeBlock';
 import './Pages.css';
 
 export const ButtonPage: React.FC = () => {
@@ -29,6 +30,18 @@ export const ButtonPage: React.FC = () => {
                     <Button variant="ghost">Ghost</Button>
                     <Button variant="link">Link</Button>
                 </div>
+                <CodeBlock
+                    code={`<Button variant="primary">Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="danger">Danger</Button>
+<Button variant="success">Success</Button>
+<Button variant="warning">Warning</Button>
+<Button variant="info">Info</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="link">Link</Button>`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">
@@ -41,6 +54,12 @@ export const ButtonPage: React.FC = () => {
                     <Button size="medium">Medium</Button>
                     <Button size="large">Large</Button>
                 </div>
+                <CodeBlock
+                    code={`<Button size="small">Small</Button>
+<Button size="medium">Medium</Button>
+<Button size="large">Large</Button>`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">
@@ -55,6 +74,13 @@ export const ButtonPage: React.FC = () => {
                 <div style={{ marginTop: '20px' }}>
                     <Button fullWidth>Full Width Button</Button>
                 </div>
+                <CodeBlock
+                    code={`<Button disabled>Disabled</Button>
+<Button loading>Loading</Button>
+
+<Button fullWidth>Full Width Button</Button>`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">
@@ -68,6 +94,13 @@ export const ButtonPage: React.FC = () => {
                     <Button startIcon={<span>💾</span>} variant="primary">Save</Button>
                     <Button startIcon={<span>🗑️</span>} variant="danger">Delete</Button>
                 </div>
+                <CodeBlock
+                    code={`<Button startIcon={<span>👈</span>}>Start Icon</Button>
+<Button endIcon={<span>👉</span>}>End Icon</Button>
+<Button startIcon={<span>💾</span>} variant="primary">Save</Button>
+<Button startIcon={<span>🗑️</span>} variant="danger">Delete</Button>`}
+                    language="tsx"
+                />
             </div>
         </div>
     );

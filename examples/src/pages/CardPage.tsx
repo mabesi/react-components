@@ -10,6 +10,7 @@ import {
     Button,
     useTheme
 } from '@mabesi/react-components';
+import { CodeBlock } from '../components/CodeBlock';
 import './Pages.css';
 
 export const CardPage: React.FC = () => {
@@ -79,6 +80,18 @@ export const CardPage: React.FC = () => {
                         </Card>
                     </div>
                 </div>
+                <CodeBlock
+                    code={`<Card variant="elevated">
+    <CardHeader title="Elevated" subtitle="Default variation" />
+    <CardBody>
+        <p>Standard card with a subtle shadow.</p>
+    </CardBody>
+    <CardFooter>
+        <Button size="small">Action</Button>
+    </CardFooter>
+</Card>`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">

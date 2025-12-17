@@ -313,7 +313,6 @@
 
 .home-page .section-title::before,
 .home-page .section-title::after {
-    content: '◆';
     position: absolute;
     top: 50%;
     transform: translateY(-50%);

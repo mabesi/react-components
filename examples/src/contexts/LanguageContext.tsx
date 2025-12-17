@@ -267,6 +267,448 @@ const translations: Translations = {
         es: 'Información contextual flotante.',
     },
 
+    // Component features
+    'component.accordion.feature1': {
+        pt: 'Permitir Múltiplos',
+        en: 'Allow Multiple',
+        es: 'Permitir Múltiples',
+    },
+    'component.accordion.feature2': {
+        pt: 'Acessível',
+        en: 'Accessible',
+        es: 'Accesible',
+    },
+    'component.accordion.feature3': {
+        pt: 'Animação Suave',
+        en: 'Smooth Animation',
+        es: 'Animación Suave',
+    },
+    'component.accordion.feature4': {
+        pt: 'Customizável',
+        en: 'Customizable',
+        es: 'Personalizable',
+    },
+
+    'component.alert.feature1': {
+        pt: '4 Variantes Semânticas',
+        en: '4 Semantic Variants',
+        es: '4 Variantes Semánticas',
+    },
+    'component.alert.feature2': {
+        pt: 'Dispensável',
+        en: 'Dismissible',
+        es: 'Descartable',
+    },
+    'component.alert.feature3': {
+        pt: 'Ícones Personalizados',
+        en: 'Custom Icons',
+        es: 'Iconos Personalizados',
+    },
+    'component.alert.feature4': {
+        pt: 'Títulos',
+        en: 'Titles',
+        es: 'Títulos',
+    },
+
+    'component.avatar.feature1': {
+        pt: 'Imagem/Iniciais',
+        en: 'Image/Initials',
+        es: 'Imagen/Iniciales',
+    },
+    'component.avatar.feature2': {
+        pt: 'Pontos de Status',
+        en: 'Status Dots',
+        es: 'Puntos de Estado',
+    },
+    'component.avatar.feature3': {
+        pt: 'Formas',
+        en: 'Shapes',
+        es: 'Formas',
+    },
+    'component.avatar.feature4': {
+        pt: 'Tamanhos',
+        en: 'Sizes',
+        es: 'Tamaños',
+    },
+
+    'component.badge.feature1': {
+        pt: 'Cores e Variantes',
+        en: 'Colors & Variants',
+        es: 'Colores y Variantes',
+    },
+    'component.badge.feature2': {
+        pt: 'Modo Contornado',
+        en: 'Outlined Mode',
+        es: 'Modo Contorneado',
+    },
+    'component.badge.feature3': {
+        pt: 'Modo Ponto',
+        en: 'Dot Mode',
+        es: 'Modo Punto',
+    },
+    'component.badge.feature4': {
+        pt: 'Tamanhos',
+        en: 'Sizes',
+        es: 'Tamaños',
+    },
+
+    'component.breadcrumb.feature1': {
+        pt: 'Separadores Automáticos',
+        en: 'Auto Separators',
+        es: 'Separadores Automáticos',
+    },
+    'component.breadcrumb.feature2': {
+        pt: 'Estado Ativo',
+        en: 'Active State',
+        es: 'Estado Activo',
+    },
+    'component.breadcrumb.feature3': {
+        pt: 'Acessível',
+        en: 'Accessible',
+        es: 'Accesible',
+    },
+    'component.breadcrumb.feature4': {
+        pt: 'Customizável',
+        en: 'Customizable',
+        es: 'Personalizable',
+    },
+
+    'component.button.feature1': {
+        pt: 'Múltiplas Variantes',
+        en: 'Multiple Variants',
+        es: 'Múltiples Variantes',
+    },
+    'component.button.feature2': {
+        pt: 'Opções de Tamanho',
+        en: 'Size Options',
+        es: 'Opciones de Tamaño',
+    },
+    'component.button.feature3': {
+        pt: 'Suporte a Ícones',
+        en: 'Icon Support',
+        es: 'Soporte de Iconos',
+    },
+    'component.button.feature4': {
+        pt: 'Estado de Carregamento',
+        en: 'Loading State',
+        es: 'Estado de Carga',
+    },
+
+    'component.card.feature1': {
+        pt: 'Cabeçalhos e Rodapés',
+        en: 'Headers & Footers',
+        es: 'Encabezados y Pies',
+    },
+    'component.card.feature2': {
+        pt: 'Suporte a Imagens',
+        en: 'Image Support',
+        es: 'Soporte de Imágenes',
+    },
+    'component.card.feature3': {
+        pt: 'Consciente de Tema',
+        en: 'Theme Aware',
+        es: 'Consciente del Tema',
+    },
+    'component.card.feature4': {
+        pt: 'Interativo',
+        en: 'Interactive',
+        es: 'Interactivo',
+    },
+
+    'component.checkbox.feature1': {
+        pt: 'Indeterminado',
+        en: 'Indeterminate',
+        es: 'Indeterminado',
+    },
+    'component.checkbox.feature2': {
+        pt: 'Estados de Erro',
+        en: 'Error States',
+        es: 'Estados de Error',
+    },
+    'component.checkbox.feature3': {
+        pt: 'SVG Personalizado',
+        en: 'Custom SVG',
+        es: 'SVG Personalizado',
+    },
+    'component.checkbox.feature4': {
+        pt: 'Totalmente Acessível',
+        en: 'Fully Accessible',
+        es: 'Totalmente Accesible',
+    },
+
+    'component.datatable.feature1': {
+        pt: 'Colunas Ordenáveis',
+        en: 'Sortable Columns',
+        es: 'Columnas Ordenables',
+    },
+    'component.datatable.feature2': {
+        pt: 'Controles de Paginação',
+        en: 'Pagination Controls',
+        es: 'Controles de Paginación',
+    },
+    'component.datatable.feature3': {
+        pt: 'Seleção de Linhas',
+        en: 'Row Selection',
+        es: 'Selección de Filas',
+    },
+    'component.datatable.feature4': {
+        pt: 'Responsivo Mobile',
+        en: 'Mobile Responsive',
+        es: 'Responsivo Móvil',
+    },
+
+    'component.drawer.feature1': {
+        pt: '4 Posicionamentos',
+        en: '4 Placements',
+        es: '4 Posicionamientos',
+    },
+    'component.drawer.feature2': {
+        pt: 'Suporte a Backdrop',
+        en: 'Backdrop Support',
+        es: 'Soporte de Fondo',
+    },
+    'component.drawer.feature3': {
+        pt: 'Tamanhos',
+        en: 'Sizes',
+        es: 'Tamaños',
+    },
+    'component.drawer.feature4': {
+        pt: 'Captura de Foco',
+        en: 'Focus Trap',
+        es: 'Trampa de Foco',
+    },
+
+    'component.dynamicform.feature1': {
+        pt: '30+ Presets de Campos',
+        en: '30+ Field Presets',
+        es: '30+ Presets de Campos',
+    },
+    'component.dynamicform.feature2': {
+        pt: 'Auto-Tradução',
+        en: 'Auto-Translation',
+        es: 'Auto-Traducción',
+    },
+    'component.dynamicform.feature3': {
+        pt: 'Seções Recolhíveis',
+        en: 'Collapsible Sections',
+        es: 'Secciones Plegables',
+    },
+    'component.dynamicform.feature4': {
+        pt: 'Validação Personalizada',
+        en: 'Custom Validation',
+        es: 'Validación Personalizada',
+    },
+
+    'component.input.feature1': {
+        pt: 'Labels e Helpers',
+        en: 'Labels & Helpers',
+        es: 'Etiquetas y Ayudas',
+    },
+    'component.input.feature2': {
+        pt: 'Estados de Validação',
+        en: 'Validation States',
+        es: 'Estados de Validación',
+    },
+    'component.input.feature3': {
+        pt: 'Adornos',
+        en: 'Adornments',
+        es: 'Adornos',
+    },
+    'component.input.feature4': {
+        pt: 'Tamanhos',
+        en: 'Sizes',
+        es: 'Tamaños',
+    },
+
+    'component.modal.feature1': {
+        pt: 'Navegação por Teclado',
+        en: 'Keyboard Navigation',
+        es: 'Navegación por Teclado',
+    },
+    'component.modal.feature2': {
+        pt: 'Captura de Foco',
+        en: 'Focus Trapping',
+        es: 'Trampa de Foco',
+    },
+    'component.modal.feature3': {
+        pt: 'Conteúdo Customizável',
+        en: 'Customizable Content',
+        es: 'Contenido Personalizable',
+    },
+    'component.modal.feature4': {
+        pt: 'Empilhável',
+        en: 'Stackable',
+        es: 'Apilable',
+    },
+
+    'component.progress.feature1': {
+        pt: 'Listrado / Animado',
+        en: 'Striped / Animated',
+        es: 'Rayado / Animado',
+    },
+    'component.progress.feature2': {
+        pt: 'Cores e Tamanhos',
+        en: 'Colors & Sizes',
+        es: 'Colores y Tamaños',
+    },
+    'component.progress.feature3': {
+        pt: 'Indeterminado',
+        en: 'Indeterminate',
+        es: 'Indeterminado',
+    },
+    'component.progress.feature4': {
+        pt: 'Labels',
+        en: 'Labels',
+        es: 'Etiquetas',
+    },
+
+    'component.select.feature1': {
+        pt: 'Controles Nativos',
+        en: 'Native Controls',
+        es: 'Controles Nativos',
+    },
+    'component.select.feature2': {
+        pt: 'Estilização Personalizada',
+        en: 'Custom Styling',
+        es: 'Estilización Personalizada',
+    },
+    'component.select.feature3': {
+        pt: 'Arrays de Opções',
+        en: 'Option Arrays',
+        es: 'Arrays de Opciones',
+    },
+    'component.select.feature4': {
+        pt: 'Validação',
+        en: 'Validation',
+        es: 'Validación',
+    },
+
+    'component.skeleton.feature1': {
+        pt: 'Texto e Formas',
+        en: 'Text & Shapes',
+        es: 'Texto y Formas',
+    },
+    'component.skeleton.feature2': {
+        pt: 'Animações',
+        en: 'Animations',
+        es: 'Animaciones',
+    },
+    'component.skeleton.feature3': {
+        pt: 'Responsivo',
+        en: 'Responsive',
+        es: 'Responsivo',
+    },
+    'component.skeleton.feature4': {
+        pt: 'Tematizável',
+        en: 'Themable',
+        es: 'Tematizable',
+    },
+
+    'component.spinner.feature1': {
+        pt: 'Tamanhos',
+        en: 'Sizes',
+        es: 'Tamaños',
+    },
+    'component.spinner.feature2': {
+        pt: 'Variantes de Cor',
+        en: 'Color Variants',
+        es: 'Variantes de Color',
+    },
+    'component.spinner.feature3': {
+        pt: 'Customizável',
+        en: 'Customizable',
+        es: 'Personalizable',
+    },
+    'component.spinner.feature4': {
+        pt: 'Leve',
+        en: 'Lightweight',
+        es: 'Ligero',
+    },
+
+    'component.switch.feature1': {
+        pt: 'Tamanhos',
+        en: 'Sizes',
+        es: 'Tamaños',
+    },
+    'component.switch.feature2': {
+        pt: 'Cores',
+        en: 'Colors',
+        es: 'Colores',
+    },
+    'component.switch.feature3': {
+        pt: 'Labels',
+        en: 'Labels',
+        es: 'Etiquetas',
+    },
+    'component.switch.feature4': {
+        pt: 'Estados',
+        en: 'States',
+        es: 'Estados',
+    },
+
+    'component.tabs.feature1': {
+        pt: 'Variantes de Tema',
+        en: 'Theme Variants',
+        es: 'Variantes de Tema',
+    },
+    'component.tabs.feature2': {
+        pt: 'Modo Controlado',
+        en: 'Controlled Mode',
+        es: 'Modo Controlado',
+    },
+    'component.tabs.feature3': {
+        pt: 'Acessível',
+        en: 'Accessible',
+        es: 'Accesible',
+    },
+    'component.tabs.feature4': {
+        pt: 'Responsivo',
+        en: 'Responsive',
+        es: 'Responsivo',
+    },
+
+    'component.toast.feature1': {
+        pt: 'Auto Dispensar',
+        en: 'Auto Dismiss',
+        es: 'Auto Descartar',
+    },
+    'component.toast.feature2': {
+        pt: 'Variantes',
+        en: 'Variants',
+        es: 'Variantes',
+    },
+    'component.toast.feature3': {
+        pt: 'Posicionamento',
+        en: 'Positioning',
+        es: 'Posicionamiento',
+    },
+    'component.toast.feature4': {
+        pt: 'Hook Global',
+        en: 'Global Hook',
+        es: 'Hook Global',
+    },
+
+    'component.tooltip.feature1': {
+        pt: '4 Posições',
+        en: '4 Positions',
+        es: '4 Posiciones',
+    },
+    'component.tooltip.feature2': {
+        pt: 'Delays Personalizados',
+        en: 'Custom Delays',
+        es: 'Retrasos Personalizados',
+    },
+    'component.tooltip.feature3': {
+        pt: 'Acesso por Teclado',
+        en: 'Keyboard Access',
+        es: 'Acceso por Teclado',
+    },
+    'component.tooltip.feature4': {
+        pt: 'Conteúdo Rico',
+        en: 'Rich Content',
+        es: 'Contenido Rico',
+    },
+
     // Footer
     'footer.support': {
         pt: 'Apoiar Projetos',

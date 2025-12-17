@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Checkbox, Card, CardBody } from '@mabesi/react-components';
+import { CodeBlock } from '../components/CodeBlock';
 import './Pages.css';
 
 export const CheckboxPage: React.FC = () => {
@@ -26,6 +26,11 @@ export const CheckboxPage: React.FC = () => {
                     <Checkbox label="Remember me" />
                     <Checkbox label="Subscribe" defaultChecked helperText="Opt-in to our newsletter." />
                 </div>
+                <CodeBlock
+                    code={`<Checkbox label="Remember me" />
+<Checkbox label="Subscribe" defaultChecked helperText="Opt-in to our newsletter." />`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">

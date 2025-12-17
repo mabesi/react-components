@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
     Tabs,
@@ -9,6 +8,7 @@ import {
     Card,
     CardBody
 } from '@mabesi/react-components';
+import { CodeBlock } from '../components/CodeBlock';
 import './Pages.css';
 
 export const TabsPage: React.FC = () => {
@@ -78,6 +78,25 @@ export const TabsPage: React.FC = () => {
                         </TabPanel>
                     </Tabs>
                 </div>
+                <CodeBlock
+                    code={`<Tabs defaultActiveTab="profile" variant="default">
+    <TabList>
+        <Tab id="profile">Profile</Tab>
+        <Tab id="gallery">Gallery</Tab>
+        <Tab id="settings">Settings</Tab>
+    </TabList>
+    <TabPanel id="profile">
+        <p>Profile content here</p>
+    </TabPanel>
+    <TabPanel id="gallery">
+        <p>Gallery content here</p>
+    </TabPanel>
+    <TabPanel id="settings">
+        <p>Settings content here</p>
+    </TabPanel>
+</Tabs>`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">

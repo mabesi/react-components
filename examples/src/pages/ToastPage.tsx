@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useToast, Button, Card, CardBody } from '@mabesi/react-components';
+import { CodeBlock } from '../components/CodeBlock';
 import './Pages.css';
 
 export const ToastPage: React.FC = () => {
@@ -40,6 +40,20 @@ export const ToastPage: React.FC = () => {
                         </CardBody>
                     </Card>
                 </div>
+                <CodeBlock
+                    code={`const { addToast } = useToast();
+
+<Button onClick={() => addToast('This is an info message', { variant: 'info' })}>
+    Info
+</Button>
+<Button onClick={() => addToast('Operation successful!', { variant: 'success' })}>
+    Success
+</Button>
+<Button onClick={() => addToast('Error: Something went wrong.', { variant: 'error' })}>
+    Error
+</Button>`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">

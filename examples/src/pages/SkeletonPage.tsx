@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Skeleton, Card, CardBody } from '@mabesi/react-components';
+import { CodeBlock } from '../components/CodeBlock';
 import './Pages.css';
 
 export function SkeletonPage() {
@@ -46,6 +47,13 @@ export function SkeletonPage() {
                         </CardBody>
                     </Card>
                 </div>
+                <CodeBlock
+                    code={`<Skeleton variant="text" />
+<Skeleton variant="circular" width={40} height={40} />
+<Skeleton variant="rectangular" width={210} height={118} />
+<Skeleton variant="rounded" width={210} height={118} />`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Tooltip, Button, Card, CardBody } from '@mabesi/react-components';
+import { CodeBlock } from '../components/CodeBlock';
 import './Pages.css';
 
 export const TooltipPage: React.FC = () => {
@@ -33,6 +34,15 @@ export const TooltipPage: React.FC = () => {
                         <Button variant="outline">Right</Button>
                     </Tooltip>
                 </div>
+                <CodeBlock
+                    code={`<Tooltip content="Tooltip on Top" position="top">
+    <Button variant="outline">Top</Button>
+</Tooltip>
+<Tooltip content="Tooltip on Right" position="right">
+    <Button variant="outline">Right</Button>
+</Tooltip>`}
+                    language="tsx"
+                />
             </div>
 
             <div className="content-container">
